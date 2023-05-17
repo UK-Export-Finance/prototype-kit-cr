@@ -3,7 +3,7 @@ name: Dev deployment
 on:
   push:
     branches:
-      - main
+      - feat/pipelines
   workflow_dispatch:
 
 env:
@@ -51,9 +51,9 @@ jobs:
         with:
           context: .
           push: true
-          tags: crprototypekitdev001.azurecr.io/prototype-kit:${{ github.sha }}
+          tags: crprototypekitdev001.azurecr.io/prototype-kit-cr:${{ github.sha }}
           file: ./Dockerfile
-      
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
@@ -61,4 +61,4 @@ jobs:
           app-name: 'app-prototypekit-dev-001'
           slot-name: 'production'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: 'crprototypekitdev001.azurecr.io/prototype-kit:${{ github.sha }}'
+          images: 'crprototypekitdev001.azurecr.io/prototype-kit-cr:${{ github.sha }}'

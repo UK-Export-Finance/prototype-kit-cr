@@ -3,7 +3,7 @@ name: Dev deployment
 on:
   push:
     branches:
-      - feat/pipelines
+      - main
   workflow_dispatch:
 
 env:
@@ -58,7 +58,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'app-prototypekit-dev-001'
+          app-name: 'app-prototypekitcr-dev-001'
           slot-name: 'production'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           images: 'crprototypekitdev001.azurecr.io/prototype-kit-cr:latest'

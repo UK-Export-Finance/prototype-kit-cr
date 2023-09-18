@@ -14724,13 +14724,13 @@ table.expanding-rows-2 .visually-hidden {
 
 .govuk-button--white {
   background-color: #ffffff;
-  box-shadow: 0 2px 0 #0f385c;
+  box-shadow: 0 2px 0 gray;
 }
 .govuk-button--white, .govuk-button--white:link, .govuk-button--white:visited, .govuk-button--white:active, .govuk-button--white:hover {
-  color: #0f385c;
+  color: gray;
 }
 .govuk-button--white:hover {
-  background-color: #dbebf9;
+  background-color: white;
 }
 .govuk-button--white:hover[disabled] {
   background-color: #ffffff;

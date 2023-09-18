@@ -312,9 +312,9 @@ $govuk-blue-button-text-colour: govuk-colour("white");
     }
   }
   $govuk-white-button-colour: govuk-colour("white");
-  $govuk-white-button-hover-colour: lighten(govuk-colour('blue'), 50%);
-  $govuk-white-button-shadow-colour: govuk-shade(govuk-colour('blue'), 50%);
-  $govuk-white-button-text-colour: govuk-shade(govuk-colour('blue'), 50%);
+  $govuk-white-button-hover-colour: lighten(govuk-colour('white'), 50%);
+  $govuk-white-button-shadow-colour: govuk-shade(govuk-colour('white'), 50%);
+  $govuk-white-button-text-colour: govuk-shade(govuk-colour('white'), 50%);
   .govuk-button--white {
     background-color: $govuk-white-button-colour;
     box-shadow: 0 $button-shadow-size 0 $govuk-white-button-shadow-colour;

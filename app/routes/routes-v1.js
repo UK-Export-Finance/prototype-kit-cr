@@ -16,7 +16,7 @@ router.post(version +'/setup', function(req, res) {
 //	else {
 //		res.redirect(version +'/create/activity-name')
 //	}
-res.redirect(version +'/setup2')
+res.redirect(version +'/ukef-tiles')
 
 	});
 

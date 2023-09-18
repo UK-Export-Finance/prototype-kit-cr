@@ -1,15 +1,32 @@
 FROM node:18-alpine
 
+ENV NODE_ENV=production
+
+RUN addgroup --gid 1017 --system appgroup \
+  && adduser --uid 1017 --system appuser --gid 1017
+
 WORKDIR /app
 
 VOLUME /node_modules
 
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y make python3
+
 COPY package.json .
+
+COPY . .
 
 RUN npm install
 
-COPY . .
+RUN chown -R appuser:appgroup /app
+
+USER 1017
+
+RUN chmod +x start.sh
 
 EXPOSE 3000
 
 CMD ["npm", "run", "dev"]
+
+CMD ["./start.sh"]

@@ -4,16 +4,7 @@ const router = express.Router()
 
 //CREATE
 require('./routes/create/routes-v1')(router);
-require('./routes/create/routes-v2')(router);
-require('./routes/create/routes-v3')(router);
-require('./routes/create/routes-v4')(router);
-require('./routes/create/routes-v5')(router);
-require('./routes/create/routes-v6')(router);
-require('./routes/create/routes-v7')(router);
-require('./routes/create/routes-v8')(router);
-require('./routes/create/routes-v9')(router);
-require('./routes/create/routes-v10')(router);
-require('./routes/create/routes-v11')(router);
+
 
 
 //UNLOCK

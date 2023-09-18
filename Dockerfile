@@ -19,12 +19,6 @@ COPY . .
 
 RUN npm install
 
-RUN chown -R appuser:appgroup /app
-
-USER 1017
-
-RUN chmod +x start.sh
-
 EXPOSE 3000
 
 CMD ["npm", "run", "dev"]

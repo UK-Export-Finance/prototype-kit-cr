@@ -1,3 +1,4 @@
+# FROM node:18-alpine3.17
 FROM node:18-alpine3.17
 
 # Set the working directory
@@ -8,6 +9,7 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm ci
+RUN npm install
 
 # Copy the application source code
 COPY . .

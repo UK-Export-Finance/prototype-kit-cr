@@ -6,10 +6,6 @@ WORKDIR /app
 
 VOLUME /node_modules
 
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y make python3
-
 COPY package.json .
 
 COPY . .

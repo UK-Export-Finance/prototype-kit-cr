@@ -1,19 +1,16 @@
-FROM node:18-alpine
+FROM node:18-alpine3.17
 
-ENV NODE_ENV=production
-
+# Set the working directory
 WORKDIR /app
 
-VOLUME /node_modules
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-COPY package.json .
+# Install dependencies
+RUN npm ci
 
+# Copy the application source code
 COPY . .
 
-RUN npm install
-
-EXPOSE 3000
-
+# Start the application
 CMD ["npm", "run", "dev"]
-
-CMD ["./start.sh"]

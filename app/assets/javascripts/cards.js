@@ -1,1 +1,0 @@
-window.onload=function(){document.querySelectorAll(".card--clickable").forEach((e=>{null!==e.querySelector("a")&&e.addEventListener("click",(()=>{e.querySelector("a").click()}))}))};

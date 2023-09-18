@@ -1,97 +1,81 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-UKEF - Claims and recoveries prototype
+Home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block header %}
-{% set page = 'create' %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: ''
+  }) }}
+  {% endblock %}
 
-{% include 'includes/proto-header.html' %}
-
-<div class="app-masthead">
-  <div class="govuk-width-container">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="app-masthead__title govuk-heading-l govuk-!-margin-bottom-3">
-          Claims and Recoveries
-        </h1>
-        <h3 class="app-masthead__subtitle govuk-heading-m">A collection of services for the management of claims and the subsequent recovery proecesses.
-        </h3>
-      </div>
-      <div class="govuk-grid-column-one-third">
-      </div>
-    </div>
-  </div>
-</div>
-{% endblock %}
 
 {% block content %}
+
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          User research, content docs and flow diagrams.
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p class="govuk-body govuk-!-margin-bottom-2">All links open in a new browser window or tab.</p>
-        <p class="govuk-body govuk-!-margin-bottom-2">User research:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="#" target="_blank" class="govuk-link govuk-link--no-visited-state">UR plan</a></li>
-          <li><a href="#" target="_blank" class="govuk-link govuk-link--no-visited-state">UR research</a></li>
+  <div class="govuk-grid-column-two-thirds">
 
-        </ul>
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            User research and  design boards.
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body govuk-!-margin-bottom-2">All links open in a new browser window or tab.</p>
+          <p class="govuk-body govuk-!-margin-bottom-2">User research:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="https://ukef.sharepoint.com/:x:/r/sites/pmo-PRO211/_layouts/15/Doc.aspx?sourcedoc=%7BD29D63C1-F9D7-4D2E-81C6-2EF94C04DE6C%7D&file=Credit%20Risk%20UR%20Engagement%20-%20Discovery.xlsx&action=default&mobileredirect=true" target="_blank" class="govuk-link govuk-link--no-visited-state">UR tracker</a></li>
+            <li><a href="https://ukef.sharepoint.com/:w:/r/sites/pmo-PRO211-CreditRiskProjectteam/Shared%20Documents/Credit%20Risk%20Project%20team/%5BDRAFT%5DUser%20Research%20Plan.docx?d=wb338062642584d87a1f0c9471106b2a1&csf=1&web=1&e=PhyzW7" target="_blank" class="govuk-link govuk-link--no-visited-state">UR discussion guide</a></li>
+            <li><a href="https://ukef.sharepoint.com/:w:/r/sites/pmo-PRO211-CreditRiskProjectteam/_layouts/15/Doc.aspx?sourcedoc=%7BB3380626-4258-4D87-A1F0-C9471106B2A1%7D&file=%5BDRAFT%5DUser%20Research%20Plan.docx&action=default&mobileredirect=true&isSPOFile=1&ovuser=8084138e-9400-409e-a6da-46b5281e0b0a%2Cricky.saunders%40ukexportfinance.gov.uk&SafelinksUrl=https%3A%2F%2Fukef.sharepoint.com%2F%3Aw%3A%2Fr%2Fsites%2Fpmo-PRO211-CreditRiskProjectteam%2F_layouts%2F15%2FDoc.aspx&cid=dfc8ae46-3a99-4f48-ba71-afee77a882ad" target="_blank" class="govuk-link govuk-link--no-visited-state">UR Plan</a></li>
+          </ul>
 
-        <p class="govuk-body govuk-!-margin-bottom-2">Service design and flow diagrams:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>
-            <a href="https://miro.com/app/board/uXjVMVg1Rd4=/?moveToWidget=3458764557382087042&cot=14"
-              target="_blank">View the overall flow diagrams</a>
-          </li>
-          <li>
-            <a href="https://miro.com/app/board/uXjVMVg1Rd4=/?moveToWidget=3458764557382087042&cot=14"
-              target="_blank">View the receipt of claim flow diagrams</a>
-          </li>
-          <li>
-            <a href="https://miro.com/app/board/uXjVMVg1Rd4=/?moveToWidget=3458764563883301283&cot=14"
-              target="_blank">View the receipt of claim designs</a>
-          </li>
-        </ul>
+          <p class="govuk-body govuk-!-margin-bottom-2">Design boards:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="https://miro.com/app/board/uXjVM8EFT3s=/" target="_blank" class="govuk-link govuk-link--no-visited-state">Miro</a></li>
+          </ul>
+        </div>
+      </details>
+      <table class="govuk-table">
+        <thead class="govuk-table__head" >
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" width="25%">Version</th>
+            <th scope="col" class="govuk-table__header" width="25%">Status</th>
+            <th scope="col" class="govuk-table__header">What changed</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" >
+              <a href="home" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Version 0</a> </td>
+      <!--        <a href="home" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Version 1</a> </td>-->
+
+              <td class="govuk-table__cell" >
+                <strong class="govuk-tag govuk-tag--blue">
+                  I<span style="text-transform:lowercase;">n design </span>
+                </strong>
+              </td>
+              <td class="govuk-table__cell" >
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>Baseline</li>
+                </ul>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
       </div>
-    </details>
 
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-caption-xl">Prototype versions</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header" width="15%">Version</th>
-          <th scope="col" class="govuk-table__header" width="25%">Status</th>
-          <th scope="col" class="govuk-table__header">What changed</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <a href="/v1/setup" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Version 1</a>
-            <!--  <a href="/2-0/setup?r=t" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Version 2</a>-->
-          </td>
-          <td class="govuk-table__cell">
-            <strong class="govuk-tag govuk-tag--blue">
-              I<span style="text-transform:lowercase;">n design </span>
-            </strong>
 
-          </td>
-          <td class="govuk-table__cell">
-            <ul class="govuk-list govuk-list--bullet">
-              <li>Receipt of claim. JIRA xxx</li>
-              </li>
-            </ul>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+
+    <!--{% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}-->
   </div>
 </div>
 

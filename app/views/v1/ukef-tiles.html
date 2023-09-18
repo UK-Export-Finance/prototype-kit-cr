@@ -9,30 +9,33 @@ Activities Management prototype
 {% block beforeContent %}
 <div class="govuk-width-container">
 	<h1 class="govuk-heading-l govuk-!-margin-top-7">Claims and recoveries</h1>
+	<p>Search for a facility using criteria below or navigate to either  create a new claim or manage an existing claim.</p>
+
 </div>
+
 {% endblock %}
-<!--
+
 <div class="homepage-search">
 	<div class="govuk-width-container">
-		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Search </h2>
-		<p class="govuk-body govuk-hint">Leave blank to view all results for selected residential location</p>
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Search for facility </h2>
+		<p class="govuk-body govuk-hint"> Enter the facility ID, deal ID or company name</p>
 		<form action="/prisoner-search" class="horizontal-form" data-test="homepage-search-form">
 			<div class="govuk-form-group">
 				<label class="govuk-label" for="keywords">
-					Name or number
+					Search term
 				</label>
 				<input class="govuk-input" id="keywords" name="keywords" type="text" data-test="homepage-search-keywords">
 			</div>
 			<div class="govuk-form-group">
 				<label class="govuk-label" for="location">
-					Residential location
+					Search category
 				</label>
 				<select class="govuk-select" id="location" name="location" data-test="homepage-search-location">
-					<option value="MDI">{{data['prison-name']}}</option>
-					{% for houseblock in data['residential-locations'] %}
-					<option value="MDI-1">{{houseblock.name}}</option>
-					{% endfor %}
-					<option value="MDI-RECEP">Reception</option>
+					<option value="MDI">Search category</option>
+					{
+					<option value="MDI-1">Facility ID</option>
+					<option value="MDI-RECEP">Deal ID</option>
+						<option value="MDI-RECEP">Company name</option>
 				</select>
 			</div>
 			<button type="submit" class="govuk-button" data-module="govuk-button">
@@ -40,7 +43,7 @@ Activities Management prototype
 			</button>
 		</form>
 	</div>
-</div>-->
+</div>
 
 
 
@@ -67,7 +70,7 @@ Activities Management prototype
 						</a>
 					</h2>
 					<p class="govuk-body card__description">
-						Manage, edit or update an existing claim. 
+						Manage, edit or update an existing claim.
 					</p>
 				</div>
 			</li>

@@ -1,24 +1,15 @@
-FROM node:16.14-bullseye-slim
-
-ENV NODE_ENV=production
-
-RUN addgroup --gid 1017 --system appgroup \
-  && adduser --uid 1017 --system appuser --gid 1017
+FROM node:18-alpine
 
 WORKDIR /app
 
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y make python3
+VOLUME /node_modules
 
-COPY . .
+COPY package.json .
 
 RUN npm install
 
-RUN chown -R appuser:appgroup /app
+COPY . .
 
-USER 1017
+EXPOSE 3000
 
-RUN chmod +x start.sh
-
-CMD ["./start.sh"]
+CMD ["npm", "run", "dev"]

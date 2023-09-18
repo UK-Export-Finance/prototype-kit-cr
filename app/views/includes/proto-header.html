@@ -1,0 +1,15 @@
+{% set homepageUrl = '/' %}
+
+{{ govukHeader({
+    homepageUrl: homepageUrl,
+    serviceName: serviceName,
+    serviceUrl: homepageUrl,
+    containerClasses: "govuk-width-container",
+    navigation: [
+    {
+      text: "Claims and recoveries",
+      href: "/index.html",
+      active: true if page == ""
+    }]
+
+  }) }}

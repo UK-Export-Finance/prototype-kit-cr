@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: ''
+  }) }}
+  {% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            User research, content docs and flow diagrams...
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body govuk-!-margin-bottom-2">All links open in a new browser window or tab.</p>
+          <p class="govuk-body govuk-!-margin-bottom-2">User research:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="#" target="_blank" class="govuk-link govuk-link--no-visited-state">UR doc 1</a></li>
+            <li><a href="#" target="_blank" class="govuk-link govuk-link--no-visited-state">UR doc 1</a></li>
+          </ul>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">Copydecks:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="#" target="_blank" class="govuk-link govuk-link--no-visited-state">Copydeck 1</a></li>
+            <li><a href="#" target="_blank" class="govuk-link govuk-link--no-visited-state">Copydeck 2</a></li>
+          </ul>
+          <p class="govuk-body govuk-!-margin-bottom-2">Flow diagrams:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="#" target="_blank" class="govuk-link govuk-link--no-visited-state">Flow diagrams 1</a></li>
+            <li><a href="#" target="_blank" class="govuk-link govuk-link--no-visited-state">Flow diagrams 2</a></li>
+          </ul>
+        </div>
+      </details>
+      <table class="govuk-table">
+        <thead class="govuk-table__head" >
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" width="25%">Version</th>
+            <th scope="col" class="govuk-table__header" width="25%">Status</th>
+            <th scope="col" class="govuk-table__header">What changed</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" >
+              <a href="home" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Version 1</a> </td>
+              <td class="govuk-table__cell" >
+                <strong class="govuk-tag govuk-tag--blue">
+                  I<span style="text-transform:lowercase;">n design </span>
+                </strong>
+              </td>
+              <td class="govuk-table__cell" >
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>Baseline</li>
+                </ul>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+    <!--{% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}-->
+  </div>
+</div>
+
+{% endblock %}

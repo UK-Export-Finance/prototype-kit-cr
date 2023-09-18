@@ -1,146 +1,82 @@
+/*
+
+Provide default values for user session data. These are automatically added
+via the `autoStoreData` middleware. Values will only be added to the
+session if a value doesn't already exist. This may be useful for testing
+journeys where users are returning or logging in to an existing application.
+
+============================================================================
+
+Example usage:
+
+"full-name": "Sarah Philips",
+
+"options-chosen": [ "foo", "bar" ]
+
+============================================================================
+
+*/
+
 module.exports = {
 
   // Insert values here
-  
-  // Dates
-  'report-due': 'yes',
-  'end-previous-month': '31 March 2023',
-  'end-current-month': '30 April 2023',
-  'last-month': 'March 2023',
-  'report-month': 'April 2023',
-  '1-month-ago': '3 April 2023',
-  'todays-date': '16 May 2023',
-  'todays-date-full': '16 May 2023',
-  'this-month-report-due': '16 May 2023',
-  'next-month-report-due': '14 June 2023',
-  
-  // Names
-  'signed-in-name': 'John Smith',
-  'last-month-name': 'John Smith',
-
-  // FACILITY 1 VALUES
-  'facility-1-updated': 'no',
-  'facility-1-name': 'Compressors Ltd',
-  'facility-1-ukef-id': '0020001371',
-  'facility-1-ref': '0239397',
-  'facility-1-end-date': '16 June 2024',
-  'facility-1-prob-default': '1.0%',
-  'facility-1-limit': '600,000.00',
-  'facility-1-cover': '80%',
-  'facility-1-max': '480,000.00',
-  'facility-1-utilisation': '400,000.00',
-  'facility-1-exposure': '320,000.00',
-  'facility-1-paid': '1,000.00',
-  'facility-1-accrued': '10,000.00',
-  'facility-1new-utilisation': '',
-  'facility-1new-exposure': '',
-  'facility-1new-paid': '',
-  'facility-1new-accrued': '',
-  'facility-1utiisation-updated': 'no',
-  'facility-1paid-updated': 'no',
-  'facility-1accrued-updated': 'no',
-
-  // FACILITY 2 VALUES
-  'facility-2-updated': 'no',
-  'facility-2-name': 'Petroleum Ltd',
-  'facility-2-ukef-id': '0020001413',
-  'facility-2-ref': '0374289',
-  'facility-2-end-date': '18 September 2026',
-  'facility-2-prob-default': '1.2%',
-  'facility-2-limit': '300,000.00',
-  'facility-2-cover': '80%',
-  'facility-2-max': '240,000.00',
-  'facility-2-utilisation': '125,000.00',
-  'facility-2-exposure': '100,000.00',
-  'facility-2-accrued': '3000.00',
-  'facility-2-paid': '800.00',
-  'facility-2new-utilisation': '',
-  'facility-2new-exposure': '',
-  'facility-2new-paid': '',
-  'facility-2new-accrued': '',
-  'facility-2utiisation-updated': 'no',
-  'facility-2paid-updated': 'no',
-  'facility-2accrued-updated': 'no',
-
-  // FACILITY 3 VALUES
-  'facility-3-updated': 'no',
-  'facility-3-name': 'Pharmaceuticals Ltd',
-  'facility-3-ukef-id': '0020001467',
-  'facility-3-ref': '0563982',
-  
-  'facility-3-end-date': '16 February 2025',
-  'facility-3-prob-default': '0.1%',
-  'facility-3-limit': '800,000.00',
-  'facility-3-cover': '80%',
-  'facility-3-max': '640,000.00',
-  
-  'facility-3-utilisation': '200,000.00',
-  'facility-3-exposure': '160,000.00',
-  'facility-3-accrued': '50,000.00',
-  'facility-3-paid': '2,000.00',
-
-  'facility-3new-utilisation': '',
-  'facility-3new-exposure': '',
-  'facility-3new-paid': '',
-  'facility-3new-accrued': '',
-
-  'facility-3utiisation-updated': 'no',
-  'facility-3paid-updated': 'no',
-  'facility-3accrued-updated': 'no',
-
-  // FACILITY 4 VALUES
-  'facility-4-updated': 'no',
-  'facility-4-name': 'Motors Ltd',
-  'facility-4-ref': '	0653289',
-  'facility-4-ukef-id': '	0020001499',
-  'facility-4-end-date': '23 Mar 2025',
-  'facility-4-prob-default': '0.7%',
-  'facility-4-limit': '1,500,000.00',
-  'facility-4-cover': '80%',
-  'facility-4-max': '1,500,000.00',
-  'facility-4-utilisation': '500,000.00',
-  'facility-4-exposure': '400,000.00',
-  'facility-4-accrued': '20,000.00',
-  'facility-4-paid': '2,000.00',
-  'facility-4new-utilisation': '',
-  'facility-4new-exposure': '',
-  'facility-4new-paid': '',
-  'facility-4new-accrued': '',
-  'facility-4utiisation-updated': 'no',
-  'facility-4paid-updated': 'no',
-  'facility-4accrued-updated': 'no',
-
-  // FACILITY 5 VALUES
-  'facility-5-updated': 'no',
-  'facility-5-name': 'A1 Manifolds Ltd',
-  'facility-5-ukef-id': '0020001507',
-  'facility-5-ref': '0378429',
-  'facility-5-end-date': '23 July 2025',
-  'facility-5-prob-default': '0.3%',
-  'facility-5-limit': '2,500,000.00',
-  'facility-5-cover': '80%',
-  'facility-5-max': '2,000,000.00',
-  'facility-5-utilisation': '1,900,000.00',
-  'facility-5-exposure': '1,520,000.00',
-  'facility-5-accrued': '50,000.00',
-  'facility-5-paid': '5,000.00',
-  'facility-5new-utilisation': '',
-  'facility-5new-exposure': '1,600,000.00',
-  'facility-5new-paid': '',
-  'facility-5new-accrued': '',
-
-// FACILITY 6 VALUES
-'facility-6-updated': 'no',
-'facility-6-name': 'XYZ Aircrafts Ltd',
-'facility-6-ukef-id': '0020001467',
-'facility-6-ref': '0529012',
-'facility-6-utilisation': '790,000.00',
-'facility-6-exposure': '632,000.00',
-'facility-6-accrued': '727.46',
-'facility-6-paid': '639.11',
-
-'facility-6new-utilisation': '',
-'facility-6new-exposure': '',
-'facility-6new-paid': '',
-'facility-6new-accrued': '',
+  "config": {
+    "record-attendance-pattern": "single-button",
+    "attendance-list-layout": "toolbar",
+    "attend-pattern": "separate",
+    "select-activity-pattern": "select-date-table",
+    "navigation-tiles": [{
+      "linkText": "Manage unlock and movement",
+      "descriptionText":"Create unlock and movement lists. Record unlock sickness, refusals and absences. ",
+      "linkURL":""
+    },
+    {
+      "linkText":"Manage activities",
+      "descriptionText":"Create and manage activities. Log applications and allocate people to activities. Check and record attendance.",
+      "linkURL":"/v10/dps-home-2"
+    },
+    {
+      "linkText":"Create and manage appointments",
+      "descriptionText":"Add and edit appointments for individuals and groups of people.",
+      "linkURL":"/v10/dps-home-2"
+    }]
+  },
+  "activity": "Workshop",
+  'prisoners': require('./prisoners-list-1'),
+  'activities': require('./activities-list-1'),
+  'timetable': require('./timetable-1'),
+  'activities-2': require('./activities-list-2'),
+  'timetable-2': require('./timetable-2'),
+  'prisoners-2': require('./prisoners-list-2'),
+  'prisoners-3': require('./prisoners-list-3'),
+  'timetable-complete-1': require('./timetable-complete-1'),
+  'activity-locations-2': require('./activity-locations-list-2'),
+  'timetable-3': require('./timetable-3'),
+  'residential-locations': require('./residential-list-1'),
+  'residential-locations-2': require('./residential-list-2'),
+  'attendance-data-1': require('./attendance-data-1'),
+  'applications': require('./applications'),
+  "times": "AM",
+  "tier": "Tier 2",
+  "provider": "Other",
+  "selected-locations": {},
+  "prison-name": "HMP Leeds",
+  "chosen-date": "today",
+  "date": "2023-01-02",
+  "appointment-categories-1": require('./appointment-categories-1'),
+  "prototype-versions": {
+    'create-and-allocate': {
+      'latest-version': 'version-16',
+      'url': 'create/version-16'
+    },
+    'unlock-and-attend': {
+      'latest-version': 'version-8',
+      'url': '/unlock/version-8/whereabouts'
+    },
+    'appointments': {
+      'latest-version': 'version-13',
+      'url': '/appointments/version-13/dps-home'
+    }
+  },
+  "areas-of-study": require('./areas-of-study'),
 }

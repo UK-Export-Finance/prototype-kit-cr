@@ -3,6 +3,9 @@ module.exports = function (router) {
 var version = '/v1';
 
 router.post(version +'/setup', function(req, res) {
+	res.redirect(version +'/ukef-tiles')
+		});
+
 ///////CREATE//////////
 
 	//use fresh posted data or use session data
@@ -16,14 +19,18 @@ router.post(version +'/setup', function(req, res) {
 //	else {
 //		res.redirect(version +'/create/activity-name')
 //	}
-res.redirect(version +'/ukef-tiles')
-
-	});
 
 router.post(version +'/url', function(req, res) {
 	{
 		res.redirect(version +'/url')
 	}
 });
+
+router.post(version +'/ukef-tiles', function(req, res) {
+	{
+		res.redirect(version +'/facility-search-result')
+	}
+});
+
 
 }

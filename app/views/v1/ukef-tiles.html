@@ -9,8 +9,10 @@ Activities Management prototype
 {% block beforeContent %}
 <div class="govuk-width-container">
 	<h1 class="govuk-heading-l govuk-!-margin-top-7">Claims and recoveries</h1>
-	<p>Search for a facility using criteria below or navigate to either  create a new claim or manage an existing claim.</p>
 
+	{% if data.setuoShowSearch=='yes' %}
+	<p>Search for a facility using criteria below or navigate to either  create a new claim or manage an existing claim.</p>
+	{% endif %}
 </div>
 
 {% endblock %}

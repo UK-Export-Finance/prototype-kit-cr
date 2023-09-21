@@ -31,6 +31,11 @@ router.post(version +'/ukef-tiles', function(req, res) {
 		res.redirect(version +'/facility-search-result')
 	}
 });
+router.post(version +'/facility-search-for-facility', function(req, res) {
+	{
+		res.redirect(version +'/facility-search-result')
+	}
+});
 
 
 }

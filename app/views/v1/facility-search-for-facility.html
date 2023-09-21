@@ -8,21 +8,19 @@ Activities Management prototype
 {% block main %}
 {% block beforeContent %}
 <div class="govuk-width-container">
-	<h1 class="govuk-heading-l govuk-!-margin-top-7">Claims and recoveries</h1>
+	<h1 class="govuk-heading-l govuk-!-margin-top-7">Search for a facility to add a start claim</h1>
 
-	{% if data.setuoShowSearch=='yes' %}
-	<p>Search for a facility using criteria below or navigate to either  create a new claim or manage an existing claim.</p>
-	{% endif %}
+
+
 </div>
 
 {% endblock %}
 
 
-{% if data.setuoShowSearch=='yes' %}
 <div class="homepage-search">
 	<div class="govuk-width-container">
-		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Search for facility </h2>
-		<p class="govuk-body govuk-hint"> Enter the facility ID, deal ID, company name or existing claim ID</p>
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Search for a facility</h2>
+		<p class="govuk-body govuk-hint"> Enter the facility ID, deal ID or company name.</p>
 		<form method="post" class="horizontal-form" data-test="homepage-search-form" name="facilitySearch">
 			<div class="govuk-form-group">
 				<label class="govuk-label" for="keywords">
@@ -49,40 +47,8 @@ Activities Management prototype
 		</form>
 	</div>
 </div>
-{% endif %}
 
 
-<div class="homepage-content">
-	<div class="govuk-width-container">
-		<ul class="govuk-grid-row card-group" id="sortable">
-			<li class="govuk-grid-column-one-third card-group__item" id="tile_create">
-				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
-					<h2 class="govuk-heading-m card__heading">
-						<a class="govuk-link card__link govuk-link--no-visited-state" href="facility-search-for-facility?claimType=new">
-							Create a new claim
-						</a>
-					</h2>
-					<p class="govuk-body card__description">
-						Create a new claim for a facility.
-					</p>
-				</div>
-			</li>
-			<li class="govuk-grid-column-one-third card-group__item" id="tile_unlock">
-				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
-					<h2 class="govuk-heading-m card__heading">
-						<a class="govuk-link card__link govuk-link--no-visited-state" href="facility-task-list">
-							Manage an existing claim
-						</a>
-					</h2>
-					<p class="govuk-body card__description">
-						Manage, edit or update an existing claim.
-					</p>
-				</div>
-			</li>
-
-		</ul>
-	</div>
-</div>
 {% endblock %}
 {% block pageScripts %}
 <script src="/public/javascripts/cards.js"></script>

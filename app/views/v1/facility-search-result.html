@@ -14,13 +14,45 @@ Claims and recoveries
 
   </a>
 </nav>
-{% endblock %}
+<h1 class="govuk-heading-l">
+  Claims and recoveries dashboard	</h1>
+<p class="govuk-body">Select the facility from the list shown to create a new claim or view an exisiting claim, or search for a different facility.<br /> You can aslo filter the results, by selecting the show filters button.</p>
 
+<div class="homepage-search">
+	<div class="govuk-width-container">
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Search for a facility</h2>
+		<p class="govuk-body govuk-hint"> Enter the facility ID, deal ID or company name.</p>
+		<form method="post" class="horizontal-form" data-test="homepage-search-form" name="facilitySearch">
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="keywords">
+					Search term
+				</label>
+				<input class="govuk-input" id="keywords" name="keywords" type="text" data-test="homepage-search-keywords">
+			</div>
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="location">
+					Search category
+				</label>
+				<select class="govuk-select" id="location" name="Home-Search" data-test="homepage-search-location">
+					<option value="Home-Search">Select category</option>
+
+					<option value="Facility ">Facility ID</option>
+					<option value="Deal">Deal ID</option>
+						<option value="Company">Company name</option>
+						<option value="Claim">Claim ID</option>
+				</select>
+			</div>
+			<button type="submit" class="govuk-button" data-module="govuk-button">
+				Search
+			</button>
+		</form>
+	</div>
+</div>
 {% block content %}
 <form id="form" method="post" action="search-results-24102023">
-	<h1 class="govuk-heading-l">
-		Claims and recoveries dashboard	</h1>
-	<p class="govuk-body">Select the facility you wish to view or view exisitng claim.</p>
+<br />
+  {% endblock %}
+
 
 	{%- from "moj/components/filter/macro.njk" import mojFilter -%}
 	{%- from "moj/components/button-menu/macro.njk" import mojButtonMenu -%}
@@ -176,7 +208,7 @@ Claims and recoveries
 
 			{% else %}
 			<h2 class="govuk-heading-s">
-				Showing 1 facility
+				Showing 3 of 3 results for '1234'
 			</h2>
 
 			{% endif %}
@@ -199,19 +231,54 @@ Claims and recoveries
 						<td class="govuk-table__cell"><strong><a href="#">12345678</a></strong></td>
 						<td class="govuk-table__cell">Airbus UK</td>
 					<!--	<td class="govuk-table__cell govuk-table__cell--numeric">2,000,000</td>-->
-						<td class="govuk-table__cell">2,000,000</td>
-            <td class="govuk-table__cell">21st Sept 2024</td>
+						<td class="govuk-table__cell" data-sort-value="20">2,000,000</td>
+            <td class="govuk-table__cell"data-sort-value="230921">21st Sept 2024</td>
 						<td class="govuk-table__cell ">
 							<span class="govuk-tag govuk-tag--blue">Input in progress</span></td>
 							<td class="govuk-table__cell">
 
-                {% if data.setupShowCardview =='no' %}
+                {% if data.setupShowCardview =='yes' %}
                 <a href="facility-card-list">
                   {% else %}
                   <a href="facility-task-list">
                 {% endif %}
                   View claim</a></td>
 					</tr>
+          <tr class="govuk-table__row ">
+						<td class="govuk-table__cell"><strong><a href="#">12341037</a></strong></td>
+						<td class="govuk-table__cell">Lush Cosmetics</td>
+					<!--	<td class="govuk-table__cell govuk-table__cell--numeric">2,000,000</td>-->
+						<td class="govuk-table__cell" data-sort-value="15">1,500,000</td>
+            <td class="govuk-table__cell"data-sort-value="231101">1st Nov 2023</td>
+						<td class="govuk-table__cell ">
+							<span class="govuk-tag govuk-tag--grey">N/A</span></td>
+							<td class="govuk-table__cell">
+
+                {% if data.setupShowCardview =='yes' %}
+                <a href="facility-card-list">
+                  {% else %}
+                  <a href="facility-task-list">
+                {% endif %}
+                  Create new claim</a></td>
+					</tr>
+
+        <tr class="govuk-table__row ">
+          <td class="govuk-table__cell"><strong><a href="#">98212341</a></strong></td>
+          <td class="govuk-table__cell">Premier furnishings LTD</td>
+        <!--	<td class="govuk-table__cell govuk-table__cell--numeric">2,000,000</td>-->
+          <td class="govuk-table__cell" data-sort-value="3">300,000</td>
+          <td class="govuk-table__cell" data-sort-value="231109">9th Nov 2023</td>
+          <td class="govuk-table__cell ">
+            <span class="govuk-tag govuk-tag--grey">N/A</span></td>
+            <td class="govuk-table__cell">
+
+              {% if data.setupShowCardview =='yes' %}
+              <a href="facility-card-list">
+                {% else %}
+                <a href="facility-task-list">
+              {% endif %}
+                Create new claim</a></td>
+        </tr>
 				</tbody>
 			</table>
 		</div>

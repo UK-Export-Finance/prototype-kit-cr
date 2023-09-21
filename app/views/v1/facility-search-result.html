@@ -20,7 +20,7 @@ Claims and recoveries
 <form id="form" method="post" action="search-results-24102023">
 	<h1 class="govuk-heading-l">
 		Claims and recoveries dashboard	</h1>
-	<p class="govuk-body">Select the facility you wish to view.</p>
+	<p class="govuk-body">Select the facility you wish to view or view exisitng claim.</p>
 
 	{%- from "moj/components/filter/macro.njk" import mojFilter -%}
 	{%- from "moj/components/button-menu/macro.njk" import mojButtonMenu -%}
@@ -203,7 +203,14 @@ Claims and recoveries
             <td class="govuk-table__cell">21st Sept 2024</td>
 						<td class="govuk-table__cell ">
 							<span class="govuk-tag govuk-tag--blue">Input in progress</span></td>
-							<td class="govuk-table__cell"><a href="facility-task-list">View claim</a></td>
+							<td class="govuk-table__cell">
+
+                {% if data.setupShowCardview =='no' %}
+                <a href="facility-card-list">
+                  {% else %}
+                  <a href="facility-task-list">
+                {% endif %}
+                  View claim</a></td>
 					</tr>
 				</tbody>
 			</table>

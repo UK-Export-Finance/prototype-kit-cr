@@ -8,9 +8,16 @@ Activities Management prototype
 {% block main %}
 {% block beforeContent %}
 <div class="govuk-width-container">
-	<h1 class="govuk-heading-l govuk-!-margin-top-7">Search for a facility to add a start claim</h1>
 
+{% if (data.claimType == 'new') %}
 
+	<h1 class="govuk-heading-l govuk-!-margin-top-7">Search for a facility to add a new claim</h1>
+
+{% else %}
+
+	<h1 class="govuk-heading-l govuk-!-margin-top-7">Search for a facility to view an existing claim</h1>
+
+{% endif %}
 
 </div>
 
@@ -20,7 +27,18 @@ Activities Management prototype
 <div class="homepage-search">
 	<div class="govuk-width-container">
 		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Search for a facility</h2>
-		<p class="govuk-body govuk-hint"> Enter the facility ID, deal ID or company name.</p>
+
+		{% if (data.claimType == 'new') %}
+
+			<p class="govuk-body govuk-hint"> Enter the facility ID, deal ID or company name.</p>
+
+		{% else %}
+
+				<p class="govuk-body govuk-hint"> Enter the existing claim ID, facility ID, deal ID or company name.</p>
+
+		{% endif %}
+
+
 		<form method="post" class="horizontal-form" data-test="homepage-search-form" name="facilitySearch">
 			<div class="govuk-form-group">
 				<label class="govuk-label" for="keywords">
@@ -34,11 +52,15 @@ Activities Management prototype
 				</label>
 				<select class="govuk-select" id="location" name="Home-Search" data-test="homepage-search-location">
 					<option value="Home-Search">Select category</option>
-
+					{% if (data.claimType !== 'new') %}
+							<option value="Claim">Claim ID</option>
+					{% endif %}
 					<option value="Facility ">Facility ID</option>
 					<option value="Deal">Deal ID</option>
 						<option value="Company">Company name</option>
-						<option value="Claim">Claim ID</option>
+
+
+
 				</select>
 			</div>
 			<button type="submit" class="govuk-button" data-module="govuk-button">

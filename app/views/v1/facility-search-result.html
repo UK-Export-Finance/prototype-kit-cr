@@ -227,6 +227,7 @@ Claims and recoveries
 					</tr>
 				</thead>
 				<tbody class="govuk-table__body">
+            {% if data.claimType =='existing' %}
 					<tr class="govuk-table__row ">
 						<td class="govuk-table__cell"><strong><a href="#">12345678</a></strong></td>
 						<td class="govuk-table__cell">Airbus UK</td>
@@ -244,6 +245,10 @@ Claims and recoveries
                 {% endif %}
                   View claim</a></td>
 					</tr>
+
+            {% endif %}
+
+            {% if data.claimType =='new' %}
           <tr class="govuk-table__row ">
 						<td class="govuk-table__cell"><strong><a href="#">12341037</a></strong></td>
 						<td class="govuk-table__cell">Lush Cosmetics</td>
@@ -254,14 +259,16 @@ Claims and recoveries
 							<span class="govuk-tag govuk-tag--grey">N/A</span></td>
 							<td class="govuk-table__cell">
 
-                {% if data.setupShowCardview =='yes' %}
-                <a href="facility-card-list">
-                  {% else %}
-                  <a href="facility-task-list">
-                {% endif %}
-                  Create new claim</a></td>
-					</tr>
+            {% if data.setupShowCardview =='yes' %}
+            <a href="facility-card-list">
+              {% else %}
+              <a href="facility-task-list">
+            {% endif %}
+              Create new claim</a></td>
+					       </tr>
+            {% endif %}
 
+            {% if data.claimType =='new' %}
         <tr class="govuk-table__row ">
           <td class="govuk-table__cell"><strong><a href="#">98212341</a></strong></td>
           <td class="govuk-table__cell">Premier furnishings LTD</td>
@@ -279,6 +286,7 @@ Claims and recoveries
               {% endif %}
                 Create new claim</a></td>
         </tr>
+          {% endif %}
 				</tbody>
 			</table>
 		</div>

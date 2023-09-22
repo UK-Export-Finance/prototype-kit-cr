@@ -201,17 +201,15 @@ Claims and recoveries
 
 			<div class="moj-action__filter"></div>
 
-			{% if data['appointment-type-fltr'] == 'Blood test' or data['appointment-type-fltr'] == 'Medical - Doctor' and data['appointment-location-fltr'] == 'Medical Room 1' %}
+		{% if data.claimType =='new' %}
 			<h2 class="govuk-heading-s">
-				Showing 2 facilities
+				Showing 2 of 2 results for '1234'
 			</h2>
-
-			{% else %}
-			<h2 class="govuk-heading-s">
-				Showing 3 of 3 results for '1234'
+      {% else %}
+      <h2 class="govuk-heading-s">
+				Showing 1 of 1 result for '1234'
 			</h2>
-
-			{% endif %}
+      {% endif %}
 
 			{% from "govuk/components/table/macro.njk" import govukTable %}
 			<table class="govuk-table app-whereabouts-table--sticky-head" data-module="moj-sortable-table">
@@ -235,18 +233,17 @@ Claims and recoveries
 						<td class="govuk-table__cell" data-sort-value="20">2,000,000</td>
             <td class="govuk-table__cell"data-sort-value="230921">21st Sept 2024</td>
 						<td class="govuk-table__cell ">
-							<span class="govuk-tag govuk-tag--blue">Input in progress</span></td>
+							<span class="govuk-tag govuk-tag--blue">In progress</span></td>
 							<td class="govuk-table__cell">
 
                 {% if data.setupShowCardview =='yes' %}
-                <a href="facility-card-list">
+                <a href="facility-card-list?company=Airbus UK&buyer=Singapore Airline&bank=JP Morgan&facility=12345678&deal=9882652&address1=Aerospace Ave§&address2=Filton&address3=Bristol&address4=BS34 7PA&email@airbus.ukcom&phone=0117 969 3831">
                   {% else %}
-                  <a href="facility-task-list">
+                  <a href="facility-task-list?company=Airbus UK&buyer=Singapore Airline&bank=JP Morgan&facility=12345678&deal=9882652&address1=Aerospace Ave§&address2=Filton&address3=Bristol&address4=BS34 7PA&email@airbus.ukcom&phone=0117 969 3831">
                 {% endif %}
-                  View claim</a></td>
-					</tr>
-
-            {% endif %}
+                  Mangage claim</a></td>
+                	</tr>
+                  {% endif %}
 
             {% if data.claimType =='new' %}
           <tr class="govuk-table__row ">

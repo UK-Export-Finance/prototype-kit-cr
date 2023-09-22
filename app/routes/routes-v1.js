@@ -37,5 +37,18 @@ router.post(version +'/facility-search-for-facility', function(req, res) {
 	}
 });
 
+router.post(version +'/are-you-sure-create-new-claim', function(req, res) {
+	{
+		if (req.session.data.cancelClaimCreation =='yes'){
+
+			res.redirect(version +'/facility-card-list')
+		}
+		else{
+			res.redirect(version +'/facility-search-result')
+		}
+	}
+});
+
+
 
 }

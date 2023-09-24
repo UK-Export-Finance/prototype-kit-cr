@@ -31,6 +31,7 @@ router.post(version +'/ukef-tiles', function(req, res) {
 		res.redirect(version +'/facility-search-result')
 	}
 });
+
 router.post(version +'/facility-search-for-facility', function(req, res) {
 	{
 		res.redirect(version +'/facility-search-result')
@@ -49,6 +50,13 @@ router.post(version +'/are-you-sure-create-new-claim', function(req, res) {
 	}
 });
 
+/*1-pre-examinsation section*/
+
+router.post(version +'/1-pre-examination/notification-new-or-expected-claim', function(req, res) {
+	{
+			res.redirect(version +'/facility-card-list')
+	}
+});
 
 
 }

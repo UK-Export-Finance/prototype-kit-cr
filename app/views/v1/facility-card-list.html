@@ -112,8 +112,18 @@ Claims and recoveries
           Notification of a new claim or expected repeat claim
         </dt>
         <dd class="govuk-summary-list__value">
-          <span> <a class="" href="#">Add details</a></span>
+          <span>
+
+            {% if data.claimNotificationorExpectedRepeat %}
+            {{data.claimNotificationorExpectedRepeat}}
+
+          </dd>
+          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/notification-new-or-expected-claim">Change details</a>
+            {% else %}
+             <a class="" href="1-pre-examination/notification-new-or-expected-claim">Add details</a> </span>
+             {% endif %}
         </dd>
+
           <dd class="govuk-summary-list__value" style="float:right;">
         </dd>
       </div>

@@ -114,13 +114,20 @@ Claims and recoveries
         <dd class="govuk-summary-list__value">
           <span>
 
-            {% if data.claimNotificationorExpectedRepeat %}
+            {% if data.claimNotificationorExpectedRepeat =='Notification of a new claim' or data.claimNotificationorExpectedRepeat =='Expected repeat claim'%}
             {{data.claimNotificationorExpectedRepeat}}
 
           </dd>
           <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/notification-new-or-expected-claim">Change details</a>
+
+
             {% else %}
+            <a class="" href="1-pre-examination/notification-new-or-expected-claim">Add details</a> </span>
+              {% endif %}
+
+            {% if data.claimType =='Expected repeat claim' %}
              <a class="" href="1-pre-examination/notification-new-or-expected-claim">Add details</a> </span>
+
              {% endif %}
         </dd>
 
@@ -404,7 +411,6 @@ Claims and recoveries
 
 
 {% endblock %}
-
 
 
 {% block pageScripts %}

@@ -102,14 +102,20 @@ router.post(version +'/1-pre-examination/date-of-default', function(req, res) {
 		if (req.session.data.defaultMonth == '12') {
 			req.session.data.defaultMonthAsText= 'December'
 		}
-
-
-
-
 		req.session.data.defaultDate = req.session.data.defaultDay +" "+ req.session.data.defaultMonthAsText +" "+ req.session.data.defaultYear
 
 			res.redirect(version +'/facility-card-list')
 	}
 });
 
+router.post(version +'/1-pre-examination/allocate-examiners', function(req, res) {
+	{
+			res.redirect(version +'/facility-card-list')
+	}
+});
+router.post(version +'/1-pre-examination/allocate-authorisers', function(req, res) {
+	{
+			res.redirect(version +'/facility-card-list')
+	}
+});
 }

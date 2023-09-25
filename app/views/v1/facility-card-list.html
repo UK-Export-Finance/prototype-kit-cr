@@ -212,16 +212,58 @@ Claims and recoveries
         </dd>
       </div>
 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+           Allocate examiners
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <span>
+
+            {% if data.allocatedExaminers %}
+            {{data.allocatedExaminers}}
+
+          </dd>
+          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/allocate-examiners">Change details</a>
+
+            {% else %}
+            <a class="" href="1-pre-examination/allocate-examiners">Add details</a> </span>
+              {% endif %}
+
+            {% if data.defaultDate =='unanswered' %}
+             <a class="" href="1-pre-examination/allocate-examiners">Add details</a> </span>
+             {% endif %}
+        </dd>
+          <dd class="govuk-summary-list__value" style="float:right;">
+        </dd>
+      </div>
+
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Allocate examiners
+           Allocate authorisers
         </dt>
         <dd class="govuk-summary-list__value">
-          <span> <a class="" href="#">Add details</a></span>    </dd>
-        <dd class="govuk-summary-list__value" style="float:right;">
+          <span>
+
+            {% if data.allocatedAuthorisers %}
+            {{data.allocatedAuthorisers}}
+
+          </dd>
+          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/allocate-authorisers">Change details</a>
+
+            {% else %}
+            <a class="" href="1-pre-examination/allocate-authorisers">Add details</a> </span>
+              {% endif %}
+
+            {% if data.defaultDate =='unanswered' %}
+             <a class="" href="1-pre-examination/allocate-authorisers">Add details</a> </span>
+             {% endif %}
+        </dd>
+          <dd class="govuk-summary-list__value" style="float:right;">
         </dd>
       </div>
+
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Allocate authoriser

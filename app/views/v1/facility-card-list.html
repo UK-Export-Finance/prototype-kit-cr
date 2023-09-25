@@ -126,24 +126,24 @@ Claims and recoveries
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Notification of a new claim or expected repeat claim
+         New claim or a repeat claim
         </dt>
         <dd class="govuk-summary-list__value">
           <span>
 
-            {% if data.claimNotificationorExpectedRepeat =='Notification of a new claim' or data.claimNotificationorExpectedRepeat =='Expected repeat claim'%}
+            {% if data.claimNotificationorExpectedRepeat =='New claim' or data.claimNotificationorExpectedRepeat =='Repeat claim'%}
             {{data.claimNotificationorExpectedRepeat}}
 
           </dd>
-          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/notification-new-or-expected-claim">Change details</a>
+          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/new-or-repeat-claim"">Change details</a>
 
 
             {% else %}
-            <a class="" href="1-pre-examination/notification-new-or-expected-claim">Add details</a> </span>
+            <a class="" href="1-pre-examination/new-or-repeat-claim">Add details</a> </span>
               {% endif %}
 
-            {% if data.claimType =='Expected repeat claim' %}
-             <a class="" href="1-pre-examination/notification-new-or-expected-claim">Add details</a> </span>
+            {% if data.claimType =='Repeat claim' %}
+             <a class="" href="1-pre-examination/new-or-repeat-claim">Add details</a> </span>
 
              {% endif %}
         </dd>
@@ -151,6 +151,39 @@ Claims and recoveries
           <dd class="govuk-summary-list__value" style="float:right;">
         </dd>
       </div>
+
+
+
+      <!--subsection 2 - expected or notified-->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Has this claim been notified or is it expected?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <span>
+
+            {% if data.claimNotification =='Notified' or data.claimNotification =='Expected'%}
+            {{data.claimNotification}}
+
+          </dd>
+          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/notified-or-expected"">Change details</a>
+
+            {% else %}
+            <a class="" href="1-pre-examination/notified-or-expected">Add details</a> </span>
+              {% endif %}
+
+            {% if data.claimType =='unanswered' %}
+             <a class="" href="1-pre-examination/notified-or-expected"">Add details</a> </span>
+
+             {% endif %}
+        </dd>
+
+          <dd class="govuk-summary-list__value" style="float:right;">
+        </dd>
+      </div>
+
+
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Default status
@@ -282,7 +315,7 @@ Claims and recoveries
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Notification of a new claim or expected repeat claim
+          Notification of New claim or expected repeat claim
         </dt>
         <dd class="govuk-summary-list__value">
           New claim

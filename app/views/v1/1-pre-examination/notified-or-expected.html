@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<nav class="govuk-!-display-none-print">
+	{{govukBackLink({
+	  text: "Back",
+	  "href": "javascript: window.history.go(-1)"
+	  })}}
+	  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+	  </a>
+	</nav>
+{% endblock %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4" style="margin-left:10px;">
+
+          Have you been notified of this claim or is it excpected?
+
+        </h1><br />
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+      <form method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+              </h1>
+            </legend>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name" name="claimNotification" {% if data.claimNotification=='Notified'%} checked='checked' {% endif %} type="radio" value="Notified">
+              <label class="govuk-label govuk-radios__label" for="changed-name">
+                Notified of the claim
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-2" name="claimNotification" {% if data.claimNotification=='Expected'%} checked='checked' {% endif %} type="radio" value="Expected">
+              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                Expected to be a claim
+              </label>
+              </div>
+            </div>
+						<br />
+
+						<div class="govuk-radios__divider">or</div>
+		 <div class="govuk-radios__item">
+			 <input class="govuk-radios__input" id="whereDoYouLive-6" name="claimNotification" type="radio" value="unanswered">
+			 <label class="govuk-label govuk-radios__label" for="whereDoYouLive-6">
+				 Reset to unanswered
+			 </label>
+		 </div>
+          </fieldset>
+        </div>
+          <button class="govuk-button" data-module="govuk-button">
+            Confirm
+          </button>
+
+    <!--      <input type="hidden" name="cancelClaimCreation" value="false">-->
+        </form>
+      </div>
+    </div>
+    </div>
+{% endblock %}

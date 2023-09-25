@@ -52,7 +52,12 @@ router.post(version +'/are-you-sure-create-new-claim', function(req, res) {
 
 /*1-pre-examinsation section*/
 
-router.post(version +'/1-pre-examination/notification-new-or-expected-claim', function(req, res) {
+router.post(version +'/1-pre-examination/new-or-repeat-claim', function(req, res) {
+	{
+			res.redirect(version +'/facility-card-list')
+	}
+});
+router.post(version +'/1-pre-examination/notified-or-expected', function(req, res) {
 	{
 			res.redirect(version +'/facility-card-list')
 	}

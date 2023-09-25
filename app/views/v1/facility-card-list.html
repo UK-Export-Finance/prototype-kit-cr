@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+
 {% block pageTitle %}
 Claims and recoveries
 {% endblock %}
@@ -166,14 +167,14 @@ Claims and recoveries
             {{data.claimNotification}}
 
           </dd>
-          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/notified-or-expected"">Change details</a>
+          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/notified-or-expected">Change details</a>
 
             {% else %}
             <a class="" href="1-pre-examination/notified-or-expected">Add details</a> </span>
               {% endif %}
 
             {% if data.claimType =='unanswered' %}
-             <a class="" href="1-pre-examination/notified-or-expected"">Add details</a> </span>
+             <a class="" href="1-pre-examination/notified-or-expected">Add details</a> </span>
 
              {% endif %}
         </dd>
@@ -186,29 +187,38 @@ Claims and recoveries
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Default status
+           Date of default
         </dt>
         <dd class="govuk-summary-list__value">
-          <span> <a class="" href="#">Add details</a></span>
+          <span>
+
+            {% if data.defaultDate %}
+            {{data.defaultDate}}
+
+          </dd>
+          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/date-of-default">Change details</a>
+
+            {% else %}
+            <a class="" href="1-pre-examination/date-of-default">Add details</a> </span>
+              {% endif %}
+
+            {% if data.defaultDate =='unanswered' %}
+             <a class="" href="1-pre-examination/date-of-default">Add details</a> </span>
+
+             {% endif %}
         </dd>
+
           <dd class="govuk-summary-list__value" style="float:right;">
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date of default
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <span> <a class="" href="#">Add details</a></span>        </dd>
-          <dd class="govuk-summary-list__value" style="float:right;">
-        </dd>
-      </div>
+
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Allocate examiners
         </dt>
         <dd class="govuk-summary-list__value">
-          <span> <a class="" href="#">Add details</a></span>        </dd>
+          <span> <a class="" href="#">Add details</a></span>    </dd>
         <dd class="govuk-summary-list__value" style="float:right;">
         </dd>
       </div>

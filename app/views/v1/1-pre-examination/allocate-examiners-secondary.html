@@ -21,39 +21,51 @@
 				  <fieldset class="govuk-fieldset">
 				    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 				      <h1 class="govuk-fieldset__heading">
-				        Choose the primary examiner would you like to allocate to the claim?
+				        Choose the seconday examiner would you like to allocate to the claim?
 				      </h1>
 				    </legend>
 						<div id="nationality-hint" class="govuk-hint">
-    			You can allocate a secondary examiner on the next page</div>
+    			You can press back to make changes to the slected primary examiner</div>
 					<div class="govuk-radios" data-module="govuk-radios">
+						{% if data.allocatedPrimaryExaminer !=='Louis Armstrong'%}
 							<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="organisation" name="allocatedPrimaryExaminer" type="radio" value="Louis Armstrong">
+							<input class="govuk-radios__input" id="organisation" name="allocatedSecondaryExaminer" type="radio" value="Louis Armstrong">
 							<label class="govuk-label govuk-radios__label" for="organisation">
 								Louis Armstrong
 							</label>
 						</div>
+						{% endif %}
+
+						{% if data.allocatedPrimaryExaminer !=='Rajesh Damodaran'%}
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="organisation-2" name="allocatedPrimaryExaminer" type="radio" value="Rajesh Damodaran">
+							<input class="govuk-radios__input" id="organisation-2" name="allocatedSecondaryExaminer" type="radio" value="Rajesh Damodaran">
 							<label class="govuk-label govuk-radios__label" for="organisation-2">
 								Rajesh Damodaran
 							</label>
 						</div>
+						{% endif %}
+
+						{% if data.allocatedPrimaryExaminer !=='Leona McLewis'%}
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="organisation-3" name="allocatedPrimaryExaminer" type="radio" value="Leona McLewis">
+							<input class="govuk-radios__input" id="organisation-3" name="allocatedSecondaryExaminer" type="radio" value="Leona McLewis">
 							<label class="govuk-label govuk-radios__label" for="organisation-3">
 								Leona McLewis
 							</label>
 						</div>
+						{% endif %}
+
+						{% if data.allocatedPrimaryExaminer !=='Samir Khan'%}
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="organisation-4" name="allocatedPrimaryExaminer" type="radio" value="Samir Khan">
+							<input class="govuk-radios__input" id="organisation-4" name="allocatedSecondaryExaminer" type="radio" value="Samir Khan">
 							<label class="govuk-label govuk-radios__label" for="organisation-4">
 								Samir Khan
 							</label>
 						</div>
+							{% endif %}
 					</div>
 				  </fieldset>
 				</div>
+
 
           <button class="govuk-button" data-module="govuk-button">
             Confirm

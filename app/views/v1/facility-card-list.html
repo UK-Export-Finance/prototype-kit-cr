@@ -204,7 +204,6 @@ Claims and recoveries
 
             {% if data.defaultDate =='unanswered' %}
              <a class="" href="1-pre-examination/date-of-default">Add details</a> </span>
-
              {% endif %}
         </dd>
 
@@ -218,10 +217,9 @@ Claims and recoveries
         </dt>
         <dd class="govuk-summary-list__value">
           <span>
-
-            {% if data.allocatedExaminers %}
-            {{data.allocatedExaminers}}
-
+            {% if data.allocatedPrimaryExaminer %}
+          {{data.allocatedPrimaryExaminer}} (Primary)<br />
+          {{data.allocatedSecondaryExaminer}} (Secondary)
           </dd>
           <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/allocate-examiners">Change details</a>
 

@@ -96,6 +96,11 @@ router.post(version +'/1-pre-examination/date-of-default', function(req, res) {
 
 router.post(version +'/1-pre-examination/allocate-examiners', function(req, res) {
 	{
+			res.redirect(version +'/1-pre-examination/allocate-examiners-secondary')
+	}
+});
+router.post(version +'/1-pre-examination/allocate-examiners-secondary', function(req, res) {
+	{
 			res.redirect(version +'/facility-card-list')
 	}
 });

@@ -115,6 +115,58 @@ router.post(version +'v1/1-pre-examination/upload-docs', function(req, res) {
 	}
 });
 
+router.post(version +'/1-pre-examination/claim-due-date', function(req, res) {
+
+	{
+
+		if (req.session.data.claimDueDateMonth == '1') {
+			req.session.data.claimDueDateMonthAsText= 'January'
+		}
+		if (req.session.data.claimDueDateMonth == '2') {
+			req.session.data.claimDueDateMonthAsText= 'February'
+		}
+		if (req.session.data.claimDueDateMonth == '3') {
+			req.session.data.claimDueDateMonthAsText= 'March'
+		}
+		if (req.session.data.claimDueDateMonth == '4') {
+			req.session.data.claimDueDateMonthAsText= 'April'
+		}
+		if (req.session.data.claimDueDateMonth == '5') {
+			req.session.data.claimDueDateMonthAsText= 'May'
+		}
+		if (req.session.data.claimDueDateMonth == '6') {
+			req.session.data.claimDueDateMonthAsText= 'June'
+		}
+		if (req.session.data.claimDueDateMonth == '7') {
+			req.session.data.claimDueDateMonthAsText= 'July'
+		}
+		if (req.session.data.claimDueDateMonth == '8') {
+			req.session.data.claimDueDateMonthAsText= 'August'
+		}
+		if (req.session.data.claimDueDateMonth == '9') {
+			req.session.data.claimDueDateMonthAsText= 'September'
+		}
+		if (req.session.data.claimDueDateMonth == '10') {
+			req.session.data.claimDueDateMonthAsText= 'October'
+		}
+		if (req.session.data.claimDueDateMonth == '11') {
+			req.session.data.claimDueDateMonthAsText= 'November'
+		}
+		if (req.session.data.claimDueDateMonth == '12') {
+			req.session.data.claimDueDateMonthAsText= 'December'
+		}
+		req.session.data.claimDueDate = req.session.data.claimDueDateDay +" "+ req.session.data.claimDueDateMonthAsText +" "+ req.session.data.claimDueDateYear
+
+			res.redirect(version +'/facility-card-list')
+	}
+});
+
+router.post(version +'/1-pre-examination/claim-amount', function(req, res) {
+	{
+			res.redirect(version +'/facility-card-list')
+	}
+});
+
 
 
 }

@@ -260,39 +260,72 @@ Claims and recoveries
               {% endif %}
             </div>
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Gross claimed amount
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <span> <a class="" href="#">Add details</a></span>
-        </dd>
-        <dd class="govuk-summary-list__value" style="float:right;">
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Upload claim documentation
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <span> <a class="" href="1-pre-examination/upload-docs?claimDocs=true">Add details</a></span>
-        </dd>
-        <dd class="govuk-summary-list__value" style="float:right;">
-        </dd>
-      </div>
-
 
 
       <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Upload supporting claim documents
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+        {% if data.otherDocs %}
+        Supporting claim documents uploaded
+
+      </dd>
+      <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/upload-docs?otherDocs=true">Change details</a>  </dd>
+        {% else %}
+        <a class="" href="1-pre-examination/upload-docs?otherDocs=true"">Add details</a>
+        <dd class="govuk-summary-list__value" style="float:right;"></dd>
+          {% endif %}
+        </div>
+
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+             Gross claimed amount
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {% if data.grossClaimedAmount %}
+              &pound;{{data.grossClaimedAmount}}
+            </dd>
+
+            <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/claim-amount">Change details</a>
+
+              {% else %}
+              <a class="" href="1-pre-examination/claim-amount">Add details</a></dd>
+              <dd class="govuk-summary-list__value" style="text-align:right;">
+                {% endif %}
+          </dd>
+
+              {% if data.grossClaimedAmount =='unanswered' %}
+               <a class="" href="1-pre-examination/claim-amount">Add details</a></dd>
+               {% endif %}
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Claim due date
         </dt>
         <dd class="govuk-summary-list__value">
-          <span> <a class="" href="#">Add details</a></span>
+
+          {% if data.claimDueDate %}
+            {{ data.claimDueDate }}
+
         </dd>
-        <dd class="govuk-summary-list__value" style="float:right;">
-        </dd>
-      </div>
+        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/claim-due-date">Change details</a>  </dd>
+
+          {% else %}
+          <a class="" href="1-pre-examination/claim-due-date"">Add details</a>
+          <dd class="govuk-summary-list__value" style="float:right;"></dd>
+            {% endif %}
+          </div>
+
+
+
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">

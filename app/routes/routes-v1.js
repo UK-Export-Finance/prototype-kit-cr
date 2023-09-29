@@ -109,4 +109,12 @@ router.post(version +'/1-pre-examination/allocate-authorisers', function(req, re
 			res.redirect(version +'/facility-card-list')
 	}
 });
+router.post(version +'v1/1-pre-examination/upload-docs', function(req, res) {
+	{
+			res.redirect(version +'/facility-card-list')
+	}
+});
+
+
+
 }

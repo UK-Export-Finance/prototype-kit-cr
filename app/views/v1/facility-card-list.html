@@ -130,27 +130,23 @@ Claims and recoveries
         Claim type
         </dt>
         <dd class="govuk-summary-list__value">
-          <span>
 
             {% if data.claimNotificationorExpectedRepeat =='New claim' or data.claimNotificationorExpectedRepeat =='Repeat claim'%}
             {{data.claimNotificationorExpectedRepeat}}
 
           </dd>
-          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/new-or-repeat-claim"">Change details</a>
-
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/new-or-repeat-claim"">Change details</a>
 
             {% else %}
-            <a class="" href="1-pre-examination/new-or-repeat-claim">Add details</a> </span>
+            <a class="" href="1-pre-examination/new-or-repeat-claim">Add details</a>
               {% endif %}
 
             {% if data.claimType =='Repeat claim' %}
-             <a class="" href="1-pre-examination/new-or-repeat-claim">Add details</a> </span>
+             <a class="" href="1-pre-examination/new-or-repeat-claim">Add details</a>
 
              {% endif %}
-        </dd>
 
-          <dd class="govuk-summary-list__value" style="float:right;">
-        </dd>
+
       </div>
 
 
@@ -161,26 +157,20 @@ Claims and recoveries
          Claim status
         </dt>
         <dd class="govuk-summary-list__value">
-          <span>
 
             {% if data.claimNotification =='Notified' or data.claimNotification =='Expected'%}
             {{data.claimNotification}}
 
           </dd>
-          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/notified-or-expected">Change details</a>
-
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/notified-or-expected">Change details</a>
             {% else %}
-            <a class="" href="1-pre-examination/notified-or-expected">Add details</a> </span>
+            <a class="" href="1-pre-examination/notified-or-expected">Add details</a>
               {% endif %}
 
             {% if data.claimType =='unanswered' %}
-             <a class="" href="1-pre-examination/notified-or-expected">Add details</a> </span>
+             <a class="" href="1-pre-examination/notified-or-expected">Add details</a>
 
              {% endif %}
-        </dd>
-
-          <dd class="govuk-summary-list__value" style="float:right;">
-        </dd>
       </div>
 
 
@@ -190,25 +180,24 @@ Claims and recoveries
            Date of default
         </dt>
         <dd class="govuk-summary-list__value">
-          <span>
 
             {% if data.defaultDate %}
             {{data.defaultDate}}
 
           </dd>
-          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/date-of-default">Change details</a>
-
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/date-of-default">Change details</a>  </dd>
             {% else %}
-            <a class="" href="1-pre-examination/date-of-default">Add details</a> </span>
+            <a class="" href="1-pre-examination/date-of-default">Add details</a>
               {% endif %}
 
             {% if data.defaultDate =='unanswered' %}
-             <a class="" href="1-pre-examination/date-of-default">Add details</a> </span>
-             {% endif %}
-        </dd>
+             <a class="" href="1-pre-examination/date-of-default">Add details</a>
 
-          <dd class="govuk-summary-list__value" style="float:right;">
-        </dd>
+
+                     <dd class="govuk-summary-list__value" style="float:right;">
+                   </dd>
+             {% endif %}
+
       </div>
 
       <div class="govuk-summary-list__row">
@@ -216,22 +205,16 @@ Claims and recoveries
            Allocate examiners
         </dt>
         <dd class="govuk-summary-list__value">
-          <span>
-            {% if data.allocatedPrimaryExaminer %}
-          {{data.allocatedPrimaryExaminer}} (Primary)<br />
-          {{data.allocatedSecondaryExaminer}} (Secondary)
-          </dd>
-          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/allocate-examiners">Change details</a>
+          {% if data.allocatedPrimaryExaminer %}
+            {{data.allocatedPrimaryExaminer}} (Primary)<br />
+            {{data.allocatedSecondaryExaminer}} (Secondary)
+        </dd>
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/allocate-examiners">Change details</a>
 
             {% else %}
-            <a class="" href="1-pre-examination/allocate-examiners">Add details</a> </span>
+            <a class="" href="1-pre-examination/allocate-examiners">Add details</a></dd>
+            <dd class="govuk-summary-list__value" style="text-align:right;">
               {% endif %}
-
-            {% if data.defaultDate =='unanswered' %}
-             <a class="" href="1-pre-examination/allocate-examiners">Add details</a> </span>
-             {% endif %}
-        </dd>
-          <dd class="govuk-summary-list__value" style="float:right;">
         </dd>
       </div>
 
@@ -241,36 +224,42 @@ Claims and recoveries
            Allocate authorisers
         </dt>
         <dd class="govuk-summary-list__value">
-          <span>
-
             {% if data.allocatedAuthorisers %}
             {{data.allocatedAuthorisers}}
-
           </dd>
-          <dd class="govuk-summary-list__value" style="float:right;"><a href="1-pre-examination/allocate-authorisers">Change details</a>
+
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/allocate-authorisers">Change details</a>
 
             {% else %}
-            <a class="" href="1-pre-examination/allocate-authorisers">Add details</a> </span>
+            <a class="" href="1-pre-examination/allocate-authorisers">Add details</a></dd>
+            <dd class="govuk-summary-list__value" style="text-align:right;">
               {% endif %}
+        </dd>
 
-            {% if data.defaultDate =='unanswered' %}
-             <a class="" href="1-pre-examination/allocate-authorisers">Add details</a> </span>
+            {% if data.allocatedAuthorisers =='unanswered' %}
+             <a class="" href="1-pre-examination/allocate-authorisers">Add details</a></dd>
              {% endif %}
-        </dd>
-          <dd class="govuk-summary-list__value" style="float:right;">
-        </dd>
       </div>
+
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Upload the claim form
+           Upload the claim form
         </dt>
         <dd class="govuk-summary-list__value">
-            <span> <a class="" href="#">Add details</a></span>
-        </dd>
-        <dd class="govuk-summary-list__value" style="float:right;">
-        </dd>
-      </div>
+
+            {% if data.claimForm %}
+            Claim form uploaded
+
+          </dd>
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/upload-docs?claimForm=true">Change details</a>  </dd>
+
+            {% else %}
+            <a class="" href="1-pre-examination/upload-docs?claimForm=true"">Add details</a>
+            <dd class="govuk-summary-list__value" style="float:right;"></dd>
+              {% endif %}
+            </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Gross claimed amount
@@ -286,7 +275,7 @@ Claims and recoveries
           Upload claim documentation
         </dt>
         <dd class="govuk-summary-list__value">
-          <span> <a class="" href="#">Add details</a></span>
+          <span> <a class="" href="1-pre-examination/upload-docs?claimDocs=true">Add details</a></span>
         </dd>
         <dd class="govuk-summary-list__value" style="float:right;">
         </dd>
@@ -296,7 +285,7 @@ Claims and recoveries
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Calculate claim due date
+          Claim due date
         </dt>
         <dd class="govuk-summary-list__value">
           <span> <a class="" href="#">Add details</a></span>

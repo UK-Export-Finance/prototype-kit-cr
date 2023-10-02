@@ -121,11 +121,19 @@ Claims and recoveries
     <h2 class="govuk-summary-card__title">Receipt of claim pre-examination</h2>
     <ul class="govuk-summary-card__actions">
 
-      {%  if data.claimNotificationorExpectedRepeat and data.claimNotificationorExpectedRepeat!=='unanswered' %}
-      <strong class="govuk-tag govuk-tag-- app-task-list__tag">
-      In progress
-      </strong>
-      {% else %}
+      {% if data.claimNotificationorExpectedRepeat and data.claimNotificationorExpectedRepeat!=='unanswered' %}
+
+        {% if data.notificationsSent %}
+          <strong class="govuk-tag govuk-tag--green app-task-list__tag">
+            Completed
+          </strong>
+          {% else %}
+          <strong class="govuk-tag govuk-tag-- app-task-list__tag">
+            In progress
+          </strong>
+        {% endif %}
+
+    {% else %}
       <strong class="govuk-tag govuk-tag--blue app-task-list__tag">
       New
       </strong>
@@ -408,6 +416,18 @@ Claims and recoveries
     </dl>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 {% else %}

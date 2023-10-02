@@ -14,7 +14,9 @@ Activities Management prototype
 	<div class="govuk-grid-row">
 	  <div class="govuk-grid-column-two-thirds">
 
-	    <h1 class="govuk-heading-xl">Upload documents</h1>
+	    <h1 class="govuk-heading-xl" style="margin-bottom:-0px;">Upload documents</h1>
+			<div id="nationality-hint" class="govuk-hint" >
+		The document must be in either xxx or xxx format and no larger than xxxmb in size.</div>
 
 <!--	    <form action="/components/multi-file-upload/examples/default2" method="post" enctype="multipart/form-data">-->
 				<form method="post" action="../facility-card-list">
@@ -22,7 +24,10 @@ Activities Management prototype
 
 	      <div class="moj-multi-file-upload">
 	        <div class="moj-multi-file__uploaded-files ">
-	          <h2 class="govuk-heading-s">When a document has been uploaded it is shown here.</h2>
+
+	          <h2 class="govuk-heading-s">When a document has been uploaded it is shown below.</h2>
+
+
 	          <div class="govuk-summary-list moj-multi-file-upload__list">
 	          </div>
 	        </div>
@@ -31,7 +36,7 @@ Activities Management prototype
 
 	          <div class="govuk-form-group">
 	            <label class="govuk-label govuk-label--m" for="documents">
-	              Upload a file
+
 	            </label>
 
 	            <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">

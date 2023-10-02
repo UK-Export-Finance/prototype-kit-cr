@@ -50,6 +50,14 @@ Claims and recoveries
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
+      Product type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Buyer credit (Aero)
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
       Bank
     </dt>
     <dd class="govuk-summary-list__value">
@@ -104,6 +112,9 @@ Claims and recoveries
 
 
 {% if data.claimType =='new' %}
+
+
+
 
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
@@ -326,29 +337,74 @@ Claims and recoveries
 
 
 
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Send notifications to stakeholders
+          </dt>
+          <dd class="govuk-summary-list__value">
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Send notifications to stakeholders
-        </dt>
-        <dd class="govuk-summary-list__value">
-        <span> <a class="" href="#">Add details</a></span>
-        </dd>
-        <dd class="govuk-summary-list__value" style="float:right;">
+            {% if data.notificationsSent %}
 
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Generate reports
-        </dt>
-        <dd class="govuk-summary-list__value">
-        <span> <a class="" href="#">Add details</a></span>
-        </dd>
-        <dd class="govuk-summary-list__value" style="float:right;">
+              {% if data.notification1 %}
+                {{ data.notification1 }} sent <br />
+              {% endif %}
 
-        </dd>
-      </div>
+              {% if data.notification2 %}
+                {{ data.notification2 }} sent <br />
+              {% endif %}
+
+              {% if data.notification3 %}
+                {{ data.notification3 }} sent <br />
+              {% endif %}
+
+              {% if data.notification4 %}
+                {{ data.notification4 }} sent <br />
+              {% endif %}
+
+          </dd>
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/notifications">Change details</a>  </dd>
+
+            {% else %}
+            <a class="" href="1-pre-examination/notifications"">Add details</a>
+            <dd class="govuk-summary-list__value" style="float:right;"></dd>
+              {% endif %}
+            </div>
+
+            <!--
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Generate reports
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {% if data.reportsGenerated %}
+
+                {% if data.report1 %}
+                  {{ data.report1 }} generated <br />
+                {% endif %}
+
+                {% if data.report2 %}
+                  {{ data.report2 }} generated <br />
+                {% endif %}
+
+                {% if data.report3 %}
+                  {{ data.report3 }} generated <br />
+                {% endif %}
+
+                {% if data.report4 %}
+                  {{ data.report4 }} generated <br />
+                {% endif %}
+
+
+            </dd>
+            <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/reports">Change details</a>  </dd>
+
+              {% else %}
+              <a class="" href="1-pre-examination/reports"">Add details</a>
+              <dd class="govuk-summary-list__value" style="float:right;"></dd>
+                {% endif %}
+              </div>
+              -->
     </dl>
   </div>
 </div>

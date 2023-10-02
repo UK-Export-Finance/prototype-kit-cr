@@ -167,6 +167,18 @@ router.post(version +'/1-pre-examination/claim-amount', function(req, res) {
 	}
 });
 
+router.post(version +'/1-pre-examination/notifications', function(req, res) {
+	{
+			res.redirect(version +'/facility-card-list')
+	}
+});
+
+router.post(version +'/1-pre-examination/reports', function(req, res) {
+	{
+			res.redirect(version +'/facility-card-list')
+	}
+});
+
 
 
 }

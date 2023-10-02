@@ -92,7 +92,7 @@ router.post(version +'/1-pre-examination/date-of-default', function(req, res) {
 		if (req.session.data.defaultMonth == '10') {
 			req.session.data.defaultMonthAsText= 'October'
 			req.session.data.defaultMonthAsTextDueDate= 'January'
-	
+
 
 		}
 		if (req.session.data.defaultMonth == '11') {
@@ -198,9 +198,10 @@ router.post(version +'/1-pre-examination/claim-amount', function(req, res) {
 
 router.post(version +'/1-pre-examination/notifications', function(req, res) {
 	{
-			res.redirect(version +'/facility-card-list')
+			res.redirect(version +'/1-pre-examination/notifications-confirm')
 	}
 });
+
 
 router.post(version +'/1-pre-examination/reports', function(req, res) {
 	{

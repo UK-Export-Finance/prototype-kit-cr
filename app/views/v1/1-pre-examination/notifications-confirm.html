@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<nav class="govuk-!-display-none-print">
+	{{govukBackLink({
+	  text: "Back",
+	  "href": "javascript: window.history.go(-1)"
+	  })}}
+	  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+	  </a>
+	</nav>
+	{% endblock %}
+	<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full"> </div>
+
+		<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Notifications sent
+          </h1>
+        </div>
+        <h2 class="govuk-heading-s">  The following have been sent:</h2>
+
+				<ul class="govuk-list govuk-list--bullet">
+
+						{% if data.notification1 %}
+							<li>	{{ data.notification1 }}  </li><br />
+						{% endif %}
+
+						{% if data.notification2 %}
+							<li>	{{ data.notification2 }}  </li><br />
+						{% endif %}
+
+						{% if data.notification3 %}
+							<li>	{{ data.notification3 }}  </li><br />
+						{% endif %}
+
+						{% if data.notification4 %}
+							<li>	{{ data.notification4 }}  </li><br />
+						{% endif %}
+
+				</ul>
+
+			<p class="govuk-body"><a href="../facility-card-list">Return to the claim task list</a></p>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+	</div>
+</div>
+{% endblock %}

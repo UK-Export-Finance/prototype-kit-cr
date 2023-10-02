@@ -220,6 +220,25 @@ Claims and recoveries
       </div>
 
       <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Claim due date
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+        {% if data.defaultDate %}
+
+          {{ data.claimDueDate }}
+
+      </dd>
+      <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/claim-due-date">Change details</a>  </dd>
+
+        {% else %}
+        <a class="" href="1-pre-examination/claim-due-date"">Add details</a>
+        <dd class="govuk-summary-list__value" style="float:right;"></dd>
+          {% endif %}
+        </div>
+
+      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
            Allocate examiners
         </dt>
@@ -324,24 +343,6 @@ Claims and recoveries
         </div>
 
 
-
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Claim due date
-        </dt>
-        <dd class="govuk-summary-list__value">
-
-          {% if data.claimDueDate %}
-            {{ data.claimDueDate }}
-
-        </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/claim-due-date">Change details</a>  </dd>
-
-          {% else %}
-          <a class="" href="1-pre-examination/claim-due-date"">Add details</a>
-          <dd class="govuk-summary-list__value" style="float:right;"></dd>
-            {% endif %}
-          </div>
 
 
 

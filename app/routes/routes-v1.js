@@ -54,41 +54,70 @@ router.post(version +'/1-pre-examination/date-of-default', function(req, res) {
 
 		if (req.session.data.defaultMonth == '1') {
 			req.session.data.defaultMonthAsText= 'January'
+			req.session.data.defaultMonthAsTextDueDate= 'April'
+
 		}
 		if (req.session.data.defaultMonth == '2') {
 			req.session.data.defaultMonthAsText= 'February'
+			req.session.data.defaultMonthAsTextDueDate= 'May'
 		}
 		if (req.session.data.defaultMonth == '3') {
 			req.session.data.defaultMonthAsText= 'March'
+			req.session.data.defaultMonthAsTextDueDate= 'June'
 		}
 		if (req.session.data.defaultMonth == '4') {
 			req.session.data.defaultMonthAsText= 'April'
+			req.session.data.defaultMonthAsTextDueDate= 'July'
 		}
 		if (req.session.data.defaultMonth == '5') {
 			req.session.data.defaultMonthAsText= 'May'
+			req.session.data.defaultMonthAsTextDueDate= 'August'
 		}
 		if (req.session.data.defaultMonth == '6') {
 			req.session.data.defaultMonthAsText= 'June'
+			req.session.data.defaultMonthAsTextDueDate= 'September'
 		}
 		if (req.session.data.defaultMonth == '7') {
 			req.session.data.defaultMonthAsText= 'July'
+			req.session.data.defaultMonthAsTextDueDate= 'October'
 		}
 		if (req.session.data.defaultMonth == '8') {
 			req.session.data.defaultMonthAsText= 'August'
+			req.session.data.defaultMonthAsTextDueDate= 'November'
 		}
 		if (req.session.data.defaultMonth == '9') {
 			req.session.data.defaultMonthAsText= 'September'
+			req.session.data.defaultMonthAsTextDueDate= 'December'
 		}
 		if (req.session.data.defaultMonth == '10') {
 			req.session.data.defaultMonthAsText= 'October'
+			req.session.data.defaultMonthAsTextDueDate= 'January'
+	
+
 		}
 		if (req.session.data.defaultMonth == '11') {
 			req.session.data.defaultMonthAsText= 'November'
+			req.session.data.defaultMonthAsTextDueDate= 'February'
 		}
 		if (req.session.data.defaultMonth == '12') {
 			req.session.data.defaultMonthAsText= 'December'
+			req.session.data.defaultMonthAsTextDueDate= 'March'
 		}
 		req.session.data.defaultDate = req.session.data.defaultDay +" "+ req.session.data.defaultMonthAsText +" "+ req.session.data.defaultYear
+
+		req.session.data.claimYear = req.session.data.defaultYear
+		req.session.data.claimDueDate = req.session.data.defaultDay
+		+" "+ req.session.data.defaultMonthAsTextDueDate
+		+" "
+		if (req.session.data.defaultMonth >= '10'){
+			req.session.data.claimYear++
+			req.session.data.claimDueDate = req.session.data.claimDueDate + req.session.data.claimYear
+		}
+		 else{
+		req.session.data.claimDueDate = req.session.data.claimDueDate + req.session.data.defaultYear
+		}
+
+
 
 			res.redirect(version +'/facility-card-list')
 	}

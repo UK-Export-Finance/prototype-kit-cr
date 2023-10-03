@@ -218,41 +218,46 @@ Claims and recoveries
 						<th class="govuk-table__header" style="width:13%" scope="col" aria-sort="ascending"><button type="button" data-index="1"></button>Facility ID</th>
 						<th class="govuk-table__header" scope="col" aria-sort="none"><button type="button" data-index="0"></button>Exporter</th>
 						<th class="govuk-table__header" scope="col" aria-sort="none"><button type="button" data-index="0"></button>Value</th>
-            <th class="govuk-table__header" scope="col" aria-sort="none"><button type="button" data-index="0"></button>Claim due</th>
-						<th class="govuk-table__header" scope="col" aria-sort="none"><button type="button" data-index="0"></button>Claim status</th>
+            {% if data.claimType =='existing' %}
+              <th class="govuk-table__header" scope="col" aria-sort="none"><button type="button" data-index="0"></button>Claim due</th>
+              <th class="govuk-table__header" scope="col" aria-sort="none"><button type="button" data-index="0"></button>Claim status</th>
+            {% else %}
+            <th class="govuk-table__header" scope="col" aria-sort="none"><button type="button" data-index="0"></button>Buyer</th>
+						<th class="govuk-table__header" scope="col" aria-sort="none"><button type="button" data-index="0"></button>Product Type</th>
+            {% endif %}
 						<th class="govuk-table__header govuk-table__header--numeric" scope="col"></th>
 					</tr>
 				</thead>
 				<tbody class="govuk-table__body">
             {% if data.claimType =='existing' %}
-					<tr class="govuk-table__row ">
-						<td class="govuk-table__cell"><strong><a href="#">12345678</a></strong></td>
-						<td class="govuk-table__cell">Airbus UK</td>
-					<!--	<td class="govuk-table__cell govuk-table__cell--numeric">2,000,000</td>-->
-						<td class="govuk-table__cell" data-sort-value="20">2,000,000</td>
-            <td class="govuk-table__cell"data-sort-value="230921">21st Sept 2024</td>
-						<td class="govuk-table__cell ">
-							<span class="govuk-tag govuk-tag--blue">In progress</span></td>
-							<td class="govuk-table__cell">
+					  <tr class="govuk-table__row ">
+  						<td class="govuk-table__cell"><strong><a href="#">12345678</a></strong></td>
+  						<td class="govuk-table__cell">Airbus UK</td>
+  					<!--	<td class="govuk-table__cell govuk-table__cell--numeric">2,000,000</td>-->
+  						<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="20">2,000,000</td>
+              <td class="govuk-table__cell"data-sort-value="230921">21st Sept 2024</td>
+  					  <td class="govuk-table__cell ">
+  						<span class="govuk-tag govuk-tag--blue">In progress</span></td>
+  						<td class="govuk-table__cell">
 
-                {% if data.setupShowCardview =='yes' %}
-                <a href="facility-card-list?company=Airbus UK&buyer=Singapore Airline&bank=JP Morgan&facility=12345678&deal=9882652&address1=Aerospace Ave§&address2=Filton&address3=Bristol&address4=BS34 7PA&email@airbus.ukcom&phone=0117 969 3831&claimNotificationorExpectedRepeat=New claim&claimNotification=Expected">
-                  {% else %}
-                  <a href="facility-task-list?company=Airbus UK&buyer=Singapore Airline&bank=JP Morgan&facility=12345678&deal=9882652&address1=Aerospace Ave§&address2=Filton&address3=Bristol&address4=BS34 7PA&email@airbus.ukcom&phone=0117 969 3831">
-                {% endif %}
-                  Mangage claim</a></td>
-                	</tr>
-                  {% endif %}
+              {% if data.setupShowCardview =='yes' %}
+              <a href="facility-card-list?company=Airbus UK&buyer=Singapore Airline&bank=JP Morgan&facility=12345678&deal=9882652&address1=Aerospace Ave§&address2=Filton&address3=Bristol&address4=BS34 7PA&email@airbus.ukcom&phone=0117 969 3831&claimNotificationorExpectedRepeat=New claim&claimNotification=Expected">
+                {% else %}
+                <a href="facility-task-list?company=Airbus UK&buyer=Singapore Airline&bank=JP Morgan&facility=12345678&deal=9882652&address1=Aerospace Ave§&address2=Filton&address3=Bristol&address4=BS34 7PA&email@airbus.ukcom&phone=0117 969 3831">
+              {% endif %}
+                Mangage claim</a></td>
+            </tr>
+          {% endif %}
+
 
             {% if data.claimType =='new' %}
-          <tr class="govuk-table__row ">
+            <tr class="govuk-table__row ">
 						<td class="govuk-table__cell"><strong><a href="#">12341037</a></strong></td>
 						<td class="govuk-table__cell">Lush Cosmetics</td>
 					<!--	<td class="govuk-table__cell govuk-table__cell--numeric">2,000,000</td>-->
-						<td class="govuk-table__cell" data-sort-value="15">1,500,000</td>
-            <td class="govuk-table__cell"data-sort-value="231101">1st Nov 2023</td>
-						<td class="govuk-table__cell ">
-							<span class="govuk-tag govuk-tag--grey">N/A</span></td>
+						<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="15">1,500,000</td>
+						<td class="govuk-table__cell ">Body Shop </td>
+            <td class="govuk-table__cell"data-sort-value="Buyer credit">Buyer credit (Aero)</td>
 							<td class="govuk-table__cell">
 
             <a href="are-you-sure-create-new-claim?company=Lush Cosmetics&buyer=Body Shop&bank=HSBC&facility=12341037&deal=87256276&address1=71 High Street&address2=Poole&address3=Dorset&address4=BH7 7HN&email=head@lush.com&phone=01202 779671">
@@ -267,10 +272,9 @@ Claims and recoveries
           <td class="govuk-table__cell"><strong><a href="#">98212341</a></strong></td>
           <td class="govuk-table__cell">Premier furnishings LTD</td>
         <!--	<td class="govuk-table__cell govuk-table__cell--numeric">2,000,000</td>-->
-          <td class="govuk-table__cell" data-sort-value="3">300,000</td>
-          <td class="govuk-table__cell" data-sort-value="231109">9th Nov 2023</td>
-          <td class="govuk-table__cell ">
-            <span class="govuk-tag govuk-tag--grey">N/A</span></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3">300,000</td>
+          <td class="govuk-table__cell ">Jeffersons Home Mart</td>
+          <td class="govuk-table__cell"data-sort-value="Buyer credit">Buyer credit (Aero)</td>
           <td class="govuk-table__cell">
               <a href="are-you-sure-create-new-claim?company=Premier Furnishings&buyer=Jeffersons Home Mart&bank=Barclays&facility=98212341&deal=28181034&address1=99 Straits Avenue&address2=Bracknell&address3=Berkshire&address4=SL6 7PJ&email=ramesh.kham@premierfurnishings.com&phone=01766 344333">
                 Create new claim</a></td>

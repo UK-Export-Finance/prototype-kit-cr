@@ -28,8 +28,6 @@ Claims and recoveries
   </h1>
 	<p class="govuk-body">Complete the tasks below. The information entered will be automatcally saved and retained when you leave this page.</p>
 
-
-
   <div class="govuk-!-margin-6 govuk-!-margin-top-9">
     <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
@@ -111,11 +109,6 @@ Claims and recoveries
 </dl>
 
 
-{% if data.claimType =='new' %}
-
-
-
-
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">Receipt of claim pre-examination</h2>
@@ -164,9 +157,7 @@ Claims and recoveries
              <a class="" href="1-pre-examination/new-or-repeat-claim">Add details</a>
 
              {% endif %}
-
-
-      </div>
+          </div>
 
 
 
@@ -342,10 +333,6 @@ Claims and recoveries
                {% endif %}
         </div>
 
-
-
-
-
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Send notifications to stakeholders
@@ -378,216 +365,10 @@ Claims and recoveries
             <dd class="govuk-summary-list__value" style="float:right;"></dd>
               {% endif %}
             </div>
-
-            <!--
-            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Generate reports
-            </dt>
-            <dd class="govuk-summary-list__value">
-
-              {% if data.reportsGenerated %}
-
-                {% if data.report1 %}
-                  {{ data.report1 }} generated <br />
-                {% endif %}
-
-                {% if data.report2 %}
-                  {{ data.report2 }} generated <br />
-                {% endif %}
-
-                {% if data.report3 %}
-                  {{ data.report3 }} generated <br />
-                {% endif %}
-
-                {% if data.report4 %}
-                  {{ data.report4 }} generated <br />
-                {% endif %}
-
-
-            </dd>
-            <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/reports">Change details</a>  </dd>
-
-              {% else %}
-              <a class="" href="1-pre-examination/reports"">Add details</a>
-              <dd class="govuk-summary-list__value" style="float:right;"></dd>
-                {% endif %}
-              </div>
-              -->
     </dl>
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% else %}
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">Receipt of claim pre-examination</h2>
-    <ul class="govuk-summary-card__actions">
-      <strong class="govuk-tag govuk-tag--blue app-task-list__tag">
-        in progess
-      </strong>
-    </ul>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Notification of New claim or expected repeat claim
-        </dt>
-        <dd class="govuk-summary-list__value">
-          New claim
-        </dd>
-          <dd class="govuk-summary-list__value" style="float:right;">
-            <span> <a class="" href="#">Change</a></span>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Default status
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Notified
-        </dd>
-          <dd class="govuk-summary-list__value" style="float:right;">
-            <span> <a class="" href="#">Change</a></span>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date of default
-        </dt>
-        <dd class="govuk-summary-list__value">
-          12th September 2023
-        </dd>
-          <dd class="govuk-summary-list__value" style="float:right;">
-            <span> <a class="" href="#">Change</a></span>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Allocate examiners
-        </dt>
-        <dd class="govuk-summary-list__value">
-          John Smith
-        </dd>
-
-        <dd class="govuk-summary-list__value" style="float:right;">
-            <span> <a class="" href="#">Change</a></span>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Allocate authoriser
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Loius Armstrong
-        </dd>
-
-        <dd class="govuk-summary-list__value" style="float:right;">
-            <span> <a class="" href="#">Change</a></span>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Obtain facility details
-        </dt>
-        <dd class="govuk-summary-list__value">
-          12345678
-        </dd>
-
-        <dd class="govuk-summary-list__value" style="float:right;">
-            <span> <a class="" href="#">Change</a></span>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Obtain claim due date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          12th December 2023
-        </dd>
-
-        <dd class="govuk-summary-list__value" style="float:right;">
-            <span> <a class="" href="#">Change</a></span>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Obtain the claim form
-        </dt>
-        <dd class="govuk-summary-list__value">
-            <span> <a class="" href="#">Add details</a></span>
-        </dd>
-
-        <dd class="govuk-summary-list__value" style="float:right;">
-
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Obtain claim documentation
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Doc 1<br />
-          Doc 2
-        </dd>
-
-        <dd class="govuk-summary-list__value" style="float:right;">
-            <span> <a class="" href="#">Change</a></span>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Calculate claim amount
-        </dt>
-        <dd class="govuk-summary-list__value">
-        £5,000,000
-        </dd>
-
-        <dd class="govuk-summary-list__value" style="float:right;">
-            <span> <a class="" href="#">Change</a></span>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Send notifications to stakeholders
-        </dt>
-        <dd class="govuk-summary-list__value">
-        <span> <a class="" href="#">Add details</a></span>
-        </dd>
-        <dd class="govuk-summary-list__value" style="float:right;">
-
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Generate reports
-        </dt>
-        <dd class="govuk-summary-list__value">
-        <span> <a class="" href="#">Add details</a></span>
-        </dd>
-        <dd class="govuk-summary-list__value" style="float:right;">
-
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
-
-{% endif %}
 
 
 {% endblock %}

@@ -1,6 +1,6 @@
 module.exports = function (router) {
 
-var version = '/v1';
+var version = '/v2';
 
 router.post(version +'/setup', function(req, res) {
 	res.redirect(version +'/ukef-tiles')

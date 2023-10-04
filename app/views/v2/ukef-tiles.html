@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Activities Management prototype
+{% endblock %}
+{% block primaryNavigation %}
+{% endblock %}
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<h1 class="govuk-heading-l govuk-!-margin-top-7">Claims and recoveries</h1>
+
+	{% if data.setuoShowSearch=='yes' %}
+	<p>Search for a facility using criteria below or navigate to either  create a new claim or manage an existing claim.</p>
+	{% endif %}
+</div>
+
+{% endblock %}
+
+
+{% if data.setuoShowSearch=='yes' %}
+<div class="homepage-search">
+	<div class="govuk-width-container">
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Search for facility </h2>
+		<p class="govuk-body govuk-hint"> Enter the facility ID, deal ID, company name or existing claim ID</p>
+		<form method="post" class="horizontal-form" data-test="homepage-search-form" name="facilitySearch">
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="keywords">
+					Search term
+				</label>
+				<input class="govuk-input" id="keywords" name="keywords" type="text" data-test="homepage-search-keywords">
+			</div>
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="location">
+					Search category
+				</label>
+				<select class="govuk-select" id="location" name="Home-Search" data-test="homepage-search-location">
+					<option value="Home-Search">Select category</option>
+
+					<option value="Facility ">Facility ID</option>
+					<option value="Deal">Deal ID</option>
+						<option value="Company">Company name</option>
+						<option value="Claim">Claim ID</option>
+				</select>
+			</div>
+			<button type="submit" class="govuk-button" data-module="govuk-button">
+				Search
+			</button>
+		</form>
+	</div>
+</div>
+{% endif %}
+
+
+<div class="homepage-content">
+	<div class="govuk-width-container">
+		<ul class="govuk-grid-row card-group" id="sortable">
+
+			{% if data.setupShowCardview !== 'no' %}
+			<li class="govuk-grid-column-one-third card-group__item" id="tile_create">
+				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+					<h2 class="govuk-heading-m card__heading">
+						<a class="govuk-link card__link govuk-link--no-visited-state" href="facility-search-for-facility?claimType=new">
+							Create a new claim
+						</a>
+					</h2>
+					<p class="govuk-body card__description">
+						Create a new claim for a facility.
+					</p>
+				</div>
+			</li>
+			{% endif %}
+			<li class="govuk-grid-column-one-third card-group__item" id="tile_unlock">
+				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+					<h2 class="govuk-heading-m card__heading">
+						<a class="govuk-link card__link govuk-link--no-visited-state" href="facility-search-for-facility?claimType=existing">
+							Manage an existing claim
+						</a>
+					</h2>
+					<p class="govuk-body card__description">
+						Manage, edit or update an existing claim.
+					</p>
+				</div>
+			</li>
+
+		</ul>
+	</div>
+</div>
+{% endblock %}
+{% block pageScripts %}
+<script src="/public/javascripts/cards.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+	// $(document).ready( function() {
+	// 	var $list = "ul#sortable"
+	// 	$($list).sortable({
+	// 		update: function(event, ui) {
+	// 			var order = [];
+	// 			var data = $(this).sortable('serialize');
+
+	// 			$($list + ' li').each( function(e) {
+	// 				order.push( $(this).find('a').html() );
+	// 			});
+
+	// 			console.log( order , data );
+	// 		}
+	// 	});
+	// 	$($list).disableSelection();
+	// } );
+</script>
+{% endblock %}

@@ -1,0 +1,439 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Claims and recoveries
+{% endblock %}
+
+
+{% block beforeContent %}
+<nav class="govuk-!-display-none-print">
+{{govukBackLink({
+  text: "Back",
+  "href": "javascript: window.history.go(-1)"
+  })}}
+  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+  </a>
+</nav>
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="search-results-24102023">
+	<h1 class="govuk-heading-l">
+
+    {% if data.claimType =='new' %}
+		Create new claim record for facility {{data.facility}}
+    {% else %}
+		Manage existing claim record for facility {{data.facility}}
+    {% endif %}
+  </h1>
+	<p class="govuk-body">Complete the tasks below. The information entered will be automatcally saved and retained when you leave this page.</p>
+
+  <div class="govuk-!-margin-6 govuk-!-margin-top-9">
+    <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Exporter
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{data.company}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Buyer
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{data.buyer}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Product type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Buyer credit (Aero)
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Bank
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{data.bank}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Facility ID
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{data.facility}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Deal ID
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{data.deal}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Amount at risk
+    </dt>
+    <dd class="govuk-summary-list__value">
+      &pound;10,000,000
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{data.address1}}<br />
+      {{data.address2}}<br />
+      {{data.address3}}<br />
+      {{data.address4}}<br />
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Contact details
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">{{data.phone}}</p>
+      <p class="govuk-body">{{data.email}}</p>
+    </dd>
+  </div>
+</dl>
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Receipt of claim pre-examination</h2>
+    <ul class="govuk-summary-card__actions">
+
+      {% if data.claimNotificationorExpectedRepeat and data.claimNotificationorExpectedRepeat!=='unanswered' %}
+
+        {% if data.notificationsSent %}
+          <strong class="govuk-tag govuk-tag--green app-task-list__tag">
+            Completed
+          </strong>
+          {% else %}
+          <strong class="govuk-tag govuk-tag-- app-task-list__tag">
+            In progress
+          </strong>
+        {% endif %}
+
+    {% else %}
+      <strong class="govuk-tag govuk-tag--blue app-task-list__tag">
+      New
+      </strong>
+
+      {% endif %}
+
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Claim type
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+            {% if data.claimNotificationorExpectedRepeat =='New claim' or data.claimNotificationorExpectedRepeat =='Repeat claim'%}
+            {{data.claimNotificationorExpectedRepeat}}
+
+          </dd>
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/new-or-repeat-claim"">Change details</a>
+
+            {% else %}
+            <a class="" href="1-pre-examination/new-or-repeat-claim">Add details</a>
+              {% endif %}
+
+            {% if data.claimType =='Repeat claim' %}
+             <a class="" href="1-pre-examination/new-or-repeat-claim">Add details</a>
+
+             {% endif %}
+          </div>
+
+
+
+      <!--subsection 2 - expected or notified-->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Claim status
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+            {% if data.claimNotification =='Notified' or data.claimNotification =='Expected'%}
+            {{data.claimNotification}}
+
+          </dd>
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/notified-or-expected">Change details</a>
+            {% else %}
+            <a class="" href="1-pre-examination/notified-or-expected">Add details</a>
+              {% endif %}
+
+            {% if data.claimType =='unanswered' %}
+             <a class="" href="1-pre-examination/notified-or-expected">Add details</a>
+
+             {% endif %}
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+           Date of default
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+            {% if data.defaultDate %}
+            {{data.defaultDate}}
+
+          </dd>
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/date-of-default">Change details</a>  </dd>
+            {% else %}
+            <a class="" href="1-pre-examination/date-of-default">Add details</a>
+              {% endif %}
+
+            {% if data.defaultDate =='unanswered' %}
+             <a class="" href="1-pre-examination/date-of-default">Add details</a>
+
+
+                     <dd class="govuk-summary-list__value" style="float:right;">
+                   </dd>
+             {% endif %}
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Claim due date
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+        {% if data.defaultDate %}
+
+          {{ data.claimDueDate }}
+
+      </dd>
+      <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/claim-due-date">Change details</a>  </dd>
+
+        {% else %}
+        <a class="" href="1-pre-examination/claim-due-date"">Add details</a>
+        <dd class="govuk-summary-list__value" style="float:right;"></dd>
+          {% endif %}
+        </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+           Allocate examiners
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data.allocatedPrimaryExaminer %}
+            {{data.allocatedPrimaryExaminer}} (Primary)<br />
+            {{data.allocatedSecondaryExaminer}} (Secondary)
+        </dd>
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/allocate-examiners">Change details</a>
+
+            {% else %}
+            <a class="" href="1-pre-examination/allocate-examiners">Add details</a></dd>
+            <dd class="govuk-summary-list__value" style="text-align:right;">
+              {% endif %}
+        </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+           Allocate authorisers
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {% if data.allocatedAuthorisers %}
+            {{data.allocatedAuthorisers}}
+          </dd>
+
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/allocate-authorisers">Change details</a>
+
+            {% else %}
+            <a class="" href="1-pre-examination/allocate-authorisers">Add details</a></dd>
+            <dd class="govuk-summary-list__value" style="text-align:right;">
+              {% endif %}
+        </dd>
+
+            {% if data.allocatedAuthorisers =='unanswered' %}
+             <a class="" href="1-pre-examination/allocate-authorisers">Add details</a></dd>
+             {% endif %}
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+           Upload the claim form
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+            {% if data.claimForm %}
+            Claim form uploaded
+
+          </dd>
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/upload-docs?claimForm=true">Change details</a>  </dd>
+
+            {% else %}
+            <a class="" href="1-pre-examination/upload-docs?claimForm=true"">Add details</a>
+            <dd class="govuk-summary-list__value" style="float:right;"></dd>
+              {% endif %}
+            </div>
+
+
+
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Upload supporting claim documents
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+        {% if data.otherDocs %}
+        Supporting claim documents uploaded
+
+      </dd>
+      <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/upload-docs?otherDocs=true">Change details</a>  </dd>
+        {% else %}
+        <a class="" href="1-pre-examination/upload-docs?otherDocs=true"">Add details</a>
+        <dd class="govuk-summary-list__value" style="float:right;"></dd>
+          {% endif %}
+        </div>
+
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+             Gross claimed amount
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {% if data.grossClaimedAmount %}
+              &pound;{{data.grossClaimedAmount}}
+            </dd>
+
+            <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/claim-amount">Change details</a>
+
+              {% else %}
+              <a class="" href="1-pre-examination/claim-amount">Add details</a></dd>
+              <dd class="govuk-summary-list__value" style="text-align:right;">
+                {% endif %}
+          </dd>
+
+              {% if data.grossClaimedAmount =='unanswered' %}
+               <a class="" href="1-pre-examination/claim-amount">Add details</a></dd>
+               {% endif %}
+        </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Send notifications to stakeholders
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            {% if data.notificationsSent %}
+
+              {% if data.notification1 %}
+                {{ data.notification1 }} sent <br />
+              {% endif %}
+
+              {% if data.notification2 %}
+                {{ data.notification2 }} sent <br />
+              {% endif %}
+
+              {% if data.notification3 %}
+                {{ data.notification3 }} sent <br />
+              {% endif %}
+
+              {% if data.notification4 %}
+                {{ data.notification4 }} sent <br />
+              {% endif %}
+
+          </dd>
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/notifications">Change details</a>  </dd>
+
+            {% else %}
+            <a class="" href="1-pre-examination/notifications"">Add details</a>
+            <dd class="govuk-summary-list__value" style="float:right;"></dd>
+              {% endif %}
+            </div>
+    </dl>
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<script type="text/javascript">
+	$(document).ready(function () {
+		new MOJFrontend.FilterToggleButton({
+			bigModeMediaQuery: "(min-width: 48.063em)",
+			startHidden: true,
+			toggleButton: {
+				container: $(".moj-action__filter"),
+				showText: "Show filter",
+				hideText: "Hide filter",
+				classes: "govuk-button--secondary",
+			},
+			closeButton: {
+				container: $(".moj-filter__header-action"),
+				text: "Close",
+			},
+			filter: {
+				container: $(".moj-filter"),
+			},
+		});
+	})
+</script>
+
+
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#appointment-location-fltr'),
+        showAllValues: true,
+        defaultValue: '',
+        autoselect: true,
+        confirmOnBlur: false,
+    })
+</script>
+
+
+
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#appointment-type-fltr'),
+        showAllValues: true,
+        defaultValue: '',
+        autoselect: true,
+        confirmOnBlur: false,
+    })
+</script>
+
+
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#appointment-prisoner-name'),
+        showAllValues: true,
+        defaultValue: '',
+        autoselect: true,
+        confirmOnBlur: false,
+    })
+</script>
+{% endblock %}

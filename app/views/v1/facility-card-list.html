@@ -117,9 +117,14 @@ Claims and recoveries
 </dl>
 
 
+
+
+
+
+<!--Pre ex-->
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">Receipt of claim pre-examination</h2>
+    <h2 class="govuk-summary-card__title">1. Claim pre-examination</h2>
     <ul class="govuk-summary-card__actions">
 
       {% if data.claimNotificationorExpectedRepeat and data.claimNotificationorExpectedRepeat!=='unanswered' %}
@@ -135,8 +140,8 @@ Claims and recoveries
         {% endif %}
 
     {% else %}
-      <strong class="govuk-tag govuk-tag--blue app-task-list__tag">
-      New
+      <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
+      Not started
       </strong>
 
       {% endif %}
@@ -274,7 +279,7 @@ Claims and recoveries
         </dd>
 
             {% if data.allocatedAuthorisers =='unanswered' %}
-             <a class="" href="1-pre-examination/allocate-authorisers">Add details</a></dd>
+             <a class="" href="1-pre-examination/allocate-authorisers">Add details</a>
              {% endif %}
       </div>
 
@@ -376,7 +381,7 @@ Claims and recoveries
     </dl>
   </div>
 </div>
-
+<!--END of pre ex-->
 
 
 {% endblock %}

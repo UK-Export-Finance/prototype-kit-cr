@@ -213,6 +213,39 @@ router.post(version +'/1-pre-examination/reports', function(req, res) {
 	}
 });
 
+//Part 2 examinsation
+//Part 2 examinsation
+//Part 2 examinsation
+//Part 2 examinsation
+//Part 2 examinsation
+//Part 2 examinsation
+//Part 2 examinsation
+//Part 2 examinsation
+//Part 2 examinsation
+
+router.post(version +'/2-examination/calculate-principal-claim-amount-1-installment', function(req, res) {
+	{
+			res.redirect(version +'/2-examination/calculate-principal-claim-amount-2-amount')
+	}
+});
+
+router.post(version +'/2-examination/calculate-principal-claim-amount-2-amount', function(req, res) {
+	{
+			res.redirect(version +'/2-examination/calculate-principal-claim-amount-3-partial')
+	}
+});
+router.post(version +'/2-examination/calculate-principal-claim-amount-3-partial', function(req, res) {
+	{
+			res.redirect(version +'/2-examination/calculate-principal-claim-amount-4-insured-percentage')
+	}
+});
+router.post(version +'/2-examination/calculate-principal-claim-amount-4-insured-percentage', function(req, res) {
+	{
+			res.redirect(version +'/2-examination/calculate-principal-claim-amount-5-end-calculation')
+	}
+});
+
+
 
 
 }

@@ -239,11 +239,17 @@ router.post(version +'/2-examination/calculate-principal-claim-amount-3-partial'
 			res.redirect(version +'/2-examination/calculate-principal-claim-amount-4-insured-percentage')
 	}
 });
+
 router.post(version +'/2-examination/calculate-principal-claim-amount-4-insured-percentage', function(req, res) {
 	{
-			res.redirect(version +'/2-examination/calculate-principal-claim-amount-5-end-calculation')
+		req.session.data.TotalClaimedAmount = '£'+(req.session.data.grossClaimedAmount - req.session.data.partialPaymentAmount) * req.session.data.insuredAmount
+
+			res.redirect(version +'/facility-card-list')
 	}
+
 });
+
+
 
 
 

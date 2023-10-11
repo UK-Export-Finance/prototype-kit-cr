@@ -69,22 +69,22 @@ Claims and recoveries
 					<tr class="govuk-table__row">
 						<!-- <th class="govuk-table__header" scope="col">Date</th> -->
 
-          {% if data.claimType =='existing' %}
-						<th class="govuk-table__header" style="width:13%" scope="col" aria-sort="ascending"><button type="button" data-index="1"></button>Claim ID</th>
+          {% if data.claimType =='new' %}
+						<th class="govuk-table__header" style="width:13%" scope="col" aria-sort="ascending"><button type="button" data-index="1"></button>Facility ID</th>
 						<th class="govuk-table__header" scope="col" aria-sort="none">Exporter</th>
-            <th class="govuk-table__header" scope="col" aria-sort="none">Claim due date</th>
+            <th class="govuk-table__header" scope="col" aria-sort="none">Buyer</th>
             <th class="govuk-table__header" scope="col" aria-sort="none">Product Type</th>
-            <th class="govuk-table__header govuk-table__header--numeric" scope="col" aria-sort="none">Value</th>
-            <th class="govuk-table__header" scope="col" aria-sort="none">Claim status</th>
-
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col" aria-sort="none">Facility value</th>
+            <th class="govuk-table__header" scope="col"></th>
 						<th class="govuk-table__header" scope="col"></th>
 
           {% else %}
-            <th class="govuk-table__header" style="width:13%" scope="col" aria-sort="ascending">Facility ID</th>
+            <th class="govuk-table__header" style="width:13%" scope="col" aria-sort="ascending">Claim ID</th>
             <th class="govuk-table__header" scope="col" aria-sort="none">Exporter</th>
-            <th class="govuk-table__header" scope="col" aria-sort="none">Buyer</th>
+            <th class="govuk-table__header" scope="col" aria-sort="none">Claim due date</th>
 						<th class="govuk-table__header" scope="col" aria-sort="none">Product Type</th>
-            <th class="govuk-table__header govuk-table__header--numeric" scope="col" aria-sort="none">Value</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col" aria-sort="none">Claim value</th>
+              <th class="govuk-table__header" scope="col" aria-sort="none">Claim status</th>
 						<th class="govuk-table__header" scope="col"></th>
           {% endif %}
 					</tr>
@@ -92,7 +92,7 @@ Claims and recoveries
 				<tbody class="govuk-table__body">
             {% if data.claimType =='existing' %}
 					  <tr class="govuk-table__row ">
-  						<td class="govuk-table__cell"><strong><a href="#">12345678</a></strong></td>
+  						<td class="govuk-table__cell"><strong><a href="#">A345678</a></strong></td>
   						<td class="govuk-table__cell">Airbus UK</td>
               <td class="govuk-table__cell"data-sort-value="230921">21st Sept 2024</td>
               <td class="govuk-table__cell"data-sort-value="Buyer credit">Buyer credit (Aero)</td>

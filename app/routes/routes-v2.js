@@ -249,6 +249,12 @@ router.post(version +'/2-examination/calculate-principal-claim-amount-4-insured-
 
 });
 
+router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-1-days-in-year', function(req, res) {
+	{
+			res.redirect(version +'/facility-card-list')
+	}
+});
+
 
 
 

@@ -441,9 +441,28 @@ Claims and recoveries
           <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/calculate-principal-claim-amount-1-installment">Change details</a>
 
             {% else %}
-            <a class="" href="2-examination/calculate-principal-claim-amount-1-installment">Add details</a>
+            <a class="" href="2-examination/calculate-contractual-interest-claim-amount-1-days-in-year">Add details</a>
               {% endif %}
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Calculate contractural interest amount
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                {% if data.interestClaimAmount %}
+                {{data.interestClaimAmount}}
+
+              </dd>
+              <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/calculate-contractual-interest-claim-amount-1-days-in-year">Change details</a>
+
+                {% else %}
+                <a class="" href="2-examination/calculate-contractual-interest-claim-amount-1-days-in-year">Add details</a>
+                  {% endif %}
+              </div>
+
+
+
 
 
         </div>

@@ -96,8 +96,6 @@ router.post(version +'/1-pre-examination/date-of-default', function(req, res) {
 		if (req.session.data.defaultMonth == '10') {
 			req.session.data.defaultMonthAsText= 'October'
 			req.session.data.defaultMonthAsTextDueDate= 'January'
-
-
 		}
 		if (req.session.data.defaultMonth == '11') {
 			req.session.data.defaultMonthAsText= 'November'
@@ -251,13 +249,41 @@ router.post(version +'/2-examination/calculate-principal-claim-amount-4-insured-
 
 router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-1-days-in-year', function(req, res) {
 	{
-			res.redirect(version +'/facility-card-list')
+				req.session.data.interestPeriod = '90';
+			res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-2-interest-period-days')
+	}
+});
+router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-2-interest-period-days', function(req, res) {
+	{
+			res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-3-principal-balance-outstanding')
+	}
+});
+router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-3-principal-balance-outstanding', function(req, res) {
+	{
+			res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-4-reference-interest-rate')
 	}
 });
 
+router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-4-reference-interest-rate', function(req, res) {
+	{
+			res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-5-interest-rate-margin')
+	}
+});
+router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-5-interest-rate-margin', function(req, res) {
+	{
+		req.session.data.interestRatetotal = parseInt(req.session.data.referenceInterestRate) + parseInt(req.session.data.interestRateMargin)
 
+			res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-6-present-total')
+	}
+});
 
+router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-6-present-total', function(req, res) {
+	{
+		req.session.data.interestRatetotal = parseInt(req.session.data.referenceInterestRate) + parseInt(req.session.data.interestRateMargin)
 
+			res.redirect(version +'/facility-card-list')
+	}
+});
 
 
 }

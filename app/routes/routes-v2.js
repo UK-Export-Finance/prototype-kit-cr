@@ -300,9 +300,10 @@ router.post(version +'/2-examination/calculate-contractual-interest-claim-amount
 		req.session.data.totalAmount =	Math.round((req.session.data.totalContracturalDue - req.session.data.partialInterestPaymentAmount)  * req.session.data.daysInAYear)
 //	req.session.data.totalContracturalDue =	(req.session.data.principalBalance / req.session.data.daysInAYear) * req.session.data.interestPeriod * req.session.data.interestRatetotals
 
-res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-9-total')
+res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-9-overall-total')
 	}
 });
+
 
 
 }

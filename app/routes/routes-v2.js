@@ -288,10 +288,19 @@ router.post(version +'/2-examination/calculate-contractual-interest-claim-amount
 
 router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-7-partial', function(req, res) {
 	{
-		req.session.data.totalContracturalDue =	Math.round((req.session.data.principalBalance / req.session.data.daysInAYear)  * req.session.data.interestPeriod * req.session.data.interestRatetotal
+		req.session.data.totalContracturalDue =	Math.round((req.session.data.principalBalance / req.session.data.daysInAYear)  * req.session.data.interestPeriod * req.session.data.interestRatetotal)
 //	req.session.data.totalContracturalDue =	(req.session.data.principalBalance / req.session.data.daysInAYear) * req.session.data.interestPeriod * req.session.data.interestRatetotals
 
 			res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-8-total-contract-interest')
+	}
+});
+
+router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-8-total-contract-interest', function(req, res) {
+	{
+		req.session.data.totalAmount =	Math.round((req.session.data.totalContracturalDue - req.session.data.partialInterestPaymentAmount)  * req.session.data.daysInAYear)
+//	req.session.data.totalContracturalDue =	(req.session.data.principalBalance / req.session.data.daysInAYear) * req.session.data.interestPeriod * req.session.data.interestRatetotals
+
+res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-9-total')
 	}
 });
 

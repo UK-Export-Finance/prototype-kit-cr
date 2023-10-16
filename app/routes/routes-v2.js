@@ -297,8 +297,8 @@ router.post(version +'/2-examination/calculate-contractual-interest-claim-amount
 
 router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-8-total-contract-interest', function(req, res) {
 	{
-		req.session.data.totalAmount =	Math.round((req.session.data.totalContracturalDue - req.session.data.partialInterestPaymentAmount)  * req.session.data.daysInAYear)
-//	req.session.data.totalContracturalDue =	(req.session.data.principalBalance / req.session.data.daysInAYear) * req.session.data.interestPeriod * req.session.data.interestRatetotals
+		req.session.data.totalAmount =	Math.round((req.session.data.totalContracturalDue - req.session.data.partialInterestPaymentAmount)  * req.session.data.interestPeriod/365)
+		//Contractual interest amount due - partial contractual interest payment * days in year (delay interest)
 
 res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-9-overall-total')
 	}

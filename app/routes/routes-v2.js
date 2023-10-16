@@ -304,6 +304,14 @@ res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amoun
 	}
 });
 
+router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-9-overall-total', function(req, res) {
+	{
+		//req.session.data.totalAmount =	Math.round((req.session.data.totalContracturalDue - req.session.data.partialInterestPaymentAmount)  * req.session.data.interestPeriod/365)
+		//Contractual interest amount due - partial contractual interest payment * days in year (delay interest)
+
+res.redirect(version +'/facility-card-list')
+	}
+});
 
 
 }

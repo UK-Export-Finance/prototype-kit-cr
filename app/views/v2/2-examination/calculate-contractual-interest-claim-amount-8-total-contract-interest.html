@@ -15,10 +15,14 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4" style="margin-left:10px;">
-    	Calculated interest rate total
+    	Total contractural amount due
       </h1><br />
 
-			<p class="govuk-body">The calculated interest rate total is shown below. This is calculated by using the reference interest rate and the interest rate margin. If necessary, this can be overridden by changing the value in the text box below.</p>
+			<p class="govuk-body">The total contractural amount due is shown below.</p>
+
+			<p class="govuk-body">This is calculated by using the principal balance outstanding during interest period, the contractual interest, days between date of default and claim due date and the interest rate total.
+
+				If necessary, this can be overridden by changing the value in the text box below.</p>
 			<form method="post">
         <div class="govuk-form-group">
 				<div class="govuk-form-group">
@@ -27,9 +31,9 @@
 	      <div class="govuk-date-input__item">
 	        <div class="govuk-form-group">
 	          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-	            Interest rate total
+	            Amount due
 	          </label>
-							<input class="govuk-input govuk-input--width-5" id="passport-issued-month" name="interestRatetotal" type="number" spellcheck="false" aria-describedby="currency-hint" value="{{ data.interestRatetotal }}">
+							<input class="govuk-input govuk-input--width-5" id="passport-issued-month" name="totalContracturalDue" type="number" spellcheck="false" aria-describedby="currency-hint" value="{{ data.totalContracturalDue }}">
 		      </div>
 		    </div>
 		  </fieldset>

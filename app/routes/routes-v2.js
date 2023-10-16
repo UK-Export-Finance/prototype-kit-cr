@@ -281,7 +281,14 @@ router.post(version +'/2-examination/calculate-contractual-interest-claim-amount
 	{
 		req.session.data.interestRatetotal = parseInt(req.session.data.referenceInterestRate) + parseInt(req.session.data.interestRateMargin)
 
-			res.redirect(version +'/facility-card-list')
+			res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-7-partial')
+	}
+});
+router.post(version +'2-examination/calculate-contractual-interest-claim-amount-7-partial', function(req, res) {
+	{
+		req.session.data.interestRatetotal = parseInt(req.session.data.referenceInterestRate) + parseInt(req.session.data.interestRateMargin)
+
+			res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-8')
 	}
 });
 

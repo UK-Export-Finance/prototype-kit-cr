@@ -288,8 +288,7 @@ router.post(version +'/2-examination/calculate-contractual-interest-claim-amount
 
 router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-7-partial', function(req, res) {
 	{
-		req.session.data.totalContracturalDue =	Math.round((req.session.data.principalBalance / req.session.data.daysInAYear)  * req.session.data.interestPeriod * req.session.data.interestRatetotal)
-//	req.session.data.totalContracturalDue =	(req.session.data.principalBalance / req.session.data.daysInAYear) * req.session.data.interestPeriod * req.session.data.interestRatetotals
+		req.session.data.totalContracturalDue = ((req.session.data.principalBalance / req.session.data.daysInAYear) * req.session.data.interestPeriod) * (req.session.data.interestRatetotal/100)
 
 			res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-8-total-contract-interest')
 	}
@@ -297,8 +296,11 @@ router.post(version +'/2-examination/calculate-contractual-interest-claim-amount
 
 router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-8-total-contract-interest', function(req, res) {
 	{
-		req.session.data.totalAmount =	Math.round((req.session.data.totalContracturalDue - req.session.data.partialInterestPaymentAmount)  * req.session.data.interestPeriod/365)
-		//Contractual interest amount due - partial contractual interest payment * days in year (delay interest)
+		//Contractual interest due
+		req.session.data.totalAmount = ((req.session.data.principalBalance / req.session.data.daysInAYear) * req.session.data.interestPeriod) * (req.session.data.interestRatetotal/100) - req.session.data.partialInterestPaymentAmount
+																		//((Principal balance outstanding / days in the year) * 90 days) * interest total - partial payment
+
+
 
 res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amount-9-overall-total')
 	}
@@ -306,8 +308,7 @@ res.redirect(version +'/2-examination/calculate-contractual-interest-claim-amoun
 
 router.post(version +'/2-examination/calculate-contractual-interest-claim-amount-9-overall-total', function(req, res) {
 	{
-		//req.session.data.totalAmount =	Math.round((req.session.data.totalContracturalDue - req.session.data.partialInterestPaymentAmount)  * req.session.data.interestPeriod/365)
-		//Contractual interest amount due - partial contractual interest payment * days in year (delay interest)
+
 
 res.redirect(version +'/facility-card-list')
 	}

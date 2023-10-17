@@ -33,7 +33,10 @@
 	          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
 	            Amount due
 	          </label>
-							<input class="govuk-input govuk-input--width-5" id="passport-issued-month" name="totalContracturalDue" type="number" spellcheck="false" aria-describedby="currency-hint" value="{{ data.totalContracturalDue }}">
+						<div class="govuk-input__wrapper">
+								<div class="govuk-input__prefix" aria-hidden="true">£</div>
+								<input class="govuk-input govuk-input--width-10" id="passport-issued-month" name="totalContracturalDue" type="text" spellcheck="false" aria-describedby="currency-hint" value="{{ data.totalContracturalDue }}">
+							</div>
 		      </div>
 		    </div>
 		  </fieldset>

@@ -17,11 +17,11 @@
       <div class="govuk-grid-column-two-thirds-from-desktop">
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 		      <h1 class="govuk-fieldset__heading">
-		    What is the amount due on the installment?
+		    Check the principal claim calculation
 		      </h1>
 		    </legend>
 		    <div id="passport-issued-hint" class="govuk-hint">
-		      You can always return and edit these details at any point.
+		      If this is correct select confirm. You can change your answers by selecting the change link.<br />You can always return and change these details at any point.
 					</div><br />
         <h2 class="govuk-heading-m">Principal claim calculation</h2>
 
@@ -33,10 +33,10 @@
 							Principal claim amount
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{data.claimCalculation}}
+							{{data.TotalClaimedAmount}}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="calculate-principal-claim-amount-change">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/change">
 								Change<span class="govuk-visually-hidden"> claim amount</span>
 							</a>
 						</dd>
@@ -49,8 +49,8 @@
               {{data.installmentNumber}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="calculate-principal-claim-amount-1-installment">
-                Change<span class="govuk-visually-hidden"> installment</span>
+              <a class="govuk-link" href="1-calculate-principal-claim-amount/1-installment">
+                <span class="govuk-visually-hidden"> installment</span>
               </a>
             </dd>
           </div>
@@ -59,11 +59,11 @@
               Amount
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data.grossClaimedAmount}}
+              £{{data.grossClaimedAmount or '0'}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="calculate-principal-claim-amount-2-amount">
-                Change<span class="govuk-visually-hidden"> claim amount</span>
+              <a class="govuk-link" href="1-calculate-principal-claim-amount/2-amount">
+                <span class="govuk-visually-hidden"> claim amount</span>
               </a>
             </dd>
           </div>
@@ -72,11 +72,11 @@
               Partial payment
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data.partialPaymentAmount}}
+            £{{data.partialPaymentAmount or '0'}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="calculate-principal-claim-amount-3-partial">
-                Change<span class="govuk-visually-hidden">Partial Payment Amount</span>
+              <a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+                <span class="govuk-visually-hidden">Partial Payment Amount</span>
               </a>
             </dd>
           </div>
@@ -85,11 +85,11 @@
 							Insured percentage
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{data.insuredAmount}}
+							{{data.insuredAmount or '0'}}%
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="calculate-principal-claim-amount-3-partial">
-								Change<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
 							</a>
 						</dd>
 					</div>

@@ -245,7 +245,7 @@ router.post(version +'/2-examination/1-calculate-principal-claim-amount/3-partia
 
 router.post(version +'/2-examination/1-calculate-principal-claim-amount/4-insured-percentage', function(req, res) {
 	{
-		req.session.data.TotalClaimedAmount = '£'+(req.session.data.grossClaimedAmount - req.session.data.partialPaymentAmount) * req.session.data.insuredAmount
+		req.session.data.totalPrincipalClaimedAmount = '£'+(req.session.data.principalAmount - req.session.data.partialPaymentAmount) * req.session.data.insuredAmount
 
 			res.redirect(version +'/2-examination/1-calculate-principal-claim-amount/5-principal-claim-calculation')
 	}

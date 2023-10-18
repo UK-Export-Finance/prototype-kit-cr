@@ -33,7 +33,7 @@
 							Principal claim amount
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{data.TotalClaimedAmount}}
+							{{data.totalPrincipalClaimedAmount}}
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="1-calculate-principal-claim-amount/change">
@@ -56,10 +56,10 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Amount
+              Installment amount
             </dt>
             <dd class="govuk-summary-list__value">
-              £{{data.grossClaimedAmount or '0'}}
+              £{{data.principalAmount or '0'}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="1-calculate-principal-claim-amount/2-amount">

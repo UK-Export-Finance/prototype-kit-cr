@@ -435,70 +435,73 @@ Claims and recoveries
         </dt>
         <dd class="govuk-summary-list__value">
 
-            {% if data.TotalClaimedAmount %}
-            {{data.TotalClaimedAmount}}
+            {% if data.TotalPricipalClaimedAmount %}
+            {{data.TotalPricipalClaimedAmount}}
 
           </dd>
           <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/1-calculate-principal-claim-amount/1-installment">Change details</a>
+            </div>
+          </dl>
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row" style="border-bottom:1px solid grey;">
+              <div>
+              <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  View breakdown
+                </span>
+              </summary>
+
+              <div class="govuk-details__text">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Installment
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data.installmentNumber}}
+                  </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Amount
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    £{{data.grossClaimedAmount or '0'}}
+                  </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Partial payment
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                  £{{data.partialPaymentAmount or '0'}}
+                  </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Insured percentage
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data.insuredAmount or '0'}}%
+                  </dd>
+
+                </div>
+                  </div>
+                </details>
+            </div>
+          </div>
+          <dl class="govuk-summary-list">
 
           {% else %}
           <a class="" href="2-examination/1-calculate-principal-claim-amount/1-installment">Add details</a>
-            {% endif %}
-        </div>
-        </dl>
-        <dl class="govuk-summary-list">
-
-          <div class="govuk-summary-list__row" style="border-bottom:1px solid grey;">
-            <div>
-            <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                View breakdown
-              </span>
-            </summary>
-
-            <div class="govuk-details__text">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Installment
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data.installmentNumber}}
-                </dd>
-
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Amount
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  £{{data.grossClaimedAmount or '0'}}
-                </dd>
-
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Partial payment
-                </dt>
-                <dd class="govuk-summary-list__value">
-                £{{data.partialPaymentAmount or '0'}}
-                </dd>
-
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Insured percentage
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data.insuredAmount or '0'}}%
-                </dd>
-
-              </div>
-                </div>
-              </details>
           </div>
-        </div>
-        <dl class="govuk-summary-list">
+            {% endif %}
+
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
           Calculate contractural interest amount

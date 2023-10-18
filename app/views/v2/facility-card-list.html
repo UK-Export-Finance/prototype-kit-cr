@@ -428,12 +428,12 @@ Claims and recoveries
   </div>
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
 
-        Calculate principal claim amount
-        </dt>
-        <dd class="govuk-summary-list__value">
+            Calculate principal claim amount
+          </dt>
+          <dd class="govuk-summary-list__value">
 
             {% if data.totalPrincipalClaimedAmount %}
             {{data.totalPrincipalClaimedAmount}}
@@ -494,30 +494,26 @@ Claims and recoveries
                 </details>
             </div>
           </div>
-          <dl class="govuk-summary-list">
-
           {% else %}
           <a class="" href="2-examination/1-calculate-principal-claim-amount/1-installment">Add details</a>
           </div>
-            {% endif %}
+          {% endif %}
 
-
-        <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
           Calculate contractural interest amount
           </dt>
           <dd class="govuk-summary-list__value">
-
               {% if data.totalAmount %}
-              £{{data.totalAmount}}
-
-            </dd>
-            <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/2-calculate-contractual-interest-amount/1-days-in-year">Change details</a>
-
-            {% else %}
-            <a class="" href="2-examination/2-calculate-contractual-interest-amount/1-days-in-year">Add details</a>
+                £{{data.totalAmount}}
+          </dd>
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/2-calculate-contractual-interest-amount/1-days-in-year">Change details</a>
+                {% else %}
+                <a class="" href="2-examination/2-calculate-contractual-interest-amount/1-days-in-year">Add details</a>
               {% endif %}
           </div>
+
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
             Calculate deferred principal amount

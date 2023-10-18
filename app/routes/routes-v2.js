@@ -300,7 +300,7 @@ router.post(version +'/2-examination/2-calculate-contractual-interest-amount/6-p
 router.post(version +'/2-examination/2-calculate-contractual-interest-amount/7-partial', function(req, res) {
 	{
 		req.session.data.totalContracturalDue = ((req.session.data.principalBalance / req.session.data.daysInAYear) * req.session.data.interestPeriod) * (req.session.data.interestRatetotal/100)
-
+					req.session.data.totalContracturalDue = req.session.data.totalContracturalDue.toFixed(2)
 			res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/8-total-contract-interest')
 	}
 });
@@ -310,8 +310,7 @@ router.post(version +'/2-examination/2-calculate-contractual-interest-amount/8-t
 		//Contractual interest due
 		req.session.data.totalAmount = ((req.session.data.principalBalance / req.session.data.daysInAYear) * req.session.data.interestPeriod) * (req.session.data.interestRatetotal/100) - req.session.data.partialInterestPaymentAmount
 																		//((Principal balance outstanding / days in the year) * 90 days) * interest total - partial payment
-
-
+			req.session.data.totalAmount = req.session.data.totalAmount.toFixed(2)
 
 res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/9-overall-total')
 	}
@@ -319,9 +318,28 @@ res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/9-
 
 router.post(version +'/2-examination/2-calculate-contractual-interest-amount/9-overall-total', function(req, res) {
 	{
-
-
 res.redirect(version +'/facility-card-list')
+	}
+});
+
+
+
+
+//Question 5 - Principal delay interest
+router.post(version +'/2-examination/5-calculate-delay-principal-interest/1-interest-start-date', function(req, res) {
+	{
+res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/2-interest-end-date')
+	}
+});
+
+router.post(version +'/2-examination/5-calculate-delay-principal-interest/2-interest-end-date', function(req, res) {
+	{
+res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/2-interest-end-date')
+	}
+});
+router.post(version +'/2-examination/5-calculate-delay-principal-interest/2-interest-end-date', function(req, res) {
+	{
+res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/3-interest-period-days')
 	}
 });
 

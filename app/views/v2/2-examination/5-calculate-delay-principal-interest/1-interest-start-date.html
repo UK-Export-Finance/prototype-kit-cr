@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<nav class="govuk-!-display-none-print">
+	{{govukBackLink({
+	  text: "Back",
+	  "href": "javascript: window.history.go(-1)"
+	  })}}
+	  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+	  </a>
+	</nav>
+{% endblock %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+      <form method="post">
+        <div class="govuk-form-group">
+					<div class="govuk-form-group">
+	  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+	    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+	      <h1 class="govuk-fieldset__heading">
+	    What is the interest period start date?
+	      </h1>
+	    </legend>
+	    <div id="passport-issued-hint" class="govuk-hint">
+	      For example, 27 11 2023
+	    </div>
+	    <div class="govuk-date-input" id="passport-issued">
+	      <div class="govuk-date-input__item">
+	        <div class="govuk-form-group">
+	          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+	            Day
+	          </label>
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.deferredPrincipalStartDay }}" name="deferredPrincipalStartDay" type="text" inputmode="numeric">
+	        </div>
+	      </div>
+	      <div class="govuk-date-input__item">
+	        <div class="govuk-form-group">
+	          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+	            Month
+	          </label>
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="{{ data.deferredPrincipalStartMonth }}" name="deferredPrincipalStartMonth" type="text" inputmode="numeric">
+	        </div>
+	      </div>
+	      <div class="govuk-date-input__item">
+	        <div class="govuk-form-group">
+	          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+	            Year
+	          </label>
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.deferredPrincipalStartYear }}" name="deferredPrincipalStartYear" type="text" inputmode="numeric">
+	        </div>
+	      </div>
+	    </div>
+	  </fieldset>
+	</div>
+        </div>
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+    <!--      <input type="hidden" name="cancelClaimCreation" value="false">-->
+        </form>
+      </div>
+    </div>
+    </div>
+{% endblock %}

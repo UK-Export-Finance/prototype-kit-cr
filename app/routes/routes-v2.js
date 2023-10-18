@@ -290,45 +290,40 @@ router.post(version +'/2-examination/2-calculate-contractual-interest-amount/5-i
 	{
 		req.session.data.interestRatetotal = parseInt(req.session.data.referenceInterestRate) + parseInt(req.session.data.interestRateMargin)
 
-			res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/6-present-total')
+			res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/6-partial')
 	}
 });
 
-router.post(version +'/2-examination/2-calculate-contractual-interest-amount/6-present-total', function(req, res) {
-	{
-		req.session.data.interestRatetotal = parseInt(req.session.data.referenceInterestRate) + parseInt(req.session.data.interestRateMargin)
-
-			res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/7-partial')
-	}
-});
-
-
-router.post(version +'/2-examination/2-calculate-contractual-interest-amount/7-partial', function(req, res) {
+router.post(version +'/2-examination/2-calculate-contractual-interest-amount/6-partial', function(req, res) {
 	{
 		req.session.data.totalContracturalDue = ((req.session.data.principalBalance / req.session.data.daysInAYear) * req.session.data.interestPeriod) * (req.session.data.interestRatetotal/100)
 					req.session.data.totalContracturalDue = req.session.data.totalContracturalDue.toFixed(2)
-			res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/8-total-contract-interest')
+			res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/7-total-contract-interest')
 	}
 });
 
-router.post(version +'/2-examination/2-calculate-contractual-interest-amount/8-total-contract-interest', function(req, res) {
+router.post(version +'/2-examination/2-calculate-contractual-interest-amount/7-total-contract-interest', function(req, res) {
 	{
 		//Contractual interest due
 		req.session.data.totalAmount = ((req.session.data.principalBalance / req.session.data.daysInAYear) * req.session.data.interestPeriod) * (req.session.data.interestRatetotal/100) - req.session.data.partialInterestPaymentAmount
 																		//((Principal balance outstanding / days in the year) * 90 days) * interest total - partial payment
 			req.session.data.totalAmount = req.session.data.totalAmount.toFixed(2)
 
-res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/9-overall-total')
+res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/8-overall-total')
 	}
 });
 
-router.post(version +'/2-examination/2-calculate-contractual-interest-amount/9-overall-total', function(req, res) {
+router.post(version +'/2-examination/2-calculate-contractual-interest-amount/8-overall-total', function(req, res) {
+	{
+res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/9-check-answers')
+	}
+});
+
+router.post(version +'/2-examination/2-calculate-contractual-interest-amount/9-check-answers', function(req, res) {
 	{
 res.redirect(version +'/facility-card-list')
 	}
 });
-
-
 
 
 //Question 5 - Principal delay interest

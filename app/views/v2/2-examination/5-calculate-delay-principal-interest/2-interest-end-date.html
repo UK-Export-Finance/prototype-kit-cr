@@ -24,27 +24,31 @@
 	  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
 	    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 	      <h1 class="govuk-fieldset__heading">
-	    What is the interest period end date?
+					Confirm the interest period end date
 	      </h1>
 	    </legend>
 	    <div id="passport-issued-hint" class="govuk-hint">
-	      For example, 27 11 2023
-	    </div>
+				For example, 27 11 2023, this is pre-populated with the date entered previously
+  	    </div>
 	    <div class="govuk-date-input" id="passport-issued">
 	      <div class="govuk-date-input__item">
 	        <div class="govuk-form-group">
 	          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
 	            Day
 	          </label>
-	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.deferredPrincipalStartDay }}" name="deferredPrincipalStartDay" type="text" inputmode="numeric">
-	        </div>
+						{% if (data.test) %}
+						<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="test" value="{{ data.test }}"  type="text" inputmode="numeric">
+						{% else %}
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.defaultDay }}" name="test" type="text" inputmode="numeric">
+						{% endif %}
+				  </div>
 	      </div>
 	      <div class="govuk-date-input__item">
 	        <div class="govuk-form-group">
 	          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
 	            Month
 	          </label>
-	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="{{ data.deferredPrincipalStartMonth }}" name="deferredPrincipalStartMonth" type="text" inputmode="numeric">
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="" name="deferredPrincipalStartMonth" type="text" inputmode="numeric">
 	        </div>
 	      </div>
 	      <div class="govuk-date-input__item">

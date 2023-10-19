@@ -335,11 +335,6 @@ res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/2-int
 
 router.post(version +'/2-examination/5-calculate-delay-principal-interest/2-interest-end-date', function(req, res) {
 	{
-res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/2-interest-end-date')
-	}
-});
-router.post(version +'/2-examination/5-calculate-delay-principal-interest/2-interest-end-date', function(req, res) {
-	{
 res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/3-interest-period-days')
 	}
 });

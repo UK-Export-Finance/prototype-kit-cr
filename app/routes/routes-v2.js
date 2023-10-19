@@ -338,6 +338,15 @@ router.post(version +'/2-examination/5-calculate-delay-principal-interest/2-inte
 res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/3-interest-period-days')
 	}
 });
-
+router.post(version +'/2-examination/5-calculate-delay-principal-interest/3-interest-period-days', function(req, res) {
+	{
+res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/4-reference-interest-rate')
+	}
+});
+router.post(version +'/2-examination/5-calculate-delay-principal-interest/4-reference-interest-rate', function(req, res) {
+	{
+res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/5-interest-rate-margin')
+	}
+});
 
 }

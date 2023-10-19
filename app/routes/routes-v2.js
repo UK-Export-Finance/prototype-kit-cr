@@ -232,6 +232,7 @@ router.post(version +'/2-examination/1-calculate-principal-claim-amount/1-instal
 	}
 });
 
+
 router.post(version +'/2-examination/1-calculate-principal-claim-amount/2-amount', function(req, res) {
 	{
 			res.redirect(version +'/2-examination/1-calculate-principal-claim-amount/3-partial')
@@ -267,9 +268,21 @@ router.post(version +'/2-examination/1-calculate-principal-claim-amount/5-princi
 router.post(version +'/2-examination/2-calculate-contractual-interest-amount/1-days-in-year', function(req, res) {
 	{
 				req.session.data.interestPeriod = '90';
+			res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/1A-interest-start-date')
+	}
+});
+
+router.post(version +'/2-examination/2-calculate-contractual-interest-amount/1A-interest-start-date', function(req, res) {
+	{
+			res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/1B-interest-end-date')
+	}
+});
+router.post(version +'/2-examination/2-calculate-contractual-interest-amount/1B-interest-end-date', function(req, res) {
+	{
 			res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/2-interest-period-days')
 	}
 });
+
 router.post(version +'/2-examination/2-calculate-contractual-interest-amount/2-interest-period-days', function(req, res) {
 	{
 			res.redirect(version +'/2-examination/2-calculate-contractual-interest-amount/3-principal-balance-outstanding')

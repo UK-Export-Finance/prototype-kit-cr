@@ -348,5 +348,15 @@ router.post(version +'/2-examination/5-calculate-delay-principal-interest/4-refe
 res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/5-interest-rate-margin')
 	}
 });
+router.post(version +'/2-examination/5-calculate-delay-principal-interest/5-interest-rate-margin', function(req, res) {
+	{
+res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/6-check-answers')
+	}
+});
+router.post(version +'/2-examination/5-calculate-delay-principal-interest/6-check-answers', function(req, res) {
+	{
+res.redirect(version +'/facility-card-list')
+	}
+});
 
 }

@@ -152,6 +152,7 @@ Claims and recoveries
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+          {% if data.setupShowNumberList =='true' %}1.1 {% endif %}
         Claim type
         </dt>
         <dd class="govuk-summary-list__value">
@@ -177,6 +178,7 @@ Claims and recoveries
       <!--subsection 2 - expected or notified-->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+         {% if data.setupShowNumberList =='true' %}1.2 {% endif %}
          Claim status
         </dt>
         <dd class="govuk-summary-list__value">
@@ -200,6 +202,7 @@ Claims and recoveries
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+          {% if data.setupShowNumberList =='true' %}1.3 {% endif %}
            Date of default
         </dt>
         <dd class="govuk-summary-list__value">
@@ -225,6 +228,7 @@ Claims and recoveries
 
       <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
+        {% if data.setupShowNumberList =='true' %}1.4 {% endif %}
         Claim due date
       </dt>
       <dd class="govuk-summary-list__value">
@@ -244,6 +248,7 @@ Claims and recoveries
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+           {% if data.setupShowNumberList =='true' %}1.5 {% endif %}
            Allocate examiners
         </dt>
         <dd class="govuk-summary-list__value">
@@ -263,6 +268,7 @@ Claims and recoveries
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+           {% if data.setupShowNumberList =='true' %}1.6 {% endif %}
            Allocate authorisers
         </dt>
         <dd class="govuk-summary-list__value">
@@ -286,6 +292,7 @@ Claims and recoveries
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+           {% if data.setupShowNumberList =='true' %}1.7 {% endif %}
            Upload the claim form
         </dt>
         <dd class="govuk-summary-list__value">
@@ -306,6 +313,7 @@ Claims and recoveries
 
       <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
+        {% if data.setupShowNumberList =='true' %}1.8 {% endif %}
         Upload supporting claim documents
       </dt>
       <dd class="govuk-summary-list__value">
@@ -326,6 +334,7 @@ Claims and recoveries
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+             {% if data.setupShowNumberList =='true' %}1.9 {% endif %}
              Gross claimed amount
           </dt>
           <dd class="govuk-summary-list__value">
@@ -348,6 +357,7 @@ Claims and recoveries
 
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            {% if data.setupShowNumberList =='true' %}1.10 {% endif %}
             Send notifications to stakeholders
           </dt>
           <dd class="govuk-summary-list__value">
@@ -431,6 +441,7 @@ Claims and recoveries
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
 
+            {% if data.setupShowNumberList =='true' %}2.1 {% endif %}
             Calculate principal claim amount
           </dt>
           <dd class="govuk-summary-list__value">
@@ -468,7 +479,7 @@ Claims and recoveries
                 Amount due
                 </dt>
                 <dd class="govuk-summary-list__value">
-                £{{data.principalAmount or '1000'}}
+                £{{data.grossClaimedAmount or '1000'}}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -498,6 +509,8 @@ Claims and recoveries
 
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+
+          {% if data.setupShowNumberList =='true' %}2.2 {% endif %}
           Calculate contractural interest amount
           </dt>
           <dd class="govuk-summary-list__value">
@@ -513,6 +526,7 @@ Claims and recoveries
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
+              {% if data.setupShowNumberList =='true' %}2.3 {% endif %}
             Calculate deferred principal amount
             </dt>
             <dd class="govuk-summary-list__value">
@@ -528,6 +542,7 @@ Claims and recoveries
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
+                {% if data.setupShowNumberList =='true' %}2.4 {% endif %}
               Calculate deferred contractual interest to due date
               </dt>
               <dd class="govuk-summary-list__value">
@@ -545,12 +560,13 @@ Claims and recoveries
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
+                  {% if data.setupShowNumberList =='true' %}2.5 {% endif %}
                 Calculate delay interest on principal
                 </dt>
               <dd class="govuk-summary-list__value">
 
-                {% if  data.delayInterestiOnPrincipal %}
-                  {{ data.delayInterestiOnPrincipal }}
+                {% if  data.delayPrincipaltotalAmount %}
+                  £{{ data.delayPrincipaltotalAmount }}
 
                 </dd>
                 <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/5-calculate-delay-principal-interest/1-interest-start-date">Change details</a>
@@ -562,6 +578,7 @@ Claims and recoveries
 
                 <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
+                  {% if data.setupShowNumberList =='true' %}2.6 {% endif %}
                 Calculate delay interest on interest
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -580,6 +597,7 @@ Claims and recoveries
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
+                      {% if data.setupShowNumberList =='true' %}2.7 {% endif %}
                     Calculate delay interest on principal deferred
                     </dt>
                     <dd class="govuk-summary-list__value">
@@ -597,6 +615,7 @@ Claims and recoveries
 
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
+                        {% if data.setupShowNumberList =='true' %}2.8 {% endif %}
                       Calculate delay interest on Interest deferred
                       </dt>
                       <dd class="govuk-summary-list__value">
@@ -614,6 +633,7 @@ Claims and recoveries
 
                       <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
+                            {% if data.setupShowNumberList =='true' %}2.9 {% endif %}
                           Calculate delay interest on interest paid
                         </dt>
                         <dd class="govuk-summary-list__value">
@@ -631,6 +651,7 @@ Claims and recoveries
 
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
+                              {% if data.setupShowNumberList =='true' %}2.10 {% endif %}
                             Calculate other amounts
                           </dt>
                           <dd class="govuk-summary-list__value">
@@ -648,6 +669,7 @@ Claims and recoveries
 
                         <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
+                              {% if data.setupShowNumberList =='true' %}2.11 {% endif %}
                             Calculate claim total
                           </dt>
                           <dd class="govuk-summary-list__value">
@@ -665,6 +687,7 @@ Claims and recoveries
 
                           <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
+                                {% if data.setupShowNumberList =='true' %}2.12 {% endif %}
                               Enter C Number
                             </dt>
                             <dd class="govuk-summary-list__value">

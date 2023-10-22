@@ -363,13 +363,27 @@ res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/5-int
 });
 router.post(version +'/2-examination/5-calculate-delay-principal-interest/5-interest-rate-margin', function(req, res) {
 	{
+		req.session.data.delayPrincipaltotalAmount = '960'
 res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/6-check-answers')
 	}
 });
 router.post(version +'/2-examination/5-calculate-delay-principal-interest/6-check-answers', function(req, res) {
 	{
-res.redirect(version +'/facility-card-list')
+res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/7-add-Another')
+}
+});
+
+router.post(version +'/2-examination/5-calculate-delay-principal-interest/7-add-Another', function(req, res) {
+	{
+if (req.session.data.anotherPrincipal == 'yes') {
+	res.redirect(version +'/2-examination/5-calculate-delay-principal-interest/1-interest-start-date')
+}
+else{
+	res.redirect(version +'/facility-card-list')
+		}
 	}
 });
+
+
 
 }

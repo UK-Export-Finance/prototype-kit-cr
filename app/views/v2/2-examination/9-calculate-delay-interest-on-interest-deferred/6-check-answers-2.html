@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<nav class="govuk-!-display-none-print">
+	{{govukBackLink({
+	  text: "Back",
+	  "href": "javascript: window.history.go(-1)"
+	  })}}
+	  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+	  </a>
+	</nav>
+{% endblock %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+		      <h1 class="govuk-fieldset__heading">
+		    Check the interest amount
+		      </h1>
+		    </legend>
+		    <div id="passport-issued-hint" class="govuk-hint">
+		      If this is correct select confirm. You can change your answers by selecting the change link.<br />You can always return and change these details at any point.
+					</div><br />
+
+				<form action="" method="post" novalidate>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key" style="width:50%">
+								Interest Name
+						</dt>
+						<dd class="govuk-summary-list__value">
+						<strong>	{{data.interestName2 or 'Interest 2'}}</strong>
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="/2-examination/5-calculate-delay-principal-interest/1-interest-start-date">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key" style="width:50%">
+								Total interest amount
+						</dt>
+						<dd class="govuk-summary-list__value">
+						<strong>	£{{data.interest2 or '1000'}}</strong>
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="/2-examination/5-calculate-delay-principal-interest/0-interest-name">Change
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Interest start date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{data.principalInterestPeriodStartDate or '01 October 2023'}}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/2-amount">
+								<span class="govuk-visually-hidden"> claim amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Interest end date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{data.principalInterestPeriodEndDate or '06 January 2024'}}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/2-amount">
+								<span class="govuk-visually-hidden"> claim amount</span>
+							</a>
+						</dd>
+					</div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Interest period days
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data.principalInterestPeriod or '90'}} days
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="1-calculate-principal-claim-amount/2-amount">
+                <span class="govuk-visually-hidden"> claim amount</span>
+              </a>
+            </dd>
+          </div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Reference interest rate
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{data.principalInterestReferenceInterestRate or '1'}}%
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Interest rate margin
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{data.principalInterestInterestRateMargin or '1'}}%
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+        </dl>
+
+				<div class="govuk-button-group">
+			  <button class="govuk-button" data-module="govuk-button" type="submit" value="no" name="addAnother">
+			    Confirm
+			  </button>
+			  <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="yes" name="addAnother">
+			    Confirm and add another interest
+			  </button>
+			</div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

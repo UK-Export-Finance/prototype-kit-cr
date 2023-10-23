@@ -17,7 +17,7 @@
       <div class="govuk-grid-column-two-thirds-from-desktop">
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 		      <h1 class="govuk-fieldset__heading">
-		    Check the principal delay interest amount
+		    Check the interest amount
 		      </h1>
 		    </legend>
 		    <div id="passport-issued-hint" class="govuk-hint">
@@ -29,10 +29,10 @@
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key" style="width:50%">
-								Principal Name
+								Interest Name
 						</dt>
 						<dd class="govuk-summary-list__value">
-						<strong>	{{data.delayInterestPrincipalName or 'Principal 1'}}</strong>
+						<strong>	{{data.interestName2 or 'Principal 2'}}</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="/2-examination/5-calculate-delay-principal-interest/1-interest-start-date">
@@ -42,7 +42,7 @@
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key" style="width:50%">
-								Total principal delay interest amount
+								Total interest amount
 						</dt>
 						<dd class="govuk-summary-list__value">
 						<strong>	£{{data.delayPrincipaltotalAmount or '1000'}}</strong>

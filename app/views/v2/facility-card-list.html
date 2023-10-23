@@ -875,27 +875,27 @@ Claims and recoveries
         {% if data.setupShowNumberList =='true' %}2.5 {% endif %}
       Calculate delay interest on interest
 
-        {% if data.delayInterestPrincipalName %}
+        {% if data.interestName %}
         <br /><br />
-          {{ data.delayInterestPrincipalName }}
+          {{ data.interestName }}
           {% endif %}
           {% if data.delayInterestPrincipalName2 %}
           <br /><br />
-            {{ data.delayInterestPrincipalName2 }}
+            {{ data.interestName2 }}
             {% endif %}
       </dt>
       <dd class="govuk-summary-list__value">
 
-        {% if data.delayInterestPrincipalName %}
+        {% if data.interestName %}
         <br /> <br />
           £90
         {% endif %}
-        {% if data.delayInterestPrincipalName2 %}
+        {% if data.interestName2 %}
         <br /> <br />
           £975
         {% endif %}
 
-    {% if data.delayInterestPrincipalName %}
+    {% if data.interestName %}
       </dd>
         <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/6-calculate-delay-interest-on-interest/0-interest-name">Change details</a>
       </dd>
@@ -914,10 +914,10 @@ Claims and recoveries
         <div class="govuk-details__text">
           <div class="govuk-summary-list__row" >
             <dt class="govuk-summary-list__key"  style="width:88%;">
-            Principal name
+            Interest name
             </dt>
             <dd class="govuk-summary-list__value">
-             {{data.delayInterestPrincipalName or 'Principal 1'}}
+             {{data.delayInterestPrincipalName or 'Interest 1'}}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -925,7 +925,7 @@ Claims and recoveries
             Amount
             </dt>
             <dd class="govuk-summary-list__value">
-           £{{data.delayPrincipaltotalAmount or '1000'}}
+           £{{data.delayPrincipaltotalAmount or '120'}}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -951,10 +951,10 @@ Claims and recoveries
         <div class="govuk-details__text">
           <div class="govuk-summary-list__row" >
             <dt class="govuk-summary-list__key"  style="width:88%;">
-            Principal name
+            Interest name
             </dt>
             <dd class="govuk-summary-list__value">
-             {{data.delayInterestPrincipalName2 or 'Principal 2'}}
+             {{data.interestName2 or 'Interest 2'}}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -962,7 +962,7 @@ Claims and recoveries
             Amount
             </dt>
             <dd class="govuk-summary-list__value">
-           £{{data.delayPrincipaltotalAmount2 or '800'}}
+           £{{data.interestName2 or '89'}}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -987,7 +987,7 @@ Claims and recoveries
 
       {% else %}
       <a class="" href="2-examination/6-calculate-delay-interest-on-interest/0-interest-name">Add details</a>
-      <hr />
+
         {% endif %}
     </div>
   </dl>

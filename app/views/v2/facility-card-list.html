@@ -151,7 +151,7 @@ Claims and recoveries
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key" style="width:400px;">
           {% if data.setupShowNumberList =='true' %}1.1 {% endif %}
         Claim type
         </dt>
@@ -358,7 +358,7 @@ Claims and recoveries
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             {% if data.setupShowNumberList =='true' %}1.10 {% endif %}
-            Send notifications to stakeholders
+            Sent notifications
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -441,10 +441,10 @@ Claims and recoveries
     <!--2.1-->
     <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
+          <dt class="govuk-summary-list__key" style="width:400px;">
 
             {% if data.setupShowNumberList =='true' %}2.1 {% endif %}
-            Calculate principal claim amount
+            Principal claim amount
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -453,7 +453,7 @@ Claims and recoveries
 
           </dd>
           <dd class="govuk-summary-list__value" style="text-align:right;">
-            <a href="2-examination/1-calculate-principal-claim-amount/1-installment">Change details</a>
+            <a href="2-examination/1--principal-claim-amount/1-installment">Change details</a>
           </dd>
         </div>
       </dl>
@@ -504,7 +504,7 @@ Claims and recoveries
           </details>
 
           {% else %}
-          <a class="" href="2-examination/1-calculate-principal-claim-amount/1-installment">Add details</a>
+          <a class="" href="2-examination/1--principal-claim-amount/1-installment">Add details</a>
 
           {% endif %}
         </div>
@@ -517,10 +517,10 @@ Claims and recoveries
 <!--here-->
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
+      <dt class="govuk-summary-list__key" style="width:400px;">
 
         {% if data.setupShowNumberList =='true' %}2.2 {% endif %}
-        Calculate contractural interest amount
+        Contractural interest amount
       </dt>
       <dd class="govuk-summary-list__value">
 
@@ -528,7 +528,7 @@ Claims and recoveries
           £{{data.totalAmount}}
 
       </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/2-calculate-contractual-interest-amount/1-days-in-year">Change details</a>
+        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/2--contractual-interest-amount/1-days-in-year">Change details</a>
       </dd>
     </div>
   </dl>
@@ -579,7 +579,7 @@ Claims and recoveries
       </details>
 
       {% else %}
-      <a class="" href="2-examination/2-calculate-contractual-interest-amount/1-days-in-year">Add details</a>
+      <a class="" href="2-examination/2--contractual-interest-amount/1-days-in-year">Add details</a>
         {% endif %}
     </div>
   </dl>
@@ -592,10 +592,10 @@ Claims and recoveries
 <!--2.3 start here-->
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
+      <dt class="govuk-summary-list__key" style="width:400px;">
 
         {% if data.setupShowNumberList =='true' %}2.3 {% endif %}
-        Calculate deferred principal amount
+         Deferred principal amount
       </dt>
       <dd class="govuk-summary-list__value">
 
@@ -667,10 +667,10 @@ Claims and recoveries
 <!--2.4 starthere-->
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
+      <dt class="govuk-summary-list__key" style="width:400px;">
 
         {% if data.setupShowNumberList =='true' %}2.4 {% endif %}
-      Calculate deferred contractual interest to due date
+       Deferred contractual interest to due date
       </dt>
       <dd class="govuk-summary-list__value">
 
@@ -741,10 +741,10 @@ Claims and recoveries
 <!--Start 2.5-->
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
+      <dt class="govuk-summary-list__key" style="width:400px;">
 
         {% if data.setupShowNumberList =='true' %}2.5 {% endif %}
-      Calculate delay interest on principal
+       Delay interest on principal
         {% if data.delayInterestPrincipalName %}
         <br /><br />
           {{ data.delayInterestPrincipalName }}
@@ -767,7 +767,7 @@ Claims and recoveries
 
     {% if data.delayInterestPrincipalName %}
       </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/5-calculate-delay-principal-interest/0-interest-name">Change details</a>
+        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/5--delay-principal-interest/0-interest-name">Change details</a>
       </dd>
     </div>
   </dl>
@@ -856,7 +856,7 @@ Claims and recoveries
       </details>
 
       {% else %}
-      <a class="" href="2-examination/5-calculate-delay-principal-interest/0-interest-name">Add details</a>
+      <a class="" href="2-examination/5--delay-principal-interest/0-interest-name">Add details</a>
         {% endif %}
 
 
@@ -870,10 +870,10 @@ Claims and recoveries
 <!--Start 2.6-->
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
+      <dt class="govuk-summary-list__key" style="width:400px;">
 
         {% if data.setupShowNumberList =='true' %}2.6 {% endif %}
-      Calculate delay interest on interest
+       Delay interest on interest
 
         {% if data.interestName %}
         <br /><br />
@@ -897,7 +897,7 @@ Claims and recoveries
 
     {% if data.interestName %}
       </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/6-calculate-delay-interest-on-interest/0-interest-name">Change details</a>
+        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/6--delay-interest-on-interest/0-interest-name">Change details</a>
       </dd>
     </div>
   </dl>
@@ -986,7 +986,7 @@ Claims and recoveries
       </details>
 
       {% else %}
-      <a class="" href="2-examination/6-calculate-delay-interest-on-interest/0-interest-name">Add details</a>
+      <a class="" href="2-examination/6--delay-interest-on-interest/0-interest-name">Add details</a>
 
         {% endif %}
     </div>
@@ -1003,10 +1003,10 @@ Claims and recoveries
 
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
+      <dt class="govuk-summary-list__key" style="width:400px;">
 
         {% if data.setupShowNumberList =='true' %}2.7 {% endif %}
-      Calculate delay interest on principal deferred
+      Delay interest on principal deferred
 
         {% if data.interestName %}
         <br /><br />
@@ -1132,11 +1132,11 @@ Claims and recoveries
 <!--Start 2.8 -->
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
+      <dt class="govuk-summary-list__key" style="width:400px;">
 
         {% if data.setupShowNumberList =='true' %}2.8 {% endif %}
 
-         Calculate delay interest on Interest deferred
+         Delay interest on Interest deferred
 
 
         {% if data.interestName %}
@@ -1263,11 +1263,11 @@ Claims and recoveries
 <!--End 2.9 -->
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
+      <dt class="govuk-summary-list__key" style="width:400px;">
 
-        {% if data.setupShowNumberList =='true' %}2.8 {% endif %}
+        {% if data.setupShowNumberList =='true' %}2.9 {% endif %}
 
-         Calculate delay interest on interest paid
+         Delay interest on interest paid
 
 
         {% if data.interestName %}
@@ -1292,7 +1292,7 @@ Claims and recoveries
 
     {% if data.interestName %}
       </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/9-calculate-delay-interest-on-interest-deferred/0-interest-name">Change details</a>
+        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/9--delay-interest-on-interest-deferred/0-interest-name">Change details</a>
       </dd>
     </div>
   </dl>
@@ -1381,7 +1381,7 @@ Claims and recoveries
       </details>
 
       {% else %}
-      <a class="" href="2-examination/9-calculate-delay-interest-on-interest-deferred/0-interest-name">Add details</a>
+      <a class="" href="2-examination/9--delay-interest-on-interest-deferred/0-interest-name">Add details</a>
 
         {% endif %}
     </div>

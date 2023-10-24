@@ -521,6 +521,106 @@ else{
 	}
 });
 
+//Section 2.9
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/0-interest-name', function(req, res) {
+	{
+res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/1-interest-start-date')
+	}
+});
+
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/1-interest-start-date', function(req, res) {
+	{
+res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/2-interest-end-date')
+	}
+});
+
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/2-interest-end-date', function(req, res) {
+	{
+res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/3-interest-period-days')
+	}
+});
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/3-interest-period-days', function(req, res) {
+	{
+res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/4-reference-interest-rate')
+	}
+});
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/4-reference-interest-rate', function(req, res) {
+	{
+res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin')
+	}
+});
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin', function(req, res) {
+	{
+		req.session.data.delayPrincipaltotalAmount = '960'
+res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers')
+	}
+});
+
+
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers', function(req, res) {
+	{
+if (req.session.data.addAnother == 'yes') {
+	res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/0-interest-name-2')
+}
+else{
+	res.redirect(version +'/facility-card-list')
+		}
+	}
+});
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/0-interest-name-2', function(req, res) {
+	{
+res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/1-interest-start-date-2')
+	}
+});
+
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/1-interest-start-date-2', function(req, res) {
+	{
+res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/2-interest-end-date-2')
+	}
+});
+
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/2-interest-end-date-2', function(req, res) {
+	{
+res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/3-interest-period-days-2')
+	}
+});
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/3-interest-period-days-2', function(req, res) {
+	{
+res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/4-reference-interest-rate-2')
+	}
+});
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/4-reference-interest-rate-2', function(req, res) {
+	{
+res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin-2')
+	}
+});
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin-2', function(req, res) {
+	{
+		req.session.data.delayPrincipaltotalAmount = '960'
+res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers-2')
+	}
+});
+router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers-2', function(req, res) {
+	{
+if (req.session.data.addAnother == 'yes') {
+	res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/0-interest-name-2')
+}
+else{
+	res.redirect(version +'/facility-card-list')
+		}
+	}
+});
+
+
+
+
+//Section 2.10
+router.post(version +'/2-examination/10--other-amounts/add-other-amount', function(req, res) {
+	{
+	res.redirect(version +'/facility-card-list')
+	}
+});
+
 
 
 

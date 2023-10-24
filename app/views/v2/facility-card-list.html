@@ -1016,7 +1016,7 @@ Claims and recoveries
       <dd class="govuk-summary-list__value">
 
         {% if data.interestName %}
-        <br /> <br /><br />
+        <br /> <br />
           £66
         {% endif %}
         {% if data.interestName2 %}
@@ -1147,7 +1147,7 @@ Claims and recoveries
       <dd class="govuk-summary-list__value">
 
         {% if data.interestName %}
-        <br /> <br /><br />
+        <br /> <br />
           £160
         {% endif %}
         {% if data.interestName2 %}
@@ -1256,7 +1256,7 @@ Claims and recoveries
 <!--End 2.8 -->
 
 
-<!--End 2.9 -->
+<!--Start 2.9 -->
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key" style="width:400px;">
@@ -1278,7 +1278,7 @@ Claims and recoveries
       <dd class="govuk-summary-list__value">
 
         {% if data.interestName %}
-        <br /> <br /><br />
+        <br /> <br />
           £160
         {% endif %}
         {% if data.interestName2 %}
@@ -1386,6 +1386,50 @@ Claims and recoveries
 
 <!--End 2.9 -->
 
+
+
+<!--Start 2.10 -->
+<dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key" style="width:400px;">
+
+        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.10</div> {% endif %}
+
+         Other amounts
+
+
+        {% if data.otherAmounts %}
+        <br /><br />
+          {{ data.otherAmountsName }}
+          {% endif %}
+          {% if data.otherAmounts2 %}
+          <br /><br />
+            {{ data.otherAmounts2 }}
+            {% endif %}
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+        {% if data.otherAmounts %}
+        <br /> <br />
+          £160
+        {% endif %}
+        {% if data.otherAmounts2 %}
+        <br /> <br />
+          £21
+        {% endif %}
+
+    {% if data.otherAmounts %}
+      </dd>
+        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/10--other-amounts/add-other-amount">Change details</a>
+      </dd>
+    </div>
+    {% else %}
+    <a class="" href="2-examination/10--other-amounts/add-other-amount">Add details</a>
+
+      {% endif %}
+  </dl>
+
+  <!--End 2.10 -->
 
 
   </div>

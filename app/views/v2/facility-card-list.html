@@ -120,16 +120,32 @@ Claims and recoveries
       {% if data.claimNotificationorExpectedRepeat and data.claimNotificationorExpectedRepeat!=='unanswered' %}
 
         {% if data.notificationsSent %}
+        <span style="margin-right:50px;">
+        <strong class="govuk-tag govuk-tag--green app-task-list__tag" >
+          All changes automatically saved
+        </strong>
+        </span>
+
           <strong class="govuk-tag govuk-tag--green app-task-list__tag">
             Completed
           </strong>
           {% else %}
+          <span style="margin-right:50px;">
+          <strong class="govuk-tag govuk-tag--green app-task-list__tag" >
+            All changes automatically saved
+          </strong>
+          </span>
           <strong class="govuk-tag govuk-tag-- app-task-list__tag">
             In progress
           </strong>
         {% endif %}
 
     {% else %}
+    <span style="margin-right:50px;">
+    <strong class="govuk-tag govuk-tag--green app-task-list__tag" >
+      All changes automatically saved
+    </strong>
+    </span>
       <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
       Not started
       </strong>
@@ -408,16 +424,31 @@ Claims and recoveries
       {% if data.TotalClaimedAmount %}
 
         {% if data.EndofSection2 %}
+        <span style="margin-right:50px;">
+        <strong class="govuk-tag govuk-tag--green app-task-list__tag" >
+          All changes automatically saved
+        </strong>
+        </span>
           <strong class="govuk-tag govuk-tag--green app-task-list__tag">
             Completed
           </strong>
           {% else %}
+          <span style="margin-right:50px;">
+          <strong class="govuk-tag govuk-tag--green app-task-list__tag" >
+            All changes automatically saved
+          </strong>
+          </span>
           <strong class="govuk-tag govuk-tag-- app-task-list__tag">
             In progress
           </strong>
         {% endif %}
 
     {% else %}
+    <span style="margin-right:50px;">
+    <strong class="govuk-tag govuk-tag--green app-task-list__tag" >
+      All changes automatically saved
+    </strong>
+    </span>
       <strong class="govuk-tag govuk-tag--grey app-task-list__tag">
       Not started
       </strong>

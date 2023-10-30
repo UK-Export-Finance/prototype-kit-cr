@@ -14,45 +14,86 @@
 {% endblock %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
-      <div class="govuk-grid-column-two-thirds">
       <form method="post">
 				<div class="govuk-form-group">
 				  <fieldset class="govuk-fieldset">
-				    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-				      <h1 class="govuk-fieldset__heading">
+				      	<h1 class="govuk-heading-l">
 				        Choose the primary examiner would you like to allocate to the claim?
 				      </h1>
-				    </legend>
+
 						<div id="nationality-hint" class="govuk-hint">
     			You can allocate a secondary examiner on the next page</div>
-					<div class="govuk-radios" data-module="govuk-radios">
-							<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="organisation" name="allocatedPrimaryExaminer" type="radio" value="Louis Armstrong">
-							<label class="govuk-label govuk-radios__label" for="organisation">
-								Louis Armstrong
-							</label>
-						</div>
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="organisation-2" name="allocatedPrimaryExaminer" type="radio" value="Rajesh Damodaran">
-							<label class="govuk-label govuk-radios__label" for="organisation-2">
-								Rajesh Damodaran
-							</label>
-						</div>
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="organisation-3" name="allocatedPrimaryExaminer" type="radio" value="Leona McLewis">
-							<label class="govuk-label govuk-radios__label" for="organisation-3">
-								Leona McLewis
-							</label>
-						</div>
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="organisation-4" name="allocatedPrimaryExaminer" type="radio" value="Samir Khan">
-							<label class="govuk-label govuk-radios__label" for="organisation-4">
-								Samir Khan
-							</label>
-						</div>
 					</div>
-				  </fieldset>
+					</div>
+					<div class="govuk-grid-column-two-thirds">
+					<table class="govuk-table">
+						 <caption class="govuk-table__caption govuk-table__caption--m">Amount of claims currently allocated to assessor</caption>
+						<thead class="govuk-table__head">
+							<tr class="govuk-table__row">
+								<th scope="col" class="govuk-table__header">Examiner name</th>
+								<th scope="col" class="govuk-table__header govuk-table__header--numeric">New claims</th>
+								<th scope="col" class="govuk-table__header govuk-table__header--numeric">Repeat claims</th>
+								<th scope="col" class="govuk-table__header govuk-table__header--numeric">Total claims</th>
+
+							</tr>
+						</thead>
+						<tbody class="govuk-table__body">
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">
+									<div class="govuk-radios__item govuk-radios--small">
+		              <input class="govuk-radios__input" id="allocatedPrimaryExaminer-lou" name="allocatedPrimaryExaminer" type="radio" value="Louis Armstrong">
+		              <label class="govuk-label govuk-radios__label" for="allocatedPrimaryExaminer-lou">
+		                Louis Armstrong
+		              </label>
+		            </div>
+								</td>
+								<td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+								<td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+								<td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">
+									<div class="govuk-radios__item govuk-radios--small">
+		              <input class="govuk-radios__input" id="allocatedPrimaryExaminer-raj" name="allocatedPrimaryExaminer" type="radio" value="Rajesh Damodaran">
+		              <label class="govuk-label govuk-radios__label" for="allocatedPrimaryExaminer-raj">
+		                Rajesh Damodaran
+		              </label>
+		            </div>
+							</td>
+								<td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+								<td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+								<td class="govuk-table__cell govuk-table__cell--numeric">4</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">
+									<div class="govuk-radios__item govuk-radios--small">
+									<input class="govuk-radios__input" id="allocatedPrimaryExaminer-leona" name="allocatedPrimaryExaminer" type="radio" value="Leona McLewis">
+									<label class="govuk-label govuk-radios__label" for="allocatedPrimaryExaminer-leona">
+										Leona McLewis
+									</label>
+								</div>
+							</td>
+								<td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+								<td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+								<td class="govuk-table__cell govuk-table__cell--numeric">5</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">
+									<div class="govuk-radios__item govuk-radios--small">
+									<input class="govuk-radios__input" id="allocatedPrimaryExaminer-sam" name="allocatedPrimaryExaminer" type="radio" value="Samir Khan<">
+									<label class="govuk-label govuk-radios__label" for="allocatedPrimaryExaminer-sam">
+										Samir Khan
+									</label>
+								</div>
+							</td>
+								<td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+								<td class="govuk-table__cell govuk-table__cell--numeric">6</td>
+								<td class="govuk-table__cell govuk-table__cell--numeric">7</td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
 				</div>
 
           <button class="govuk-button" data-module="govuk-button">

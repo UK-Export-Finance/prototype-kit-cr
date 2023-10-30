@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-m">Claims and recoveries prototype setup</h1>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+</div>
+<form method="post" >
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h3 class="govuk-label" ><strong>Show search facility on tile navigation page</strong></h3><br />
+          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="setuoShowSearchYes" name="setuoShowSearch" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="setuoShowSearchYes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="setuoShowSearchNo" name="setuoShowSearch" type="radio" value="no" checked="checked">
+              <label class="govuk-label govuk-radios__label" for="setuoShowSearchNo">
+             No
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <hr />
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-label" ><strong>Show guide numbers on task list screen</strong></h3><br />
+            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="setuoShowSearchYes" name="setupShowNumberList" type="radio" value="true">
+                <label class="govuk-label govuk-radios__label" for="setuoShowSearchYes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="setuoShowSearchNo" name="setupShowNumberList" type="radio" value="false" checked="checked">
+                <label class="govuk-label govuk-radios__label" for="setuoShowSearchNo">
+               No
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-label" ><strong>Show facility claim as task list or card view</strong></h3><br />
+            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="setupShowTasklist" name="setupShowCardview" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="setupShowTasklist">
+                  Task list
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="setupShowCardview" name="setupShowCardview" type="radio" value="yes" checked="checked">
+                <label class="govuk-label govuk-radios__label" for="setupShowCardview">
+               Card View
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+      <br /><br />
+      <button class="govuk-button" data-module="govuk-button">Start prototype</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

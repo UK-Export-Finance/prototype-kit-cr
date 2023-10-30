@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<nav class="govuk-!-display-none-print">
+	{{govukBackLink({
+	  text: "Back",
+	  "href": "javascript: window.history.go(-1)"
+	  })}}
+	  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+	  </a>
+	</nav>
+{% endblock %}
+<div class="govuk-grid-row">
+	 <form method="post">
+    <div class="govuk-grid-column-full">
+				<div class="govuk-grid-column-two-thirds">
+				<table class="govuk-table">
+					 <caption class="govuk-table__caption govuk-table__caption--m">Amount of claims currently allocated to assessor</caption>
+					<thead class="govuk-table__head">
+						<tr class="govuk-table__row">
+							<th scope="col" class="govuk-table__header">Examiner name</th>
+							<th scope="col" class="govuk-table__header govuk-table__header--numeric">New claims</th>
+							<th scope="col" class="govuk-table__header govuk-table__header--numeric">Repeat claims</th>
+							<th scope="col" class="govuk-table__header govuk-table__header--numeric">Total claims</th>
+						</tr>
+					</thead>
+					<tbody class="govuk-table__body">
+						{% if data.allocatedPrimaryExaminer !=='Louis Armstrong'%}
+						<tr class="govuk-table__row">
+							<td class="govuk-table__cell">
+								<div class="govuk-radios__item govuk-radios--small">
+								<input class="govuk-radios__input" id="allocatedPrimaryExaminer-lou" name="allocatedSecondaryExaminer" type="radio" value="Louis Armstrong">
+								<label class="govuk-label govuk-radios__label" for="allocatedPrimaryExaminer-lou">
+									Louis Armstrong
+								</label>
+							</div>
+							</td>
+							<td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+							<td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+							<td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+
+						</tr>
+						{% endif %}
+						{% if data.allocatedPrimaryExaminer !=='Rajesh Damodaran'%}
+						<tr class="govuk-table__row">
+							<td class="govuk-table__cell">
+								<div class="govuk-radios__item govuk-radios--small">
+								<input class="govuk-radios__input" id="allocatedPrimaryExaminer-raj" name="allocatedSecondaryExaminer" type="radio" value="Rajesh Damodaran">
+								<label class="govuk-label govuk-radios__label" for="allocatedPrimaryExaminer-raj">
+									Rajesh Damodaran
+								</label>
+							</div>
+						</td>
+							<td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+							<td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+							<td class="govuk-table__cell govuk-table__cell--numeric">4</td>
+						</tr>
+						{% endif %}
+						{% if data.allocatedPrimaryExaminer !=='Leona McLewis'%}
+						<tr class="govuk-table__row">
+							<td class="govuk-table__cell">
+								<div class="govuk-radios__item govuk-radios--small">
+								<input class="govuk-radios__input" id="allocatedPrimaryExaminer-leona" name="allocatedSecondaryExaminer" type="radio" value="Leona McLewis">
+								<label class="govuk-label govuk-radios__label" for="allocatedPrimaryExaminer-leona">
+									Leona McLewis
+								</label>
+							</div>
+						</td>
+							<td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+							<td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+							<td class="govuk-table__cell govuk-table__cell--numeric">5</td>
+						</tr>
+						{% endif %}
+						{% if data.allocatedPrimaryExaminer !=='Samir Khan'%}
+						<tr class="govuk-table__row">
+							<td class="govuk-table__cell">
+								<div class="govuk-radios__item govuk-radios--small">
+								<input class="govuk-radios__input" id="allocatedPrimaryExaminer-sam" name="allocatedSecondaryExaminer" type="radio" value="Samir Khan">
+								<label class="govuk-label govuk-radios__label" for="allocatedPrimaryExaminer-sam">
+									Samir Khan
+								</label>
+							</div>
+						</td>
+							<td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+							<td class="govuk-table__cell govuk-table__cell--numeric">6</td>
+							<td class="govuk-table__cell govuk-table__cell--numeric">7</td>
+						</tr>
+						{% endif %}
+					</tbody>
+				</table>
+				</div>
+			</div>
+			<button class="govuk-button" data-module="govuk-button">
+				Confirm
+			</button>
+			</form>
+			</div>
+      </div>
+{% endblock %}

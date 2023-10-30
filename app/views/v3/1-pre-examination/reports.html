@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<nav class="govuk-!-display-none-print">
+	{{govukBackLink({
+	  text: "Back",
+	  "href": "javascript: window.history.go(-1)"
+	  })}}
+	  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+	  </a>
+	</nav>
+{% endblock %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+      <form method="post">
+        <div class="govuk-form-group">
+					<div class="govuk-form-group">
+	  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+	    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+	      <h1 class="govuk-fieldset__heading">
+	    Which reports do you wish to generate
+	      </h1>
+	    </legend>
+	    <div id="passport-issued-hint" class="govuk-hint">
+	      You can send or generate one or many at any time
+	    </div>
+
+			<div class="govuk-form-group">
+			  <fieldset class="govuk-fieldset">
+			    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+			      <h1 class="govuk-fieldset__heading">
+			       Reports
+			      </h1>
+			    </legend>
+			    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+			      <div class="govuk-checkboxes__item">
+			        <input class="govuk-checkboxes__input" id="organisation" name="report1" type="checkbox" value="Report 1">
+			        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+			           Report 1
+			        </label>
+			      </div>
+			      <div class="govuk-checkboxes__item">
+			        <input class="govuk-checkboxes__input" id="organisation-2" name="report2" type="checkbox" value="Report 2">
+			        <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+			          Report 2
+			        </label>
+			      </div>
+			      <div class="govuk-checkboxes__item">
+			        <input class="govuk-checkboxes__input" id="organisation-3" name="report3" type="checkbox" value="Report 3">
+			        <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+			           Report 3
+			        </label>
+			      </div>
+			      <div class="govuk-checkboxes__item">
+			        <input class="govuk-checkboxes__input" id="organisation-4" name="report4" type="checkbox" value="Report 4">
+			        <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+			           Report 4
+			        </label>
+			      </div>
+			    </div>
+			  </fieldset>
+			</div>
+			<input class="govuk-checkboxes__input" id="organisation" name="reportsGenerated" type="hidden" value="true">
+
+
+
+
+
+	  </fieldset>
+	</div>
+        </div>
+          <button class="govuk-button" data-module="govuk-button">
+            Send selected notifications
+          </button>
+
+    <!--      <input type="hidden" name="cancelClaimCreation" value="false">-->
+        </form>
+      </div>
+    </div>
+    </div>
+{% endblock %}

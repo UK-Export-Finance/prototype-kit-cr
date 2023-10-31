@@ -250,7 +250,7 @@ router.post(version +'/2-examination/1--principal-claim-amount/4-insured-percent
 		req.session.data.partialPaymentAmount = parseInt(req.session.data.partialPaymentAmount).toFixed(2)
 		req.session.data.insuredAmount = parseInt(req.session.data.insuredAmount).toFixed(2)
 
-		req.session.data.totalPrincipalClaimedAmount = (req.session.data.principalAmount - req.session.data.partialPaymentAmount) * req.session.data.insuredAmount
+		req.session.data.totalPrincipalClaimedAmount = ((req.session.data.principalAmount - req.session.data.partialPaymentAmount) /100) * req.session.data.insuredAmount
 		req.session.data.totalPrincipalClaimedAmount = req.session.data.totalPrincipalClaimedAmount.toFixed(2)
 		req.session.data.totalPrincipalClaimedAmount = '£'+ req.session.data.totalPrincipalClaimedAmount
 

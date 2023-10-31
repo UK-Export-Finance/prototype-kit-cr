@@ -505,7 +505,7 @@ Claims and recoveries
                 Amount due
                 </dt>
                 <dd class="govuk-summary-list__value">
-                £{{data.grossClaimedAmount or '1000'}}
+                {{data.totalPrincipalClaimedAmount or '1000'}}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -548,7 +548,7 @@ Claims and recoveries
       <dd class="govuk-summary-list__value">
 
         {% if data.totalAmount %}
-          £{{data.totalAmount}}
+          £{{data.totalPrincipalClaimedAmount}}
 
       </dd>
         <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/2--contractual-interest-amount/1-days-in-year">Change details</a>
@@ -579,10 +579,10 @@ Claims and recoveries
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-            Amount due
+            Amount due2
             </dt>
             <dd class="govuk-summary-list__value">
-            £{{data.grossClaimedAmount or '1000'}}
+            £{{data.totalPrincipalClaimedAmount or '1000'}}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -630,7 +630,7 @@ Claims and recoveries
           £{{data.totalAmount}}
 
       </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="#">Change details</a>
+        <dd class="govuk-summary-list__value" style="text-align:right;">Change details
       </dd>
     </div>
   </dl>
@@ -681,7 +681,7 @@ Claims and recoveries
       </details>
 
       {% else %}
-      <a class="" href="#">Add details</a>
+      Add details
         {% endif %}
     </div>
   </dl>
@@ -705,7 +705,7 @@ Claims and recoveries
           £250
 
       </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="#">Change details</a>
+        <dd class="govuk-summary-list__value" style="text-align:right;">Change details
       </dd>
     </div>
   </dl>
@@ -756,7 +756,7 @@ Claims and recoveries
       </details>
 
       {% else %}
-      <a class="" href="#">Add details</a>
+    Add details
 
         {% endif %}
     </div>

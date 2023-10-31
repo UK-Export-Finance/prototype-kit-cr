@@ -546,7 +546,7 @@ res.redirect(version +'/2-examination/6--delay-interest-on-interest/5-interest-r
 });
 router.post(version +'/2-examination/6--delay-interest-on-interest/5-interest-rate-margin', function(req, res) {
 	{
-		req.session.data.delayPrincipaltotalAmount = '960'
+		req.session.data.delayPrincipaltotalAmount = '60'
 res.redirect(version +'/2-examination/6--delay-interest-on-interest/6-check-answers')
 	}
 });
@@ -592,7 +592,7 @@ res.redirect(version +'/2-examination/6--delay-interest-on-interest/5-interest-r
 });
 router.post(version +'/2-examination/6--delay-interest-on-interest/5-interest-rate-margin-2', function(req, res) {
 	{
-		req.session.data.delayPrincipaltotalAmount = '960'
+		req.session.data.delayPrincipaltotalAmount = '60'
 res.redirect(version +'/2-examination/6--delay-interest-on-interest/6-check-answers-2')
 	}
 });
@@ -637,7 +637,7 @@ res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/5-i
 });
 router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin', function(req, res) {
 	{
-		req.session.data.delayPrincipaltotalAmount = '960'
+		req.session.data.delayPrincipaltotalAmount = '60'
 res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers')
 	}
 });
@@ -682,7 +682,7 @@ res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/5-i
 });
 router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin-2', function(req, res) {
 	{
-		req.session.data.delayPrincipaltotalAmount = '960'
+		req.session.data.delayPrincipaltotalAmount = '60'
 res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers-2')
 	}
 });

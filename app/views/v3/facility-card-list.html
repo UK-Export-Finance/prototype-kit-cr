@@ -505,7 +505,7 @@ Claims and recoveries
                 Amount due
                 </dt>
                 <dd class="govuk-summary-list__value">
-                £{{data.grossClaimedAmount or '1000'}}
+                {{data.totalPrincipalClaimedAmount or '1000'}}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -571,18 +571,18 @@ Claims and recoveries
         <div class="govuk-details__text">
           <div class="govuk-summary-list__row" >
             <dt class="govuk-summary-list__key" style="width:80%;">
-            Installment
+            	Total
             </dt>
             <dd class="govuk-summary-list__value">
-            {{data.installmentNumber}}
+          £{{data.totalAmount or '100'}}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-            Amount due
+            Days in the year
             </dt>
             <dd class="govuk-summary-list__value">
-            £{{data.grossClaimedAmount or '1000'}}
+          {{data.daysInAYear or '365'}} days
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -595,15 +595,66 @@ Claims and recoveries
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Insured percentage
+              Interest start date
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data.totalAmount or '0'}}%
+              {{data.principalInterestPeriodStartDate or '01 October 2023'}}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Interest end date
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{data.principalInterestPeriodEndDate or '06 January 2024'}}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Interest period days
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{data.interestPeriod or '90'}} days
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Principal balance outstanding
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £{{data.principalBalance or '0'}}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              	Reference interest rate
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{data.referenceInterestRate or '0'}}%
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Interest rate margin
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{data.interestRateMargin or '0'}}%
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Partial payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+            £{{data.partialInterestPaymentAmount or '0'}}
             </dd>
           </div>
         </div>
       </details>
 
+
+
+Interest rate margin
       {% else %}
       <a class="" href="2-examination/2--contractual-interest-amount/1-days-in-year">Add details</a>
         {% endif %}
@@ -627,10 +678,10 @@ Claims and recoveries
       <dd class="govuk-summary-list__value">
 
         {% if data.totalAmount %}
-          £{{data.totalAmount}}
+        £0
 
       </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="#">Change details</a>
+        <dd class="govuk-summary-list__value" style="text-align:right;">Change details
       </dd>
     </div>
   </dl>
@@ -681,7 +732,7 @@ Claims and recoveries
       </details>
 
       {% else %}
-      <a class="" href="#">Add details</a>
+      Add details
         {% endif %}
     </div>
   </dl>
@@ -702,10 +753,10 @@ Claims and recoveries
       <dd class="govuk-summary-list__value">
 
         {% if data.totalAmount %}
-          £250
+            £0
 
       </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="#">Change details</a>
+        <dd class="govuk-summary-list__value" style="text-align:right;">Change details
       </dd>
     </div>
   </dl>
@@ -756,7 +807,7 @@ Claims and recoveries
       </details>
 
       {% else %}
-      <a class="" href="#">Add details</a>
+    Add details
 
         {% endif %}
     </div>
@@ -785,11 +836,11 @@ Claims and recoveries
 
         {% if data.delayInterestPrincipalName %}
         <br /> <br />
-          £90
+        {{data.delayPrincipaltotalAmount or £90}}
         {% endif %}
         {% if data.delayInterestPrincipalName2 %}
         <br /> <br />
-          £975
+        {{data.delayPrincipaltotalAmount or £90}}
         {% endif %}
 
     {% if data.delayInterestPrincipalName %}
@@ -822,7 +873,7 @@ Claims and recoveries
             Amount
             </dt>
             <dd class="govuk-summary-list__value">
-           £{{data.delayPrincipaltotalAmount or '1000'}}
+           £{{data.delayPrincipaltotalAmount or '100'}}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -859,7 +910,7 @@ Claims and recoveries
             Amount
             </dt>
             <dd class="govuk-summary-list__value">
-           £{{data.delayPrincipaltotalAmount2 or '800'}}
+           £{{data.delayPrincipaltotalAmount or '80'}}
             </dd>
           </div>
           <div class="govuk-summary-list__row">

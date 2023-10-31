@@ -39,7 +39,7 @@
 						{% if (data.test) %}
 						<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="test" value="{{ data.test }}"  type="text" inputmode="numeric">
 						{% else %}
-	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.deferredPrincipalStartDay2 }}" name="deferredPrincipalStartDay2" type="text" inputmode="numeric">
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.delayInterstPrincipalEndDay2 }}" name="delayInterstPrincipalEndDay2" type="text" inputmode="numeric">
 						{% endif %}
 				  </div>
 	      </div>
@@ -48,7 +48,7 @@
 	          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
 	            Month
 	          </label>
-	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="" name="deferredPrincipalStartMonth2" type="text" inputmode="numeric">
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="{{ data.delayInterstPrincipalEndMonth2 }}" name="delayInterstPrincipalEndMonth2" type="text" inputmode="numeric">
 	        </div>
 	      </div>
 	      <div class="govuk-date-input__item">
@@ -56,7 +56,7 @@
 	          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
 	            Year
 	          </label>
-	          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.deferredPrincipalStartYear2 }}" name="deferredPrincipalStartYear2" type="text" inputmode="numeric">
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.delayInterstPrincipalEndYear2 }}" name="delayInterstPrincipalEndYear2" type="text" inputmode="numeric">
 	        </div>
 	      </div>
 	    </div>

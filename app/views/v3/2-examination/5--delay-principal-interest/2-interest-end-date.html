@@ -36,11 +36,7 @@
 	          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
 	            Day
 	          </label>
-						{% if (data.test) %}
-						<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="test" value="{{ data.test }}"  type="text" inputmode="numeric">
-						{% else %}
-	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.defaultDay }}" name="test" type="text" inputmode="numeric">
-						{% endif %}
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.delayInterstPrincipalEndDay }}" name="delayInterstPrincipalEndDay" type="text" inputmode="numeric">
 				  </div>
 	      </div>
 	      <div class="govuk-date-input__item">
@@ -48,7 +44,7 @@
 	          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
 	            Month
 	          </label>
-	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="" name="deferredPrincipalStartMonth" type="text" inputmode="numeric">
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="{{ data.delayInterstPrincipalEndMonth }}"  name="delayInterstPrincipalEndMonth" type="text" inputmode="numeric">
 	        </div>
 	      </div>
 	      <div class="govuk-date-input__item">
@@ -56,7 +52,7 @@
 	          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
 	            Year
 	          </label>
-	          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.deferredPrincipalStartYear }}" name="deferredPrincipalStartYear" type="text" inputmode="numeric">
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.delayInterstPrincipalEndYear }}" name="delayInterstPrincipalEndYear" type="text" inputmode="numeric">
 	        </div>
 	      </div>
 	    </div>

@@ -35,7 +35,7 @@
 						<strong>	{{data.delayInterestPrincipalName or 'Principal 1'}}</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="/2-examination/5-calculate-delay-principal-interest/1-interest-start-date">
+							<a class="govuk-link" href="0-interest-name">Change
 								<span class="govuk-visually-hidden">Partial Payment Amount</span>
 							</a>
 						</dd>
@@ -45,10 +45,10 @@
 								Total principal delay interest amount
 						</dt>
 						<dd class="govuk-summary-list__value">
-						<strong>	£{{data.delayPrincipaltotalAmount or '1000'}}</strong>
+						<strong>	£{{data.delayPrincipaltotalAmount or '100'}}</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="/2-examination/5-calculate-delay-principal-interest/0-interest-name">Change
+
 								<span class="govuk-visually-hidden">Partial Payment Amount</span>
 							</a>
 						</dd>
@@ -60,7 +60,7 @@
 							Interest start date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{data.principalInterestPeriodStartDate or '01 October 2023'}}
+							{{data.delayInterstPrincipalStartDate or '01 October 2023'}}
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="1-calculate-principal-claim-amount/2-amount">
@@ -73,7 +73,7 @@
 							Interest end date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{data.principalInterestPeriodEndDate or '06 January 2024'}}
+							{{data.delayInterstPrincipalEndDate or '06 January 2024'}}
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="1-calculate-principal-claim-amount/2-amount">

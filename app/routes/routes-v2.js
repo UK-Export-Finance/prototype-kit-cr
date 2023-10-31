@@ -340,6 +340,8 @@ res.redirect(version +'/facility-card-list')
 
 
 
+
+
 //Question 5 - Principal delay interest
 router.post(version +'/2-examination/5--delay-principal-interest/0-interest-name', function(req, res) {
 	{
@@ -370,7 +372,87 @@ res.redirect(version +'/2-examination/5--delay-principal-interest/5-interest-rat
 });
 router.post(version +'/2-examination/5--delay-principal-interest/5-interest-rate-margin', function(req, res) {
 	{
-		req.session.data.delayPrincipaltotalAmount = '960'
+		req.session.data.delayPrincipaltotalAmount = '60'
+
+		if (req.session.data.delayInterstPrincipalStartMonth == '1') {
+			req.session.data.delayInterstPrincipalStartMonthAsText= 'January'
+		}
+		if (req.session.data.delayInterstPrincipalStartMonth == '2') {
+			req.session.data.delayInterstPrincipalStartMonthAsText= 'February'
+		}
+		if (req.session.data.delayInterstPrincipalStartMonth == '3') {
+			req.session.data.delayInterstPrincipalStartMonthAsText= 'March'
+		}
+		if (req.session.data.delayInterstPrincipalStartMonth == '4') {
+			req.session.data.delayInterstPrincipalStartMonthAsText= 'April'
+		}
+		if (req.session.data.delayInterstPrincipalStartMonth == '5') {
+			req.session.data.delayInterstPrincipalStartMonthAsText= 'May'
+		}
+		if (req.session.data.delayInterstPrincipalStartMonth == '6') {
+			req.session.data.delayInterstPrincipalStartMonthAsText= 'June'
+		}
+		if (req.session.data.delayInterstPrincipalStartMonth == '7') {
+			req.session.data.delayInterstPrincipalStartMonthAsText= 'July'
+		}
+		if (req.session.data.delayInterstPrincipalStartMonth == '8') {
+			req.session.data.delayInterstPrincipalStartMonthAsText= 'August'
+		}
+		if (req.session.data.delayInterstPrincipalStartMonth == '9') {
+			req.session.data.delayInterstPrincipalStartMonthAsText= 'September'
+		}
+		if (req.session.data.delayInterstPrincipalStartMonth == '10') {
+			req.session.data.delayInterstPrincipalStartMonthAsText= 'October'
+		}
+		if (req.session.data.delayInterstPrincipalStartMonth == '11') {
+			req.session.data.delayInterstPrincipalStartMonthAsText= 'November'
+		}
+		if (req.session.data.delayInterstPrincipalStartMonth == '12') {
+			req.session.data.delayInterstPrincipalStartMonthAsText= 'December'
+		}
+
+
+
+
+		if (req.session.data.delayInterstPrincipalEndMonth == '1') {
+			req.session.data.delayInterstPrincipalEndMonthAsText= 'January'
+		}
+		if (req.session.data.delayInterstPrincipalEndMonth == '2') {
+			req.session.data.delayInterstPrincipalEndMonthAsText= 'February'
+		}
+		if (req.session.data.delayInterstPrincipalEndMonth == '3') {
+			req.session.data.delayInterstPrincipalEndMonthAsText= 'March'
+		}
+		if (req.session.data.delayInterstPrincipalEndMonth == '4') {
+			req.session.data.delayInterstPrincipalEndMonthAsText= 'April'
+		}
+		if (req.session.data.delayInterstPrincipalEndMonth == '5') {
+			req.session.data.delayInterstPrincipalEndMonthAsText= 'May'
+		}
+		if (req.session.data.delayInterstPrincipalEndMonth == '6') {
+			req.session.data.delayInterstPrincipalEndMonthAsText= 'June'
+		}
+		if (req.session.data.delayInterstPrincipalEndMonth == '7') {
+			req.session.data.delayInterstPrincipalEndMonthAsText= 'July'
+		}
+		if (req.session.data.delayInterstPrincipalEndMonth == '8') {
+			req.session.data.delayInterstPrincipalEndMonthAsText= 'August'
+		}
+		if (req.session.data.delayInterstPrincipalEndMonth == '9') {
+			req.session.data.delayInterstPrincipalEndMonthAsText= 'September'
+		}
+		if (req.session.data.delayInterstPrincipalEndMonth == '10') {
+			req.session.data.delayInterstPrincipalEndMonthAsText= 'October'
+		}
+		if (req.session.data.delayInterstPrincipalEndMonth == '11') {
+			req.session.data.delayInterstPrincipalEndMonthAsText= 'November'
+		}
+		if (req.session.data.delayInterstPrincipalEndMonth == '12') {
+			req.session.data.delayInterstPrincipalEndMonthAsText= 'December'
+		}
+		req.session.data.delayInterstPrincipalEndDate= req.session.data.delayInterstPrincipalEndDay + ' ' + req.session.data.delayInterstPrincipalEndMonthAsText + ' ' + req.session.data.delayInterstPrincipalEndYear
+		req.session.data.delayInterstPrincipalStartDate= req.session.data.delayInterstPrincipalStartDay + ' ' + req.session.data.delayInterstPrincipalStartMonthAsText + ' ' + req.session.data.delayInterstPrincipalStartYear
+
 res.redirect(version +'/2-examination/5--delay-principal-interest/6-check-answers')
 	}
 });
@@ -416,7 +498,7 @@ res.redirect(version +'/2-examination/5--delay-principal-interest/5-interest-rat
 });
 router.post(version +'/2-examination/5--delay-principal-interest/5-interest-rate-margin-2', function(req, res) {
 	{
-		req.session.data.delayPrincipaltotalAmount = '960'
+		req.session.data.delayPrincipaltotalAmount = '60'
 res.redirect(version +'/2-examination/5--delay-principal-interest/6-check-answers-2')
 	}
 });
@@ -430,6 +512,10 @@ else{
 		}
 	}
 });
+
+
+
+
 //Question 6 - interest on  interest
 router.post(version +'/2-examination/6--delay-interest-on-interest/0-interest-name', function(req, res) {
 	{

@@ -119,8 +119,6 @@ router.post(version +'/1-pre-examination/date-of-default', function(req, res) {
 		req.session.data.claimDueDate = req.session.data.claimDueDate + req.session.data.defaultYear
 		}
 
-
-
 			res.redirect(version +'/facility-card-list')
 	}
 });
@@ -226,43 +224,21 @@ router.post(version +'/1-pre-examination/reports', function(req, res) {
 //Part 2 examinsation
 //Part 2 examinsation
 
-router.post(version +'/2-examination/1--principal-claim-amount/1-installment', function(req, res) {
-	{
-			res.redirect(version +'/2-examination/1--principal-claim-amount/2-amount')
-	}
-});
-
-
-router.post(version +'/2-examination/1--principal-claim-amount/2-amount', function(req, res) {
-	{
-			res.redirect(version +'/2-examination/1--principal-claim-amount/3-partial')
-	}
-});
-router.post(version +'/2-examination/1--principal-claim-amount/3-partial', function(req, res) {
-	{
-			res.redirect(version +'/2-examination/1--principal-claim-amount/4-insured-percentage')
-	}
-});
-
-router.post(version +'/2-examination/1--principal-claim-amount/4-insured-percentage', function(req, res) {
+router.post(version +'/2-examination/1--principal-claim-amount/1', function(req, res) {
 	{
 		req.session.data.principalAmount = parseInt(req.session.data.principalAmount).toFixed(2)
 		req.session.data.partialPaymentAmount = parseInt(req.session.data.partialPaymentAmount).toFixed(2)
 		req.session.data.insuredAmount = parseInt(req.session.data.insuredAmount).toFixed(2)
 
-		req.session.data.totalPrincipalClaimedAmount = ((req.session.data.principalAmount - req.session.data.partialPaymentAmount) /100) * req.session.data.insuredAmount
+		req.session.data.totalPrincipalClaimedAmount = ((req.session.data.principalAmount  /100) * req.session.data.insuredAmount) - req.session.data.partialPaymentAmount
 		req.session.data.totalPrincipalClaimedAmount = req.session.data.totalPrincipalClaimedAmount.toFixed(2)
 		req.session.data.totalPrincipalClaimedAmount = '£'+ req.session.data.totalPrincipalClaimedAmount
 
-			res.redirect(version +'/2-examination/1--principal-claim-amount/5-principal-claim-calculation')
+		res.redirect(version +'/facility-card-list')
 	}
 });
 
-router.post(version +'/2-examination/1--principal-claim-amount/5-principal-claim-calculation', function(req, res) {
-	{
-					res.redirect(version +'/facility-card-list')
-	}
-});
+
 
 
 router.post(version +'/2-examination/2--contractual-interest-amount/1-days-in-year', function(req, res) {
@@ -546,7 +522,7 @@ res.redirect(version +'/2-examination/6--delay-interest-on-interest/5-interest-r
 });
 router.post(version +'/2-examination/6--delay-interest-on-interest/5-interest-rate-margin', function(req, res) {
 	{
-		req.session.data.delayPrincipaltotalAmount = '60'
+		req.session.data.delayPrincipaltotalAmount = '960'
 res.redirect(version +'/2-examination/6--delay-interest-on-interest/6-check-answers')
 	}
 });
@@ -592,7 +568,7 @@ res.redirect(version +'/2-examination/6--delay-interest-on-interest/5-interest-r
 });
 router.post(version +'/2-examination/6--delay-interest-on-interest/5-interest-rate-margin-2', function(req, res) {
 	{
-		req.session.data.delayPrincipaltotalAmount = '60'
+		req.session.data.delayPrincipaltotalAmount = '960'
 res.redirect(version +'/2-examination/6--delay-interest-on-interest/6-check-answers-2')
 	}
 });
@@ -637,7 +613,7 @@ res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/5-i
 });
 router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin', function(req, res) {
 	{
-		req.session.data.delayPrincipaltotalAmount = '60'
+		req.session.data.delayPrincipaltotalAmount = '960'
 res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers')
 	}
 });
@@ -682,7 +658,7 @@ res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/5-i
 });
 router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin-2', function(req, res) {
 	{
-		req.session.data.delayPrincipaltotalAmount = '60'
+		req.session.data.delayPrincipaltotalAmount = '960'
 res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers-2')
 	}
 });

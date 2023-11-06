@@ -246,13 +246,17 @@ router.post(version +'/2-examination/1--principal-claim-amount/3-partial', funct
 
 router.post(version +'/2-examination/1--principal-claim-amount/4-insured-percentage', function(req, res) {
 	{
+
 		req.session.data.principalAmount = parseInt(req.session.data.principalAmount).toFixed(2)
 		req.session.data.partialPaymentAmount = parseInt(req.session.data.partialPaymentAmount).toFixed(2)
 		req.session.data.insuredAmount = parseInt(req.session.data.insuredAmount).toFixed(2)
 
-		req.session.data.totalPrincipalClaimedAmount = ((req.session.data.principalAmount - req.session.data.partialPaymentAmount) /100) * req.session.data.insuredAmount
+		req.session.data.totalPrincipalClaimedAmount = ((req.session.data.principalAmount  /100) * req.session.data.insuredAmount) - req.session.data.partialPaymentAmount
 		req.session.data.totalPrincipalClaimedAmount = req.session.data.totalPrincipalClaimedAmount.toFixed(2)
 		req.session.data.totalPrincipalClaimedAmount = '£'+ req.session.data.totalPrincipalClaimedAmount
+
+
+
 
 			res.redirect(version +'/2-examination/1--principal-claim-amount/5-principal-claim-calculation')
 	}

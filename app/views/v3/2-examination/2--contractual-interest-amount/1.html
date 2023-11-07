@@ -1,0 +1,229 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<nav class="govuk-!-display-none-print">
+	{{govukBackLink({
+	  text: "Back",
+	  "href": "javascript: window.history.go(-1)"
+	  })}}
+	  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+	  </a>
+	</nav>
+{% endblock %}
+	<div class="govuk-grid-row">
+	  <div class="govuk-grid-column-two-thirds">
+		  <form method="post">
+				<h1 class="govuk-heading-xl govuk-!-margin-bottom-4" >
+					 Contractual interest amount
+				</h1>
+				<div class="govuk-form-group">
+				  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+				    <h1 class="govuk-fieldset__heading">
+				  Select the amount of days in the year for contractual interest purposes
+				    </h1>
+				  </legend>
+				  <div class="govuk-date-input" id="passport-issued">
+				    <div class="govuk-date-input__item">
+				      <div class="govuk-form-group">
+								<div class="govuk-radios" data-module="govuk-radios">
+									<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="changed-name" name="daysInAYear" {% if data.daysInAYear=='360'%} checked='checked' {% endif %} type="radio" value="360">
+									<label class="govuk-label govuk-radios__label" for="changed-name">
+										360 days (GBP)
+									</label>
+								</div>
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="changed-name-2" name="daysInAYear" {% if data.daysInAYear=='365'%} checked='checked' {% endif %} type="radio" value="365">
+									<label class="govuk-label govuk-radios__label" for="changed-name-2">
+										365 days (All other currencies)
+									</label>
+									</div>
+								</div>
+				      	</div>
+				    </div>
+				  </div>
+					<br /><br />
+					<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+					 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+						 <h1 class="govuk-fieldset__heading">
+								Enter the reference interest rate
+						 </h1>
+					 </legend>
+						 <div class="govuk-date-input" id="passport-issued">
+							 <div class="govuk-date-input__item">
+								<div class="govuk-form-group">
+									<label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+										Reference interest rate
+									</label>
+										<div class="govuk-input__wrapper">
+										<input class="govuk-input govuk-input--width-3" id="passport-issued-month" name="referenceInterestRate" type="number" spellcheck="false" aria-describedby="currency-hint" value="{{ data.referenceInterestRate }}">
+											<div class="govuk-input__prefix" aria-hidden="true" style="border-right:2px solid black; margin-left:-2px;">%
+											</div>
+										</div>
+									</div>
+							</div>
+						</div>
+					</fieldset>
+
+					<br /><br />
+					<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+					 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+						 <h1 class="govuk-fieldset__heading">
+								Enter the interest rate margin
+						 </h1>
+					 </legend>
+						 <div class="govuk-date-input" id="passport-issued">
+							 <div class="govuk-date-input__item">
+								<div class="govuk-form-group">
+									<label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+									 Interest rate margin
+									</label>
+
+									<div class="govuk-input__wrapper">
+									<input class="govuk-input govuk-input--width-3" id="passport-issued-month" name="interestRateMargin" type="number" spellcheck="false" aria-describedby="currency-hint" value="{{ data.interestRateMargin }}">
+										<div class="govuk-input__prefix" aria-hidden="true" style="border-right:2px solid black; margin-left:-2px;">%
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+
+					<br /><br />
+					<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+					 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+						 <h1 class="govuk-fieldset__heading">
+								 Confirm the interest period start date
+						 </h1>
+					 </legend>
+					 <div id="passport-issued-hint" class="govuk-hint">
+						 For example, 27 11 2023
+					 </div>
+					 <div class="govuk-date-input" id="passport-issued">
+						 <div class="govuk-date-input__item">
+							 <div class="govuk-form-group">
+								 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+									 Day
+								 </label>
+								 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.deferredPrincipalStartDay }}" name="deferredPrincipalStartDay" type="text" inputmode="numeric">
+							 </div>
+						 </div>
+						 <div class="govuk-date-input__item">
+							 <div class="govuk-form-group">
+								 <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+									 Month
+								 </label>
+								 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="{{ data.deferredPrincipalStartMonth }}" name="deferredPrincipalStartMonth" type="text" inputmode="numeric">
+							 </div>
+						 </div>
+						 <div class="govuk-date-input__item">
+							 <div class="govuk-form-group">
+								 <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+									 Year
+								 </label>
+								 <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.deferredPrincipalStartYear }}" name="deferredPrincipalStartYear" type="text" inputmode="numeric">
+							 </div>
+						 </div>
+					 </div>
+					</fieldset>
+
+
+
+					<br /><br />
+					<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+				 	 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+				 		 <h1 class="govuk-fieldset__heading">
+				 Confirm the interest period end date
+				 		 </h1>
+				 	 </legend>
+					 <div id="passport-issued-hint" class="govuk-hint">
+						 For example, 27 11 2023
+						 </div>
+					 <div class="govuk-date-input" id="passport-issued">
+						 <div class="govuk-date-input__item">
+							 <div class="govuk-form-group">
+								 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+									 Day
+								 </label>
+								 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.deferredPrincipalEndDay }}" name="deferredPrincipalEndDay" type="text" inputmode="numeric">
+							 </div>
+						 </div>
+						 <div class="govuk-date-input__item">
+							 <div class="govuk-form-group">
+								 <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+									 Month
+								 </label>
+								 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="{{data.deferredPrincipalEndMonth}}" name="deferredPrincipalEndMonth" type="text" inputmode="numeric">
+							 </div>
+						 </div>
+						 <div class="govuk-date-input__item">
+							 <div class="govuk-form-group">
+								 <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+									 Year
+								 </label>
+								 <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.deferredPrincipalEndYear }}" name="deferredPrincipalEndYear" type="text" inputmode="numeric">
+							 </div>
+						 </div>
+					 </div>
+				  </fieldset>
+
+					<br /><br />
+					<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+				 	 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+				 		 <h1 class="govuk-fieldset__heading">
+							 	Enter principal balance outstanding during the interest period
+				 		 </h1>
+				 	 </legend>
+						 <div class="govuk-date-input" id="passport-issued">
+	 		      <div class="govuk-date-input__item">
+	 		        <div class="govuk-form-group">
+	 		          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+	 		            Principal balance outstanding
+	 		          </label>
+	 							<div class="govuk-input__wrapper">
+	 									<div class="govuk-input__prefix" aria-hidden="true">£</div>
+	 								<input class="govuk-input govuk-input--width-10" id="passport-issued-month" name="principalBalance" type="text" spellcheck="false" aria-describedby="currency-hint" value="{{ data.principalBalance }}">
+	 					      </div>
+	 					    </div>
+	 						</div>
+	 					</div>
+				  </fieldset>
+
+
+
+					<br /><br />
+					<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+					 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+						 <h1 class="govuk-fieldset__heading">
+							 Enter any partial contractual interest payment (Optional)
+						 </h1>
+					 </legend>
+						 <div class="govuk-date-input" id="passport-issued">
+							 <div class="govuk-date-input__item">
+	 			        <div class="govuk-form-group">
+	 			          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+	 			            Amount
+	 			          </label>
+	 								<div class="govuk-input__wrapper">
+	 										<div class="govuk-input__prefix" aria-hidden="true">£</div>
+	 										<input class="govuk-input govuk-input--width-10" id="passport-issued-month" name="partialInterestPaymentAmount" type="text" spellcheck="false" aria-describedby="currency-hint" value="{{ data.partialInterestPaymentAmount }}">
+	 									</div>
+	 			        </div>
+	 			      </div>
+						</div>
+					</fieldset>
+
+
+
+				</div>
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
+		 </form>
+		</div>
+	</div>
+
+</div>
+{% endblock %}

@@ -35,7 +35,7 @@ Claims and recoveries
           Claim ID
         </dt>
         <dd class="govuk-summary-list__value">
-          C1267615
+          12341037-CL1
         </dd>
       </div>
   <div class="govuk-summary-list__row">
@@ -666,162 +666,13 @@ Interest rate margin
 
 <!--2.2 endhere-->
 
-<!--2.3 start here-->
+
+<!--Start 2.3-->
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" style="width:400px;">
-
+      <dt class="govuk-summary-list__key" style="width:400px;">
 
         {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.3</div> {% endif %}
-         Deferred principal amount
-      </dt>
-      <dd class="govuk-summary-list__value">
-
-        {% if data.totalAmount %}
-        £0
-
-      </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;">Change details
-      </dd>
-    </div>
-  </dl>
-
-
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row" style="border-bottom:1px solid grey;">
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            View breakdown
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <div class="govuk-summary-list__row" >
-            <dt class="govuk-summary-list__key" style="width:80%;">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-             Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-           Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Demo copy data
-            </dt>
-            <dd class="govuk-summary-list__value">
-            Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Value
-            </dd>
-          </div>
-        </div>
-      </details>
-
-      {% else %}
-      Add details
-        {% endif %}
-    </div>
-  </dl>
-
-
-
-
-<!--2.3 endhere-->
-
-<!--2.4 starthere-->
-<dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:400px;">
-
-        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.4</div> {% endif %}
-       Deferred contractual interest to due date
-      </dt>
-      <dd class="govuk-summary-list__value">
-
-        {% if data.totalAmount %}
-            £0
-
-      </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;">Change details
-      </dd>
-    </div>
-  </dl>
-
-
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row" style="border-bottom:1px solid grey;">
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            View breakdown
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:80%;">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-             Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-           Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Demo copy data
-            </dt>
-            <dd class="govuk-summary-list__value">
-            Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Value
-            </dd>
-          </div>
-        </div>
-      </details>
-
-      {% else %}
-    Add details
-
-        {% endif %}
-    </div>
-  </dl>
-
-
-<!--End 2.4-->
-
-<!--Start 2.5-->
-<dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:400px;">
-
-        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.5</div> {% endif %}
        Delay interest on principal
         {% if data.delayInterestPrincipalName %}
         <br /><br />
@@ -943,407 +794,15 @@ Interest rate margin
   </dl>
 
 
-<!--End 2.5-->
+<!--End 2.3-->
 
-<!--Start 2.6-->
+
+<!--Start 2.4 -->
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key" style="width:400px;">
 
-        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.6</div> {% endif %}
-       Delay interest on interest
-
-        {% if data.interestName %}
-        <br /><br />
-          {{ data.interestName }}
-          {% endif %}
-          {% if data.delayInterestPrincipalName2 %}
-          <br /><br />
-            {{ data.interestName2 }}
-            {% endif %}
-      </dt>
-      <dd class="govuk-summary-list__value">
-
-        {% if data.interestName %}
-        <br /> <br />
-          £90
-        {% endif %}
-        {% if data.interestName2 %}
-        <br /> <br />
-          £975
-        {% endif %}
-
-    {% if data.interestName %}
-      </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/6--delay-interest-on-interest/0-interest-name">Change details</a>
-      </dd>
-    </div>
-  </dl>
-
-
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row" style="border-bottom:1px solid grey;">
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            View breakdown
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <div class="govuk-summary-list__row" >
-            <dt class="govuk-summary-list__key" style="width:80%;">
-            Interest name
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{data.delayInterestPrincipalName or 'Interest 1'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Amount
-            </dt>
-            <dd class="govuk-summary-list__value">
-           £{{data.delayPrincipaltotalAmount or '85'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Demo copy data
-            </dt>
-            <dd class="govuk-summary-list__value">
-            Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Value
-            </dd>
-          </div>
-        </div>
-
-
-      {% if data.delayInterestPrincipalName2 %}
-        <div class="govuk-details__text">
-          <div class="govuk-summary-list__row" >
-            <dt class="govuk-summary-list__key"  style="width:80%;">
-            Interest name
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{data.interestName2 or 'Interest 2'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Amount
-            </dt>
-            <dd class="govuk-summary-list__value">
-           £{{data.delayPrincipaltotalAmount or '85'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Demo copy data
-            </dt>
-            <dd class="govuk-summary-list__value">
-            Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Value
-            </dd>
-          </div>
-        </div>
-        {% endif %}
-      </details>
-
-      {% else %}
-      <a class="" href="2-examination/6--delay-interest-on-interest/0-interest-name">Add details</a>
-
-        {% endif %}
-    </div>
-  </dl>
-
-
-<!--End 2.6-->
-
-
-
-
-
-<!--Start 2.7-->
-
-<dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:400px;">
-
-        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.7 </div>{% endif %}
-      Delay interest on principal deferred
-
-        {% if data.interestName %}
-        <br /><br />
-          {{ data.interestName }}
-          {% endif %}
-          {% if data.delayInterestPrincipalName2 %}
-          <br /><br />
-            {{ data.interestName2 }}
-            {% endif %}
-      </dt>
-      <dd class="govuk-summary-list__value">
-
-        {% if data.interestName %}
-        <br /> <br />
-          £66
-        {% endif %}
-        {% if data.interestName2 %}
-        <br /> <br />
-          £56
-        {% endif %}
-
-    {% if data.interestName %}
-      </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="#">Change details</a>
-      </dd>
-    </div>
-  </dl>
-
-
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row" style="border-bottom:1px solid grey;">
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            View breakdown
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <div class="govuk-summary-list__row" >
-            <dt class="govuk-summary-list__key"  style="width:80%;">
-            Interest name
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{data.delayInterestPrincipalName or 'Interest 1'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Amount
-            </dt>
-            <dd class="govuk-summary-list__value">
-           £{{data.delayPrincipaltotalAmount or '120'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Demo copy data
-            </dt>
-            <dd class="govuk-summary-list__value">
-            Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Value
-            </dd>
-          </div>
-        </div>
-
-
-      {% if data.delayInterestPrincipalName2 %}
-        <div class="govuk-details__text">
-          <div class="govuk-summary-list__row" >
-            <dt class="govuk-summary-list__key"  style="width:80%;">
-            Interest name
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{data.interestName2 or 'Interest 2'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Amount
-            </dt>
-            <dd class="govuk-summary-list__value">
-           £{{data.delayPrincipaltotalAmount or '87'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Demo copy data
-            </dt>
-            <dd class="govuk-summary-list__value">
-            Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Value
-            </dd>
-          </div>
-        </div>
-        {% endif %}
-      </details>
-
-      {% else %}
-      <a class="" href="#">Add details</a>
-
-        {% endif %}
-    </div>
-  </dl>
-
-<!--End 2.7 -->
-
-
-
-<!--Start 2.8 -->
-<dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:400px;">
-
-        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.8</div> {% endif %}
-
-         Delay interest on Interest deferred
-
-
-        {% if data.interestName %}
-        <br /><br />
-          {{ data.interestName }}
-          {% endif %}
-          {% if data.delayInterestPrincipalName2 %}
-          <br /><br />
-            {{ data.interestName2 }}
-            {% endif %}
-      </dt>
-      <dd class="govuk-summary-list__value">
-
-        {% if data.interestName %}
-        <br /> <br />
-          £160
-        {% endif %}
-        {% if data.interestName2 %}
-        <br /> <br />
-          £21
-        {% endif %}
-
-    {% if data.interestName %}
-      </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="#">Change details</a>
-      </dd>
-    </div>
-  </dl>
-
-
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row" style="border-bottom:1px solid grey;">
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            View breakdown
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <div class="govuk-summary-list__row" >
-            <dt class="govuk-summary-list__key"  style="width:80%;">
-            Interest name
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{data.delayInterestPrincipalName or 'Interest 1'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Amount
-            </dt>
-            <dd class="govuk-summary-list__value">
-           £{{data.delayPrincipaltotalAmount or '120'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Demo copy data
-            </dt>
-            <dd class="govuk-summary-list__value">
-            Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Value
-            </dd>
-          </div>
-        </div>
-
-
-      {% if data.delayInterestPrincipalName2 %}
-        <div class="govuk-details__text">
-          <div class="govuk-summary-list__row" >
-            <dt class="govuk-summary-list__key"  style="width:80%;">
-            Interest name
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{data.interestName2 or 'Interest 2'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Amount
-            </dt>
-            <dd class="govuk-summary-list__value">
-           £{{data.delayPrincipaltotalAmount or '89'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Demo copy data
-            </dt>
-            <dd class="govuk-summary-list__value">
-            Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Value
-            </dd>
-          </div>
-        </div>
-        {% endif %}
-      </details>
-
-      {% else %}
-      <a class="" href="#">Add details</a>
-
-        {% endif %}
-    </div>
-  </dl>
-
-
-<!--End 2.8 -->
-
-
-<!--Start 2.9 -->
-<dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:400px;">
-
-        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.9</div> {% endif %}
+        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.4</div> {% endif %}
 
          Delay interest on interest paid
 
@@ -1466,16 +925,16 @@ Interest rate margin
   </dl>
 
 
-<!--End 2.9 -->
+<!--End 2.4 -->
 
 
 
-<!--Start 2.10 -->
+<!--Start 2.5 -->
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key" style="width:400px;">
 
-        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.10</div> {% endif %}
+        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.5</div> {% endif %}
 
          Other amounts
 
@@ -1511,7 +970,7 @@ Interest rate margin
       {% endif %}
   </dl>
 
-  <!--End 2.10 -->
+  <!--End 2.5 -->
 
 
   </div>

@@ -461,7 +461,7 @@ Claims and recoveries
 
     <!--2.1-->
     <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row"   {% if data.totalPrincipalClaimedAmount %} {% else %} style="border-bottom:1px solid grey;" {% endif %}>
           <dt class="govuk-summary-list__key" style="width:400px;">
 
             {% if data.setupShowNumberList =='true' %}
@@ -540,7 +540,7 @@ Claims and recoveries
 <!--start 2.2 -->
 <!--here-->
 <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
+    <div class="govuk-summary-list__row"   {% if data.totalAmount %} {% else %} style="border-bottom:1px solid grey;" {% endif %}>
         <dt class="govuk-summary-list__key"  style="width:400px;">
         {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.2 </div>{% endif %}
         Contractural interest amount
@@ -652,9 +652,6 @@ Claims and recoveries
         </div>
       </details>
 
-
-
-Interest rate margin
       {% else %}
       <a class="" href="2-examination/2--contractual-interest-amount/1-days-in-year">Add details</a>
         {% endif %}
@@ -669,7 +666,7 @@ Interest rate margin
 
 <!--Start 2.3-->
 <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row" style="border-bottom:1px solid grey;">
       <dt class="govuk-summary-list__key" style="width:400px;">
 
         {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.3</div> {% endif %}
@@ -703,7 +700,7 @@ Interest rate margin
 
 
   <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row" style="border-bottom:1px solid grey;">
+    <div class="govuk-summary-list__row"   {% if (data.delayPrincipaltotalAmount)  %} {% else %} style="border-bottom:1px solid grey;" {% endif %}>
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -787,10 +784,7 @@ Interest rate margin
       {% else %}
       <a class="" href="2-examination/5--delay-principal-interest/0-interest-name">Add details</a>
         {% endif %}
-
-
     </div>
-
   </dl>
 
 
@@ -799,7 +793,7 @@ Interest rate margin
 
 <!--Start 2.4 -->
 <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
+  <div class="govuk-summary-list__row"   {% if data.interestName %} {% else %} style="border-bottom:1px solid grey;" {% endif %}>
       <dt class="govuk-summary-list__key" style="width:400px;">
 
         {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.4</div> {% endif %}
@@ -929,48 +923,21 @@ Interest rate margin
 
 
 
-<!--Start 2.5 -->
-<dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:400px;">
+<!--Start add buttons -->
+<br /><br />
+<div class="govuk-button-group">
+<button class="govuk-button" data-module="govuk-button" type="submit"  value="no" name="addAnother">
+  Add another calculation
+</button>
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="yes" name="addAnother">
+  Remove a calculation
+</button>
+</div>
 
-        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.5</div> {% endif %}
-
-         Other amounts
 
 
-        {% if data.otherAmounts %}
-        <br /><br />
-          {{ data.otherAmountsName }}
-          {% endif %}
-          {% if data.otherAmounts2 %}
-          <br /><br />
-            {{ data.otherAmounts2 }}
-            {% endif %}
-      </dt>
-      <dd class="govuk-summary-list__value">
 
-        {% if data.otherAmounts %}
-        <br /> <br />
-          £160
-        {% endif %}
-        {% if data.otherAmounts2 %}
-        <br /> <br />
-          £21
-        {% endif %}
-
-    {% if data.otherAmounts %}
-      </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/10--other-amounts/add-other-amount">Change details</a>
-      </dd>
-    </div>
-    {% else %}
-    <a class="" href="2-examination/10--other-amounts/add-other-amount">Add details</a>
-
-      {% endif %}
-  </dl>
-
-  <!--End 2.5 -->
+  <!--End add buttons -->
 
 
   </div>

@@ -666,7 +666,7 @@ Claims and recoveries
 
 <!--Start 2.3-->
 <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row" style="border-bottom:1px solid grey;">
+  <div class="govuk-summary-list__row"   {% if (data.delayPrincipaltotalAmount)  %} {% else %} style="border-bottom:1px solid grey;" {% endif %}>
       <dt class="govuk-summary-list__key" style="width:400px;">
 
         {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.3</div> {% endif %}
@@ -700,7 +700,7 @@ Claims and recoveries
 
 
   <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row"   {% if (data.delayPrincipaltotalAmount)  %} {% else %} style="border-bottom:1px solid grey;" {% endif %}>
+    <div class="govuk-summary-list__row"   {% if (data.delayPrincipaltotalAmount)  %} style="border-bottom:1px solid grey;" {% else %}  {% endif %}>
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">

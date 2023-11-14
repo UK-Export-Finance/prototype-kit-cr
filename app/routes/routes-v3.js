@@ -232,6 +232,8 @@ router.post(version +'/2-examination/1--principal-claim-amount/1', function(req,
 
 		req.session.data.totalPrincipalClaimedAmount = ((req.session.data.principalAmount  /100) * req.session.data.insuredAmount) - req.session.data.partialPaymentAmount
 		req.session.data.totalPrincipalClaimedAmount = req.session.data.totalPrincipalClaimedAmount.toFixed(2)
+		req.session.data.totalPrincipalClaimedAmountToUseInTotal = req.session.data.totalPrincipalClaimedAmount
+
 		req.session.data.totalPrincipalClaimedAmount = '£'+ req.session.data.totalPrincipalClaimedAmount
 
 		res.redirect(version +'/facility-card-list')
@@ -318,7 +320,7 @@ res.redirect(version +'/facility-card-list')
 
 
 
-//Question 5 - Principal delay interest
+//2.3 - Principal delay interest
 router.post(version +'/2-examination/5--delay-principal-interest/0-interest-name', function(req, res) {
 	{
 res.redirect(version +'/2-examination/5--delay-principal-interest/1-interest-start-date')
@@ -444,7 +446,11 @@ else{
 		}
 	}
 });
-//Question 5 - Principal delay interest
+
+
+
+
+//2.4 - Principal delay interest
 router.post(version +'/2-examination/5--delay-principal-interest/0-interest-name-2', function(req, res) {
 	{
 res.redirect(version +'/2-examination/5--delay-principal-interest/1-interest-start-date-2')
@@ -492,7 +498,7 @@ else{
 
 
 
-//Question 6 - interest on  interest
+//2.5 - interest on  interest
 router.post(version +'/2-examination/6--delay-interest-on-interest/0-interest-name', function(req, res) {
 	{
 res.redirect(version +'/2-examination/6--delay-interest-on-interest/1-interest-start-date')
@@ -523,6 +529,8 @@ res.redirect(version +'/2-examination/6--delay-interest-on-interest/5-interest-r
 router.post(version +'/2-examination/6--delay-interest-on-interest/5-interest-rate-margin', function(req, res) {
 	{
 		req.session.data.delayPrincipaltotalAmount = '960'
+		req.session.data.totalClaimAmount =  req.session.data.totalPrincipalClaimedAmountToUseInTotal + req.session.data.totalAmount + req.session.data.delayPrincipaltotalAmount
+
 res.redirect(version +'/2-examination/6--delay-interest-on-interest/6-check-answers')
 	}
 });
@@ -538,6 +546,9 @@ else{
 		}
 	}
 });
+
+
+
 //Question 5 - Principal delay interest
 router.post(version +'/2-examination/6--delay-interest-on-interest/0-interest-name-2', function(req, res) {
 	{
@@ -613,7 +624,7 @@ res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/5-i
 });
 router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin', function(req, res) {
 	{
-		req.session.data.delayPrincipaltotalAmount = '960'
+		//req.session.data.delayPrincipaltotalAmount = '960'
 res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers')
 	}
 });
@@ -658,7 +669,7 @@ res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/5-i
 });
 router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin-2', function(req, res) {
 	{
-		req.session.data.delayPrincipaltotalAmount = '960'
+		//req.session.data.delayPrincipaltotalAmount = '960'
 res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers-2')
 	}
 });

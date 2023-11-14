@@ -16,12 +16,12 @@
 	  <div class="govuk-grid-column-two-thirds">
 		  <form method="post">
 				<h1 class="govuk-heading-xl govuk-!-margin-bottom-4" >
-					 Contractual interest amount
+					 Principal claim amount
 				</h1>
 				<div class="govuk-form-group">
 				  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
 				    <h1 class="govuk-fieldset__heading">
-				  Select the amount of days in the year for contractual interest purposes
+				  Select the amount of days in the year for the principal claim
 				    </h1>
 				  </legend>
 				  <div class="govuk-date-input" id="passport-issued">
@@ -29,13 +29,13 @@
 				      <div class="govuk-form-group">
 								<div class="govuk-radios" data-module="govuk-radios">
 									<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="changed-name" name="daysInAYear" {% if data.daysInAYear=='360'%} checked='checked' {% endif %} type="radio" value="360">
+									<input class="govuk-radios__input" id="changed-name" name="daysInAYear2-1" {% if data.daysInAYear2-1=='360'%} checked='checked' {% endif %} type="radio" value="360">
 									<label class="govuk-label govuk-radios__label" for="changed-name">
 										360 days (GBP)
 									</label>
 								</div>
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="changed-name-2" name="daysInAYear" {% if data.daysInAYear=='365'%} checked='checked' {% endif %} type="radio" value="365">
+									<input class="govuk-radios__input" id="changed-name-2" name="daysInAYear2-1" {% if data.daysInAYear2-1=='365'%} checked='checked' {% endif %} type="radio" value="365">
 									<label class="govuk-label govuk-radios__label" for="changed-name-2">
 										365 days (All other currencies)
 									</label>

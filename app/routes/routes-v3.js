@@ -198,7 +198,7 @@ router.post(version +'/1-pre-examination/claim-amount', function(req, res) {
 
 router.post(version +'/1-pre-examination/notifications', function(req, res) {
 	{
-			res.redirect(version +'/1-pre-examination/notifications-confirm')
+			res.redirect(version +'/facility-card-list')
 	}
 });
 

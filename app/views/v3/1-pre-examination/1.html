@@ -22,33 +22,30 @@
 					<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
 					 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
 						 <h1 class="govuk-fieldset__heading">
-				 Is this a new or repeat claim?
+				 What is the claim status?
 						 </h1>
 					 </legend>
 					 <div class="govuk-radios" data-module="govuk-radios">
  						<div class="govuk-radios__item">
  						<input class="govuk-radios__input" id="changed-name" name="section1ExpectedRepeat" {% if data.section1ExpectedRepeat=='New claim'%} checked='checked' {% endif %} type="radio" value="New claim">
  						<label class="govuk-label govuk-radios__label" for="changed-name">
- 							New claim
+ 							A new claim
  						</label>
  					</div>
  					<div class="govuk-radios__item">
  						<input class="govuk-radios__input" id="changed-name-2" name="section1ExpectedRepeat" {% if data.section1ExpectedRepeat=='Repeat claim'%} checked='checked' {% endif %} type="radio" value="Repeat claim">
  						<label class="govuk-label govuk-radios__label" for="changed-name-2">
- 							Repeat claim
+ 							A repeat claim
  						</label>
  						</div>
  					</div>
 					</fieldset>
 						<br /><br />
 
-
-
-
 							<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
 							<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
 								<h1 class="govuk-fieldset__heading">
-					Have you been notified of this claim or is it expected?
+									What is the claim type?
 								</h1>
 							</legend>
 
@@ -56,13 +53,13 @@
 							<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="changed-name-3" name="section1ClaimNotification" {% if data.section1ClaimNotification=='Notified'%} checked='checked' {% endif %} type="radio" value="Notified">
 							<label class="govuk-label govuk-radios__label" for="changed-name-3">
-								Notified of the claim
+								Notified
 							</label>
 						</div>
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="changed-name-4" name="section1ClaimNotification" {% if data.section1ClaimNotification=='Expected'%} checked='checked' {% endif %} type="radio" value="Expected">
 							<label class="govuk-label govuk-radios__label" for="changed-name-4">
-								Expected to be a claim
+								Expected
 							</label>
 							</div>
 						</div>
@@ -78,7 +75,7 @@
 									</h1>
 								</legend>
 								<div id="passport-issued-hint" class="govuk-hint">
-									For example, 27 11 2023
+									For example, 27 11 2023. The claim due date is automatically calculated using this date
 								</div>
 								<div class="govuk-date-input" id="passport-issued">
 									<div class="govuk-date-input__item">
@@ -119,7 +116,7 @@
 									</h1>
 								</legend>
 								<div id="passport-issued-hint" class="govuk-hint">
-									This has been calculated using the date of default
+									This has been calculated using the date of the default
 								</div>
 								<div class="govuk-date-input" id="passport-issued">
 									<div class="govuk-date-input__item">

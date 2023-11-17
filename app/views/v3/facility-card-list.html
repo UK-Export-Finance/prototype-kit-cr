@@ -38,30 +38,7 @@ Claims and recoveries
           12341037-CL1
         </dd>
       </div>
-      <div class="govuk-summary-list__row" style="border-bottom:none;">
-        <dt class="govuk-summary-list__key" style="width:400px;">
-          Total Claim amount:
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Awaiting data entry
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row" style="border-bottom:none;">
-        <dt class="govuk-summary-list__key" style="width:400px;">
-          Claim due date:
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{data.section1ClaimDueDate or 'Awaiting data entry'}}
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row" style="border-bottom:none;">
-        <dt class="govuk-summary-list__key" style="width:400px;">
-          Default date:
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{data.section1DefaultDate or 'Awaiting data entry'}}
-        </dd>
-      </div>
+
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -153,7 +130,7 @@ Claims and recoveries
     <h2 class="govuk-summary-card__title">1. Claim pre-examination</h2>
     <ul class="govuk-summary-card__actions">
 
-      {% if data.claimNotificationorExpectedRepeat and data.claimNotificationorExpectedRepeat!=='unanswered' %}
+      {% if data.section1DefaultDate %}
 
         {% if data.notificationsSent %}
         <span style="margin-right:50px;">
@@ -194,20 +171,68 @@ Claims and recoveries
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key" style="width:400px;">
-          {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">1.1</div> {% endif %}
+        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">1.1</div> {% endif %}
         Claim details
+        {% if data.section1ClaimedAmount %}
+        <div class="govuk-inset-text" style="margin-top:5px; font-weight:bold; ">
+
+          {% if data.section1ExpectedRepeat%}
+            {{'New or repeat claim'}}
+          {% endif %}
+
+          {% if data.section1ClaimNotification%}
+             <br /> {{'Notified or expected'}}
+          {% endif %}
+
+          {% if data.section1DefaultDate %}
+            <br /> {{'Default date'}}
+           {% endif %}
+
+           {% if data.section1ClaimDueDate%}
+              <br /> {{'Claim due date'}}
+           {% endif %}
+
+          {% if data.section1ClaimedAmount %}
+          <br />  {{'Claim amount'}}
+          {% endif %}
+
+           {% if data.section1AmountAtRisk%}
+              <br /> {{'Amount at risk'}}
+           {% endif %}
+        </div>
+         {% endif %}
         </dt>
         <dd class="govuk-summary-list__value">
+          <br /><br />
 
-            {% if data.claimNotificationorExpectedRepeat =='New claim' or data.claimNotificationorExpectedRepeat =='Repeat claim'%}
-            {{data.claimNotificationorExpectedRepeat}}
+          {% if data.section1ExpectedRepeat%}
+            {{data.section1ExpectedRepeat or 'Awaiting entry'}}<br />
+          {% endif %}
 
+          {% if data.section1ClaimNotification%}
+            {{data.section1ClaimNotification or 'Awaiting entry'}}<br />
+          {% endif %}
+
+          {% if data.section1DefaultDate %}
+           {{data.section1DefaultDate or 'Awaiting entry'}}<br />
+        {% endif %}
+
+          {% if data.section1ClaimDueDate%}
+            {{data.section1ClaimDueDate or 'Awaiting data entry'}}<br />
+          {% endif %}
+
+          {% if data.section1ClaimedAmount%}
+            {{'£'+data.section1ClaimedAmount or 'Awaiting entry'}}<br />
+          {% endif %}
+
+          {% if data.section1AmountAtRisk%}
+            {{'£'+data.section1AmountAtRisk or 'Awaiting data entry'}}
           </dd>
-          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/1"">Change details</a>
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/1">View / Change details</a>
 
             {% else %}
             <a class="" href="1-pre-examination/1">Add details</a>
-              {% endif %}
+            {% endif %}
 
             {% if data.claimType =='Repeat claim' %}
              <a class="" href="1-pre-examination/1">Add details</a>
@@ -215,129 +240,142 @@ Claims and recoveries
              {% endif %}
           </div>
 
-
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-           {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">1.5</div> {% endif %}
-           Allocate examiners
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {% if data.allocatedPrimaryExaminer %}
-            {{data.allocatedPrimaryExaminer}} (Primary)<br />
-            {{data.allocatedSecondaryExaminer}} (Secondary)
-        </dd>
-          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/allocate-examiners">Change details</a>
-
-            {% else %}
-            <a class="" href="1-pre-examination/allocate-examiners">Add details</a></dd>
-            <dd class="govuk-summary-list__value" style="text-align:right;">
-              {% endif %}
-        </dd>
-      </div>
-
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-           {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">1.6</div> {% endif %}
-           Allocate authorisers
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {% if data.allocatedAuthorisers %}
-            {{data.allocatedAuthorisers}}
-          </dd>
-
-          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/allocate-authorisers">Change details</a>
-
-            {% else %}
-            <a class="" href="1-pre-examination/allocate-authorisers">Add details</a></dd>
-            <dd class="govuk-summary-list__value" style="text-align:right;">
-              {% endif %}
-        </dd>
-
-            {% if data.allocatedAuthorisers =='unanswered' %}
-             <a class="" href="1-pre-examination/allocate-authorisers">Add details</a>
-             {% endif %}
-      </div>
-
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-           {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">1.7</div> {% endif %}
-           Upload the claim form
-        </dt>
-        <dd class="govuk-summary-list__value">
-
-            {% if data.claimForm %}
-            Claim form uploaded
-
-          </dd>
-          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/upload-docs?claimForm=true">Change details</a>  </dd>
-
-            {% else %}
-            <a class="" href="1-pre-examination/upload-docs?claimForm=true"">Add details</a>
-            <dd class="govuk-summary-list__value" style="float:right;"></dd>
-              {% endif %}
-            </div>
-
-
-
-      <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">1.8 </div>{% endif %}
-        Upload supporting claim documents
-      </dt>
-      <dd class="govuk-summary-list__value">
-
-        {% if data.otherDocs %}
-        Supporting claim documents uploaded
-
-      </dd>
-      <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/upload-docs?otherDocs=true">Change details</a>  </dd>
-        {% else %}
-        <a class="" href="1-pre-examination/upload-docs?otherDocs=true"">Add details</a>
-        <dd class="govuk-summary-list__value" style="float:right;"></dd>
-          {% endif %}
-        </div>
-
-
-
-
-
-
           <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">1.10 </div>{% endif %}
-            Notifications sent to
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-            {% if data.notificationsSent %}
-
-              {% if data.notification1 %}
-                {{ data.notification1 }}  <br />
+            <dt class="govuk-summary-list__key" style="width:400px;">
+            {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">1.1</div> {% endif %}
+            Allocated examiners
+            {% if data.allocatedPrimaryExaminer %}
+            <div class="govuk-inset-text" style="margin-top:5px; font-weight:bold; ">
+              {% if data.allocatedPrimaryExaminer %}
+                {{'Primary Examiner'}}
               {% endif %}
 
-              {% if data.notification2 %}
-                {{ data.notification2 }}  <br />
-              {% endif %}
-
-              {% if data.notification3 %}
-                {{ data.notification3 }}  <br />
-              {% endif %}
-
-              {% if data.notification4 %}
-                {{ data.notification4 }}  <br />
-              {% endif %}
-
-          </dd>
-          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/notifications">Change details</a>  </dd>
-
-            {% else %}
-            <a class="" href="1-pre-examination/notifications"">Add details</a>
-            <dd class="govuk-summary-list__value" style="float:right;"></dd>
-              {% endif %}
+              {% if data.allocatedSecondaryExaminer %}
+                <br /> {{'SecondaryExaminer'}}
+               {% endif %}
             </div>
+             {% endif %}
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {% if data.allocatedPrimaryExaminer%}<br /><br />
+                {{data.allocatedPrimaryExaminer or 'Awaiting entry'}}<br />
+              {% endif %}
+
+                {% if data.allocatedSecondaryExaminer%}
+                  {{data.allocatedSecondaryExaminer or 'Awaiting data entry'}}
+              </dd>
+              <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/allocate-examiners"">View / Change details</a>
+
+                {% else %}
+                <a class="" href="1-pre-examination/allocate-examiners">Add details</a>
+                {% endif %}
+
+                {% if data.claimType =='Repeat claim' %}
+                 <a class="" href="1-pre-examination/allocate-examiners">Add details</a>
+
+                 {% endif %}
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key" style="width:400px;">
+                {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">1.1</div> {% endif %}
+                Upload claim documents
+                {% if data.uploadDocs %}
+                <div class="govuk-inset-text" style="margin-top:5px; font-weight:bold; ">
+                  {% if data.uploadDocs %}
+                    Document 1
+                  {% endif %}
+
+                  {% if data.uploadDocs %}
+                    <br /> Document 2
+                   {% endif %}
+                </div>
+                 {% endif %}
+                </dt>
+                <dd class="govuk-summary-list__value">
+
+                  {% if data.uploadDocs%}<br /><br />
+                    Original claim form<br />
+                  {% endif %}
+
+                    {% if data.uploadDocs%}
+                      Proof of default form
+                  </dd>
+                  <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/allocate-examiners"">View / Change details</a>
+
+                    {% else %}
+                    <a class="" href="1-pre-examination/upload-claim-form">Add details</a>
+                    {% endif %}
+
+                    {% if data.claimType =='Repeat claim' %}
+                     <a class="" href="1-pre-examination/upload-claim-form">Add details</a>
+
+                     {% endif %}
+                  </div>
+
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key" style="width:400px;">
+                    {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">1.1</div> {% endif %}
+                    Notifications
+                    {% if data.notificationsSent %} sent to
+                    <div class="govuk-inset-text" style="margin-top:5px; font-weight:bold; ">
+                      {% if data.notification1 %}
+                        Party 1<br />
+                      {% endif %}
+
+                      {% if data.notification2 %}
+                        Party 2 <br />
+                       {% endif %}
+
+                       {% if data.notification3 %}
+                        Party 3<br />
+                        {% endif %}
+
+                        {% if data.notification4 %}
+                          Party 4
+                         {% endif %}
+                    </div>
+                     {% endif %}
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <br /><br />
+                      {% if data.notification1%}
+                        Sent<br />
+                      {% endif %}
+
+                      {% if data.notification2%}
+                        Sent<br />
+                      {% endif %}
+
+                      {% if data.notification3%}
+                        Sent<br />
+                      {% endif %}
+
+                        {% if data.notification4%}
+                          Sent
+                        {% endif %}
+                        {% if data.notificationsSent %}
+                      </dd>
+                      <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/notifications"">View / Change details</a>
+
+                        {% else %}
+                        <a class="" href="1-pre-examination/notifications">Add details</a>
+                        {% endif %}
+
+                        {% if data.claimType =='Repeat claim' %}
+                         <a class="" href="1-pre-examination/notifications">Add details</a>
+
+                         {% endif %}
+                      </div>
+
+
+
+
+
+
+
     </dl>
   </div>
 </div>
@@ -419,7 +457,7 @@ Claims and recoveries
 
           </dd>
           <dd class="govuk-summary-list__value"  style="text-align:right;">
-            <a href="2-examination/1--principal-claim-amount/1">Change details</a>
+            <a href="2-examination/1--principal-claim-amount/1">View / Change details</a>
 
 
           </dd>
@@ -495,7 +533,7 @@ Claims and recoveries
           £{{data.totalAmount}}
 
       </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/2--contractual-interest-amount/1">Change details</a>
+        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/2--contractual-interest-amount/1">View / Change details</a>
       </dd>
     </div>
   </dl>
@@ -637,7 +675,7 @@ Claims and recoveries
 
     {% if data.delayInterestPrincipalName %}
       </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/5--delay-principal-interest/0-interest-name">Change details</a>
+        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/5--delay-principal-interest/0-interest-name">View / Change details</a>
       </dd>
     </div>
   </dl>
@@ -767,7 +805,7 @@ Claims and recoveries
 
     {% if data.interestName %}
       </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/9--delay-interest-on-interest-deferred/0-interest-name">Change details</a>
+        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/9--delay-interest-on-interest-deferred/0-interest-name">View / Change details</a>
       </dd>
     </div>
   </dl>
@@ -879,7 +917,7 @@ Claims and recoveries
           £{{data.totalClaimAmount}}
 
       </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/2--contractual-interest-amount/1-days-in-year">Change details</a>
+        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/2--contractual-interest-amount/1-days-in-year">View / Change details</a>
       </dd>
     </div>
   </dl>

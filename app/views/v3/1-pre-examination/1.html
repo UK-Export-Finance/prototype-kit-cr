@@ -54,14 +54,14 @@
 
 						<div class="govuk-radios" data-module="govuk-radios">
 							<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="changed-name" name="section1claimNotification" {% if data.section1ClaimNotification=='Notified'%} checked='checked' {% endif %} type="radio" value="Notified">
-							<label class="govuk-label govuk-radios__label" for="changed-name">
+							<input class="govuk-radios__input" id="changed-name-3" name="section1ClaimNotification" {% if data.section1ClaimNotification=='Notified'%} checked='checked' {% endif %} type="radio" value="Notified">
+							<label class="govuk-label govuk-radios__label" for="changed-name-3">
 								Notified of the claim
 							</label>
 						</div>
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="changed-name-2" name="section1claimNotification" {% if data.section1claimNotification=='Expected'%} checked='checked' {% endif %} type="radio" value="Expected">
-							<label class="govuk-label govuk-radios__label" for="changed-name-2">
+							<input class="govuk-radios__input" id="changed-name-4" name="section1ClaimNotification" {% if data.section1ClaimNotification=='Expected'%} checked='checked' {% endif %} type="radio" value="Expected">
+							<label class="govuk-label govuk-radios__label" for="changed-name-4">
 								Expected to be a claim
 							</label>
 							</div>
@@ -108,6 +108,48 @@
 								</div>
 							</fieldset>
 							<br /><br />
+
+
+
+							{% if data.section1ClaimDueDate%}
+							<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+								<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+									<h1 class="govuk-fieldset__heading">
+								Claim due date
+									</h1>
+								</legend>
+								<div id="passport-issued-hint" class="govuk-hint">
+									This has been calculated using the date of default
+								</div>
+								<div class="govuk-date-input" id="passport-issued">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+												Day
+											</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.section1ClaimDueDay }}" name="section1ClaimDueDay" type="text" inputmode="numeric">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+												Month
+											</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="{{ data.section1ClaimDueMonth }}" name="section1ClaimDueMonth" type="number" inputmode="numeric">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+												Year
+											</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.section1ClaimDueYear }}" name="section1ClaimDueYear" type="text" inputmode="numeric">
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<br /><br />
+							{% endif %}
 
 
 							<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">

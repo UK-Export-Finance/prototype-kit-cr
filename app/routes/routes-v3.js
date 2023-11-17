@@ -43,55 +43,68 @@ router.post(version +'/1-pre-examination/1', function(req, res) {
 
 		if (req.session.data.section1DefaultMonth == '1') {
 			req.session.data.section1DefaultMonthAsText= 'January'
+			req.session.data.section1ClaimDueMonth = '4'
 			req.session.data.section1ClaimDueDateMonthAsText= 'April'
 
 		}
 		if (req.session.data.section1DefaultMonth == '2') {
 			req.session.data.section1DefaultMonthAsText= 'February'
+			req.session.data.section1ClaimDueMonth = '5'
 			req.session.data.section1ClaimDueDateMonthAsText= 'May'
 		}
 		if (req.session.data.section1DefaultMonth == '3') {
 			req.session.data.section1DefaultMonthAsText= 'March'
+			req.session.data.section1ClaimDueMonth = '6'
 			req.session.data.section1ClaimDueDateMonthAsText= 'June'
 		}
 		if (req.session.data.section1DefaultMonth == '4') {
 			req.session.data.section1DefaultMonthAsText= 'April'
+			req.session.data.section1ClaimDueMonth = '7'
 			req.session.data.section1ClaimDueDateMonthAsText= 'July'
 		}
 		if (req.session.data.section1DefaultMonth == '5') {
 			req.session.data.section1DefaultMonthAsText= 'May'
+			req.session.data.section1ClaimDueMonth = '8'
 			req.session.data.section1ClaimDueDateMonthAsText= 'August'
 		}
 		if (req.session.data.section1DefaultMonth == '6') {
 			req.session.data.section1DefaultMonthAsText= 'June'
+			req.session.data.section1ClaimDueMonth = '9'
 			req.session.data.section1ClaimDueDateMonthAsText= 'September'
 		}
 		if (req.session.data.section1DefaultMonth == '7') {
 			req.session.data.section1DefaultMonthAsText= 'July'
+			req.session.data.section1ClaimDueMonth = '10'
 			req.session.data.section1ClaimDueDateMonthAsText= 'October'
 		}
 		if (req.session.data.section1DefaultMonth == '8') {
 			req.session.data.section1DefaultMonthAsText= 'August'
+			req.session.data.section1ClaimDueMonth = '11'
 			req.session.data.section1ClaimDueDateMonthAsText= 'November'
 		}
 		if (req.session.data.section1DefaultMonth == '9') {
 			req.session.data.section1DefaultMonthAsText= 'September'
+			req.session.data.section1ClaimDueMonth = '12'
 			req.session.data.section1ClaimDueDateMonthAsText= 'December'
 		}
 		if (req.session.data.section1DefaultMonth == '10') {
 			req.session.data.section1DefaultMonthAsText= 'October'
+			req.session.data.section1ClaimDueMonth = '1'
 			req.session.data.section1ClaimDueDateMonthAsText= 'January'
 		}
 		if (req.session.data.section1DefaultMonth == '11') {
 			req.session.data.section1DefaultMonthAsText= 'November'
+			req.session.data.section1ClaimDueMonth = '2'
 			req.session.data.section1ClaimDueDateMonthAsText= 'February'
 		}
 		if (req.session.data.section1DefaultMonth == '12') {
 			req.session.data.section1DefaultMonthAsText= 'December'
+			req.session.data.section1ClaimDueMonth = '3'
 			req.session.data.section1ClaimDueDateMonthAsText= 'March'
 		}
 
 		//Defualt date calc
+//		req.session.data.section1ClaimDueMonth = req.session.data.section1DefaultMonth
 		req.session.data.section1DefaultDate = req.session.data.section1DefaultDay +" "+ req.session.data.section1DefaultMonthAsText +" "+ req.session.data.section1DefaultYear
 
 

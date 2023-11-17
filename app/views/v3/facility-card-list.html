@@ -203,9 +203,9 @@ Claims and recoveries
          {% endif %}
         </dt>
         <dd class="govuk-summary-list__value">
-          <br /><br />
 
-          {% if data.section1ExpectedRepeat%}
+
+          {% if data.section1ExpectedRepeat%}  <br /><br />
             {{data.section1ExpectedRepeat or 'Awaiting entry'}}<br />
           {% endif %}
 
@@ -251,7 +251,7 @@ Claims and recoveries
               {% endif %}
 
               {% if data.allocatedSecondaryExaminer %}
-                <br /> {{'SecondaryExaminer'}}
+                <br /> {{'Secondary Examiner'}}
                {% endif %}
             </div>
              {% endif %}
@@ -340,8 +340,12 @@ Claims and recoveries
                      {% endif %}
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        <br /><br />
-                      {% if data.notification1%}
+
+                        {% if data.notification1 %}
+
+                        {% endif %}
+
+                      {% if data.notification1%}  <br /><br />
                         Sent<br />
                       {% endif %}
 
@@ -369,16 +373,9 @@ Claims and recoveries
 
                          {% endif %}
                       </div>
-
-
-
-
-
-
-
-    </dl>
-  </div>
-</div>
+                    </dl>
+                  </div>
+                </div>
 <!--END of pre ex-->
 <!--END of pre ex-->
 <!--END of pre ex-->
@@ -388,29 +385,22 @@ Claims and recoveries
 <!--END of pre ex-->
 
 
+<!--NEW Section2-->
 
-
-
-
-<!--Start of examination-->
-<!--Start of examination-->
-<!--Start of examination-->
-<!--Start of examination-->
-<!--Start of examination-->
-<!--Start of examination-->
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">2. Claim examination</h2>
     <ul class="govuk-summary-card__actions">
 
-      {% if data.totalPrincipalClaimedAmount %}
+      {% if data.section1DefaultDate %}
 
-        {% if data.EndofSection2 %}
+        {% if data.notificationsSent %}
         <span style="margin-right:50px;">
         <strong class="govuk-tag govuk-tag--green app-task-list__tag" >
           All changes automatically saved
         </strong>
         </span>
+
           <strong class="govuk-tag govuk-tag--green app-task-list__tag">
             Completed
           </strong>
@@ -439,6 +429,108 @@ Claims and recoveries
 
     </ul>
   </div>
+
+
+  <!--SEction starts here-->
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width:400px;">
+        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">1.1</div> {% endif %}
+        Principal claim total
+        {% if data.principalAmountDue %}
+
+        <div class="govuk-inset-text" style="margin-top:5px; font-weight:bold; ">
+
+          {% if data.CalculatedPrincipalAmountDue %}
+            {{'Calculated principal amount due'}}
+          {% endif %}
+
+          {% if data.PrincipalMissedInstallDate%}
+             <br /> {{'Installment due date'}}
+          {% endif %}
+
+          {% if data.principalMissedInstallmentNumber %}
+            <br /> {{'Installment number'}}
+           {% endif %}
+
+           {% if data.principalAmountDue %}
+             <br /> {{'Principal amount on installment'}}
+            {% endif %}
+
+
+           {% if data.principalPartialPaymentAmount%}
+              <br /> {{'Partial payments made'}}
+           {% endif %}
+
+          {% if data.principalAmountDue %}
+          <br />  {{'Percentage insured'}}
+          {% endif %}
+        </div>
+         {% endif %}
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+          {% if data.CalculatedPrincipalAmountDue %}  <br /><br />
+            {{'£'+data.CalculatedPrincipalAmountDue or 'Awaiting entry'}}<br />
+          {% endif %}
+
+          {% if data.PrincipalMissedInstallDate%}
+            {{data.PrincipalMissedInstallDate or 'Awaiting entry'}}<br />
+          {% endif %}
+
+          {% if data.principalMissedInstallmentNumber %}
+           {{data.principalMissedInstallmentNumber or 'Awaiting entry'}}<br />
+        {% endif %}
+
+        {% if data.principalAmountDue %}
+         {{'£'+data.principalAmountDue or 'Awaiting entry'}}<br />
+      {% endif %}
+
+          {% if data.principalPartialPaymentAmount%}
+            {{'£'+data.principalPartialPaymentAmount or 'Awaiting entry'}}<br />
+          {% endif %}
+
+          {% if data.principalAmountDue%}
+            {{data.principalInsuredPercentage or '100'}}%
+          </dd>
+          <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/1--principal-claim-amount/1">View / Change details</a>
+
+            {% else %}
+            <a class="" href="2-examination/1--principal-claim-amount/1">Add details</a>
+            {% endif %}
+
+            {% if data.claimType =='Repeat claim' %}
+             <a class="" href="2-examination/1--principal-claim-amount/1">Add details</a>
+
+             {% endif %}
+          </div>
+
+    </dl>
+  </div>
+</div>
+
+
+<!--END new sec2-->
+
+
+
+
+
+
+
+
+<!--Start of examination-->
+<!--Start of examination-->
+<!--Start of examination-->
+<!--Start of examination-->
+<!--Start of examination-->
+<!--Start of examination-->
+<div class="govuk-summary-card">
+
+
   <div class="govuk-summary-card__content">
 
     <!--2.1-->
@@ -448,7 +540,6 @@ Claims and recoveries
 
             {% if data.setupShowNumberList =='true' %}
               <div style="width:40px; float:left;">2.1</div> {% endif %}
-            Principal claim amount
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -465,57 +556,18 @@ Claims and recoveries
       </dl>
 
 
-      <dl class="govuk-summary-list" >
-        <div class="govuk-summary-list__row" style="border-bottom:1px solid grey;">
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                View breakdown
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <div class="govuk-summary-list__row" >
-                <dt class="govuk-summary-list__key"  style="width:80%;">
-                Installment
-                </dt>
-                <dd class="govuk-summary-list__value">
-                {{data.installmentNumber}}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                Amount due
-                </dt>
-                <dd class="govuk-summary-list__value">
-                {{data.totalPrincipalClaimedAmount or '1000'}}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Partial payment
-                </dt>
-                <dd class="govuk-summary-list__value">
-                £{{data.partialPaymentAmount or '0'}}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Insured percentage
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data.insuredAmount or '0'}}%
-                </dd>
-              </div>
-            </div>
-          </details>
-
-          {% else %}
-          <a class="" href="2-examination/1--principal-claim-amount/1">Add details</a>
-
-          {% endif %}
-        </div>
-      </dl>
+      v
       <!--end 2.1-->
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -524,13 +576,10 @@ Claims and recoveries
 <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row"   {% if data.totalAmount %} {% else %} style="border-bottom:1px solid grey;" {% endif %}>
         <dt class="govuk-summary-list__key"  style="width:400px;">
-        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.2 </div>{% endif %}
         Contractural interest amount
       </dt>
       <dd class="govuk-summary-list__value">
 
-        {% if data.totalAmount %}
-          £{{data.totalAmount}}
 
       </dd>
         <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/2--contractual-interest-amount/1">View / Change details</a>

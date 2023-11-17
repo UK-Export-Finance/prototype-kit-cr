@@ -179,21 +179,69 @@ router.post(version +'/1-pre-examination/notifications', function(req, res) {
 
 router.post(version +'/2-examination/1--principal-claim-amount/1', function(req, res) {
 	{
-		req.session.data.principalBalance = parseInt(req.session.data.principalBalance).toFixed(2)
-		req.session.data.principalPartialInterestPaymentAmount = parseInt(req.session.data.principalPartialInterestPaymentAmount).toFixed(2)
+		//req.session.data.principalBalance = parseInt(req.session.data.principalBalance).toFixed(2)
+		//req.session.data.principalPartialInterestPaymentAmount = parseInt(req.session.data.principalPartialInterestPaymentAmount).toFixed(2)
 
 		//this is from section 1
-		req.session.data.insuredAmount = parseInt(req.session.data.insuredAmount).toFixed(2)
+		//req.session.data.insuredAmount = parseInt(req.session.data.insuredAmount).toFixed(2)
 
-		req.session.data.totalPrincipalClaimedAmount = ((req.session.data.principalBalance  /100) * req.session.data.insuredAmount) - req.session.data.partialPaymentAmount
-		req.session.data.totalPrincipalClaimedAmount = req.session.data.totalPrincipalClaimedAmount.toFixed(2)
-		req.session.data.totalPrincipalClaimedAmountToUseInTotal = req.session.data.totalPrincipalClaimedAmount
+		//req.session.data.totalPrincipalClaimedAmount = ((req.session.data.principalBalance  /100) * req.session.data.insuredAmount) - req.session.data.partialPaymentAmount
+		//req.session.data.totalPrincipalClaimedAmount = req.session.data.totalPrincipalClaimedAmount.toFixed(2)
+		//req.session.data.totalPrincipalClaimedAmountToUseInTotal = req.session.data.totalPrincipalClaimedAmount
 
-		req.session.data.totalPrincipalClaimedAmount = '£'+ req.session.data.totalPrincipalClaimedAmount
+		//req.session.data.totalPrincipalClaimedAmount = '£'+ req.session.data.totalPrincipalClaimedAmount
+
+
+			if (req.session.data.PrincipalMissedInstallMonth == '1') {
+				req.session.data.PrincipalMissedInstallMonthAsText= 'January'
+			}
+			if (req.session.data.PrincipalMissedInstallMonth == '2') {
+				req.session.data.PrincipalMissedInstallMonthAsText= 'February'
+			}
+			if (req.session.data.PrincipalMissedInstallMonth == '3') {
+				req.session.data.PrincipalMissedInstallMonthAsText= 'March'
+			}
+			if (req.session.data.PrincipalMissedInstallMonth == '4') {
+				req.session.data.PrincipalMissedInstallMonthAsText= 'April'
+			}
+			if (req.session.data.PrincipalMissedInstallMonth == '5') {
+				req.session.data.PrincipalMissedInstallMonthAsText= 'May'
+			}
+			if (req.session.data.PrincipalMissedInstallMonth == '6') {
+				req.session.data.PrincipalMissedInstallMonthAsText= 'June'
+			}
+			if (req.session.data.PrincipalMissedInstallMonth == '7') {
+				req.session.data.PrincipalMissedInstallMonthAsText= 'July'
+			}
+			if (req.session.data.PrincipalMissedInstallMonth == '8') {
+				req.session.data.PrincipalMissedInstallMonthAsText= 'August'
+			}
+			if (req.session.data.PrincipalMissedInstallMonth == '9') {
+				req.session.data.PrincipalMissedInstallMonthAsText= 'September'
+			}
+			if (req.session.data.PrincipalMissedInstallMonth == '10') {
+				req.session.data.PrincipalMissedInstallMonthAsText= 'October'
+			}
+			if (req.session.data.PrincipalMissedInstallMonth == '11') {
+				req.session.data.PrincipalMissedInstallMonthAsText= 'November'
+			}
+			if (req.session.data.PrincipalMissedInstallMonth == '12') {
+				req.session.data.PrincipalMissedInstallMonthAsText= 'December'
+			}
+
+			req.session.data.PrincipalMissedInstallDate = req.session.data.PrincipalMissedInstallDay +" "+ req.session.data.PrincipalMissedInstallMonthAsText +" "+ req.session.data.PrincipalMissedInstallYear
+
+
+			if (!req.session.data.principalInsuredPercentage){req.session.data.principalInsuredPercentage ='100'}
+			req.session.data.CalculatedPrincipalAmountDue= ((req.session.data.principalAmountDue - req.session.data.principalPartialPaymentAmount) /100) * req.session.data.principalInsuredPercentage
+			req.session.data.CalculatedPrincipalAmountDue = req.session.data.CalculatedPrincipalAmountDue.toFixed(2)
+
 
 		res.redirect(version +'/facility-card-list')
 	}
 });
+
+
 
 
 

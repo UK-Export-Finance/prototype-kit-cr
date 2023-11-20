@@ -236,7 +236,10 @@ router.post(version +'/2-examination/1--principal-claim-amount/1', function(req,
 			req.session.data.CalculatedPrincipalAmountDue= ((req.session.data.principalAmountDue - req.session.data.principalPartialPaymentAmount) /100) * req.session.data.principalInsuredPercentage
 			req.session.data.CalculatedPrincipalAmountDue = req.session.data.CalculatedPrincipalAmountDue.toFixed(2)
 
-
+			if (req.session.data.CalculatedPrincipalDelayInterestAmountDue ){
+				req.session.data.CalculatedPrincipalDelayInterestAmountDue = ((req.session.data.CalculatedPrincipalAmountDue /365) *90) * req.session.data.principalDelayInterestRateTotalToUseInCalc
+				req.session.data.CalculatedPrincipalDelayInterestAmountDue  = req.session.data.CalculatedPrincipalDelayInterestAmountDue.toFixed(2)
+			}
 
 
 		res.redirect(version +'/facility-card-list')

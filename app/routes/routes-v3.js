@@ -466,4 +466,10 @@ router.post(version +'/2-examination/5--delay-principal-interest/1', function(re
 							res.redirect(version +'/facility-card-list')
 			}
 		});
+
+		router.post(version +'/2-examination/11--Summary/1', function(req, res) {
+			{
+					res.redirect(version +'/facility-card-list')
+	}
+});
 }

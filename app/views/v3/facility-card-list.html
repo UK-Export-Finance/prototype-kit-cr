@@ -755,8 +755,8 @@ Claims and recoveries
   </dt>
   <dd class="govuk-summary-list__value">
 
-    {% if data.cNumber %}
-      {{data.cNumber or 'Awaiting completion'}}
+    {% if data.rmSummaryComplete =="yes" %}
+      {{'RM Summary complete' or 'Awaiting completion'}}
 
   </dd>
     <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/11--Summary/1">View / Change details</a>
@@ -773,14 +773,14 @@ Claims and recoveries
 <!--Start add buttons -->
 <br /><br />
 <div class="govuk-button-group">
-<button class="govuk-button" data-module="govuk-button" type="submit"  value="no" name="addAnother">
-  Add another calculation
-</button>
-<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="yes" name="addAnother">
-  Remove a calculation
-</button>
+  <button class="govuk-button" data-module="govuk-button">
+    Add a new calculation
+  </button>
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Remove a calculation
+  </button>
 </div>
-</div>
+
 <!--END of examination-->
 <!--END of examination-->
 <!--END of examination-->

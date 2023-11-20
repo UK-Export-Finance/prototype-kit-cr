@@ -24,7 +24,7 @@
 		      Check all details are correct and press confirm once complete
 					</div><br />
 
-				<form action="" method="post" novalidate>
+				<form action="" method="post">
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 					<div class="govuk-summary-list__row">
@@ -191,29 +191,22 @@
 							Add commentary to RM Summary
 						</dt>
 						<dd class="govuk-summary-list__value">
-
-							<textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+							<textarea class="govuk-textarea" id="more-detail" name="summaryCommentary" value="summaryCommentary" rows="5" aria-describedby="more-detail-hint"></textarea>
 						</div>
+						<input class="" id="contact-by-text" type="hidden" name="rmSummaryComplete" value="yes">
 
 						<dd class="govuk-summary-list__actions">
-
 						</dd>
 					</div>
+				</div>
 
-
-
-
-        </dl>
 				<div class="govuk-button-group">
-				<button class="govuk-button" data-module="govuk-button" type="submit"  value="no" name="addAnother">
-					Confirm
-				</button>
-				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="yes" name="addAnother">
-					Confirm and add another interest
-				</button>
+			  <button class="govuk-button" data-module="govuk-button">
+			    Confirm
+			  </button>
+			  <a class="govuk-link" href="../../facility-card-list">Cancel and go back</a>
 			</div>
-        </form>
-      </div>
-    </div>
-  </div>
+  </form>
+</div>
+
 {% endblock %}

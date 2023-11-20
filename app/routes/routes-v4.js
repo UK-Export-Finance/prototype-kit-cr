@@ -156,11 +156,24 @@ router.post(version +'/1-pre-examination/notifications', function(req, res) {
 	}
 });
 
+router.post(version +'/facility-card-list', function(req, res) {
+	{
+			res.redirect(version +'/facility-card-list-2')
+	}
+});
 
 
+router.post(version +'/facility-card-list-2', function(req, res) {
+	{
+			res.redirect(version +'/facility-card-list-3')
+	}
+});
 
-
-
+router.post(version +'/facility-card-list-3', function(req, res) {
+	{
+			res.redirect(version +'/confirmation-changes-saved')
+	}
+});
 
 
 //Part 2 examinsation
@@ -245,11 +258,6 @@ router.post(version +'/2-examination/1--principal-claim-amount/1', function(req,
 		res.redirect(version +'/facility-card-list')
 	}
 });
-
-
-
-
-
 
 //2.3 - Principal delay interest
 router.post(version +'/2-examination/5--delay-principal-interest/1', function(req, res) {

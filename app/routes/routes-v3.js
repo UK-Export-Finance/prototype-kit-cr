@@ -354,254 +354,110 @@ router.post(version +'/2-examination/5--delay-principal-interest/1', function(re
 		});
 
 
+		//2.4 - Principal delay interest on interest
+		router.post(version +'/2-examination/9--delay-interest-on-interest-paid/1', function(req, res) {
+			{
 
 
-//2.4 - Principal delay interest
-router.post(version +'/2-examination/5--delay-principal-interest/0-interest-name-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/5--delay-principal-interest/1-interest-start-date-2')
-	}
-});
+				//req.session.data.delayPrincipaltotalAmount = '60'
 
-router.post(version +'/2-examination/5--delay-principal-interest/1-interest-start-date-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/5--delay-principal-interest/2-interest-end-date-2')
-	}
-});
-
-router.post(version +'/2-examination/5--delay-principal-interest/2-interest-end-date-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/5--delay-principal-interest/3-interest-period-days-2')
-	}
-});
-router.post(version +'/2-examination/5--delay-principal-interest/3-interest-period-days-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/5--delay-principal-interest/4-reference-interest-rate-2')
-	}
-});
-router.post(version +'/2-examination/5--delay-principal-interest/4-reference-interest-rate-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/5--delay-principal-interest/5-interest-rate-margin-2')
-	}
-});
-router.post(version +'/2-examination/5--delay-principal-interest/5-interest-rate-margin-2', function(req, res) {
-	{
-		req.session.data.delayPrincipaltotalAmount = '60'
-res.redirect(version +'/2-examination/5--delay-principal-interest/6-check-answers-2')
-	}
-});
-router.post(version +'/2-examination/5--delay-principal-interest/6-check-answers-2', function(req, res) {
-	{
-if (req.session.data.addAnother == 'yes') {
-	res.redirect(version +'/2-examination/5--delay-principal-interest/0-interest-name-2')
-}
-else{
-	res.redirect(version +'/facility-card-list')
-		}
-	}
-});
+				if (req.session.data.principalDelayInterestOnInterestStartMonth == '1') {
+					req.session.data.principalDelayInterestOnInterestStartMonthAsText= 'January'
+				}
+				if (req.session.data.principalDelayInterestOnInterestStartMonth == '2') {
+					req.session.data.principalDelayInterestOnInterestStartMonthAsText= 'February'
+				}
+				if (req.session.data.principalDelayInterestOnInterestStartMonth == '3') {
+					req.session.data.principalDelayInterestOnInterestStartMonthAsText= 'March'
+				}
+				if (req.session.data.principalDelayInterestOnInterestStartMonth == '4') {
+					req.session.data.principalDelayInterestOnInterestStartMonthAsText= 'April'
+				}
+				if (req.session.data.principalDelayInterestOnInterestStartMonth == '5') {
+					req.session.data.principalDelayInterestOnInterestStartMonthAsText= 'May'
+				}
+				if (req.session.data.principalDelayInterestOnInterestStartMonth == '6') {
+					req.session.data.principalDelayInterestOnInterestStartMonthAsText= 'June'
+				}
+				if (req.session.data.principalDelayInterestOnInterestStartMonth == '7') {
+					req.session.data.principalDelayInterestOnInterestStartMonthAsText= 'July'
+				}
+				if (req.session.data.principalDelayInterestOnInterestStartMonth == '8') {
+					req.session.data.principalDelayInterestOnInterestStartMonthAsText= 'August'
+				}
+				if (req.session.data.principalDelayInterestOnInterestStartMonth == '9') {
+					req.session.data.principalDelayInterestOnInterestStartMonthAsText= 'September'
+				}
+				if (req.session.data.principalDelayInterestOnInterestStartMonth == '10') {
+					req.session.data.principalDelayInterestOnInterestStartMonthAsText= 'October'
+				}
+				if (req.session.data.principalDelayInterestOnInterestStartMonth == '11') {
+					req.session.data.principalDelayInterestOnInterestStartMonthAsText= 'November'
+				}
+				if (req.session.data.principalDelayInterestOnInterestStartMonth == '12') {
+					req.session.data.principalDelayInterestOnInterestStartMonthAsText= 'December'
+				}
 
 
 
+				if (req.session.data.principalDelayInterestOnInterestEndMonth == '1') {
+					req.session.data.principalDelayInterestOnInterestEndMonthAsText= 'January'
+				}
+				if (req.session.data.principalDelayInterestOnInterestEndMonth == '2') {
+					req.session.data.principalDelayInterestOnInterestEndMonthAsText= 'February'
+				}
+				if (req.session.data.principalDelayInterestOnInterestEndMonth == '3') {
+					req.session.data.principalDelayInterestOnInterestEndMonthAsText= 'March'
+				}
+				if (req.session.data.principalDelayInterestOnInterestEndMonth == '4') {
+					req.session.data.principalDelayInterestOnInterestEndMonthAsText= 'April'
+				}
+				if (req.session.data.principalDelayInterestOnInterestEndMonth == '5') {
+					req.session.data.principalDelayInterestOnInterestEndMonthAsText= 'May'
+				}
+				if (req.session.data.principalDelayInterestOnInterestEndMonth == '6') {
+					req.session.data.principalDelayInterestOnInterestEndMonthAsText= 'June'
+				}
+				if (req.session.data.principalDelayInterestOnInterestEndMonth == '7') {
+					req.session.data.principalDelayInterestOnInterestEndMonthAsText= 'July'
+				}
+				if (req.session.data.principalDelayInterestOnInterestEndMonth == '8') {
+					req.session.data.principalDelayInterestOnInterestEndMonthAsText= 'August'
+				}
+				if (req.session.data.principalDelayInterestOnInterestEndMonth == '9') {
+					req.session.data.principalDelayInterestOnInterestEndMonthAsText= 'September'
+				}
+				if (req.session.data.principalDelayInterestOnInterestEndMonth == '10') {
+					req.session.data.principalDelayInterestOnInterestEndMonthAsText= 'October'
+				}
+				if (req.session.data.principalDelayInterestOnInterestEndMonth == '11') {
+					req.session.data.principalDelayInterestOnInterestEndMonthAsText= 'November'
+				}
+				if (req.session.data.principalDelayInterestOnInterestEndMonth == '12') {
+					req.session.data.principalDelayInterestOnInterestEndMonthAsText= 'December'
+				}
 
-//2.5 - interest on  interest
-router.post(version +'/2-examination/6--delay-interest-on-interest/0-interest-name', function(req, res) {
-	{
-res.redirect(version +'/2-examination/6--delay-interest-on-interest/1-interest-start-date')
-	}
-});
+			 req.session.data.principalDelayInterestOnInterestEndDate= req.session.data.principalDelayInterestOnInterestEndDay + ' ' + req.session.data.principalDelayInterestOnInterestEndMonthAsText + ' ' + req.session.data.principalDelayInterestOnInterestEndYear
 
-router.post(version +'/2-examination/6--delay-interest-on-interest/1-interest-start-date', function(req, res) {
-	{
-res.redirect(version +'/2-examination/6--delay-interest-on-interest/2-interest-end-date')
-	}
-});
+			 req.session.data.principalDelayInterestOnInterestStartDate= req.session.data.principalDelayInterestOnInterestStartDay + ' ' + req.session.data.principalDelayInterestOnInterestStartMonthAsText + ' ' + req.session.data.principalDelayInterestOnInterestStartYear
 
-router.post(version +'/2-examination/6--delay-interest-on-interest/2-interest-end-date', function(req, res) {
-	{
-res.redirect(version +'/2-examination/6--delay-interest-on-interest/3-interest-period-days')
-	}
-});
-router.post(version +'/2-examination/6--delay-interest-on-interest/3-interest-period-days', function(req, res) {
-	{
-res.redirect(version +'/2-examination/6--delay-interest-on-interest/4-reference-interest-rate')
-	}
-});
-router.post(version +'/2-examination/6--delay-interest-on-interest/4-reference-interest-rate', function(req, res) {
-	{
-res.redirect(version +'/2-examination/6--delay-interest-on-interest/5-interest-rate-margin')
-	}
-});
-router.post(version +'/2-examination/6--delay-interest-on-interest/5-interest-rate-margin', function(req, res) {
-	{
-		req.session.data.delayPrincipaltotalAmount = '960'
-		req.session.data.totalClaimAmount =  req.session.data.totalPrincipalClaimedAmountToUseInTotal + req.session.data.totalAmount + req.session.data.delayPrincipaltotalAmount
+			 req.session.data.principalDelayInterestOnInterestDuration = '90'
 
-res.redirect(version +'/2-examination/6--delay-interest-on-interest/6-check-answers')
-	}
-});
+			 req.session.data.principalDelayInterestOnInterestRateTotal = parseInt(req.session.data.principalDelayInterestOnInterestRate) + parseInt(req.session.data.principalDelayInterestOnInterestRateMargin)
 
+			 req.session.data.principalDelayInterestOnInterestRateTotalToUseInCalc = (req.session.data.principalDelayInterestOnInterestRateTotal /100)
 
-router.post(version +'/2-examination/6--delay-interest-on-interest/6-check-answers', function(req, res) {
-	{
-if (req.session.data.addAnother == 'yes') {
-	res.redirect(version +'/2-examination/6--delay-interest-on-interest/0-interest-name-2')
-}
-else{
-	res.redirect(version +'/facility-card-list')
-		}
-	}
-});
+			 req.session.data.CalculatedPrincipalDelayInterestOnInterestAmountDue = ((req.session.data.CalculatedPrincipalAmountDue /365) *90) * req.session.data.principalDelayInterestOnInterestRateTotalToUseInCalc
 
+			 req.session.data.CalculatedPrincipalDelayInterestOnInterestAmountDue  = req.session.data.CalculatedPrincipalDelayInterestOnInterestAmountDue.toFixed(2)
 
+			 req.session.data.totalClaimAmount = parseFloat(req.session.data.CalculatedPrincipalAmountDue) +  parseFloat(req.session.data.CalculatedPrincipalDelayInterestAmountDue) + parseFloat(req.session.data.CalculatedPrincipalDelayInterestOnInterestAmountDue)
 
-//Question 5 - Principal delay interest
-router.post(version +'/2-examination/6--delay-interest-on-interest/0-interest-name-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/6--delay-interest-on-interest/1-interest-start-date-2')
-	}
-});
-
-router.post(version +'/2-examination/6--delay-interest-on-interest/1-interest-start-date-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/6--delay-interest-on-interest/2-interest-end-date-2')
-	}
-});
-
-router.post(version +'/2-examination/6--delay-interest-on-interest/2-interest-end-date-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/6--delay-interest-on-interest/3-interest-period-days-2')
-	}
-});
-router.post(version +'/2-examination/6--delay-interest-on-interest/3-interest-period-days-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/6--delay-interest-on-interest/4-reference-interest-rate-2')
-	}
-});
-router.post(version +'/2-examination/6--delay-interest-on-interest/4-reference-interest-rate-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/6--delay-interest-on-interest/5-interest-rate-margin-2')
-	}
-});
-router.post(version +'/2-examination/6--delay-interest-on-interest/5-interest-rate-margin-2', function(req, res) {
-	{
-		req.session.data.delayPrincipaltotalAmount = '960'
-res.redirect(version +'/2-examination/6--delay-interest-on-interest/6-check-answers-2')
-	}
-});
-router.post(version +'/2-examination/6--delay-interest-on-interest/6-check-answers-2', function(req, res) {
-	{
-if (req.session.data.addAnother == 'yes') {
-	res.redirect(version +'/2-examination/6--delay-interest-on-interest/0-interest-name-2')
-}
-else{
-	res.redirect(version +'/facility-card-list')
-		}
-	}
-});
-
-//Section 2.9
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/0-interest-name', function(req, res) {
-	{
-res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/1-interest-start-date')
-	}
-});
-
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/1-interest-start-date', function(req, res) {
-	{
-res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/2-interest-end-date')
-	}
-});
-
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/2-interest-end-date', function(req, res) {
-	{
-res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/3-interest-period-days')
-	}
-});
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/3-interest-period-days', function(req, res) {
-	{
-res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/4-reference-interest-rate')
-	}
-});
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/4-reference-interest-rate', function(req, res) {
-	{
-res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin')
-	}
-});
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin', function(req, res) {
-	{
-		//req.session.data.delayPrincipaltotalAmount = '960'
-res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers')
-	}
-});
+			 req.session.data.totalClaimAmount = req.session.data.totalClaimAmount.toFixed(2)
 
 
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers', function(req, res) {
-	{
-if (req.session.data.addAnother == 'yes') {
-	res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/0-interest-name-2')
-}
-else{
-	res.redirect(version +'/facility-card-list')
-		}
-	}
-});
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/0-interest-name-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/1-interest-start-date-2')
-	}
-});
-
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/1-interest-start-date-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/2-interest-end-date-2')
-	}
-});
-
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/2-interest-end-date-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/3-interest-period-days-2')
-	}
-});
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/3-interest-period-days-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/4-reference-interest-rate-2')
-	}
-});
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/4-reference-interest-rate-2', function(req, res) {
-	{
-res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin-2')
-	}
-});
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/5-interest-rate-margin-2', function(req, res) {
-	{
-		//req.session.data.delayPrincipaltotalAmount = '960'
-res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers-2')
-	}
-});
-router.post(version +'/2-examination/9--delay-interest-on-interest-deferred/6-check-answers-2', function(req, res) {
-	{
-if (req.session.data.addAnother == 'yes') {
-	res.redirect(version +'/2-examination/9--delay-interest-on-interest-deferred/0-interest-name-2')
-}
-else{
-	res.redirect(version +'/facility-card-list')
-		}
-	}
-});
-
-
-
-
-//Section 2.10
-router.post(version +'/2-examination/10--other-amounts/add-other-amount', function(req, res) {
-	{
-	res.redirect(version +'/facility-card-list')
-	}
-});
-
-
-
-
-
+			 // + req.session.data.CalculatedPrincipalDelayInterestAmountDue +  req.session.data.CalculatedPrincipalDelayInterestOnInterestAmountDue
+				res.redirect(version +'/facility-card-list')
+					}
+				});
 }

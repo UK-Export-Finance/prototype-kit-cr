@@ -34,7 +34,7 @@
 													 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
 														 Day
 													 </label>
-													 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" if value="{{ data.principalDelayInterestOnInterestStartDay }}" name="principalDelayInterestOnInterestStartDay" type="text" inputmode="numeric">
+													 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" if value="{{ data.principalDelayInterestStartDay }}" name="principalDelayInterestStartDay" type="text" inputmode="numeric">
 												 </div>
 											 </div>
 											 <div class="govuk-date-input__item">
@@ -42,7 +42,7 @@
 													 <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
 														 Month
 													 </label>
-													 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="{{ data.principalDelayInterestOnInterestStartMonth }}" name="principalDelayInterestOnInterestStartMonth" type="text" inputmode="numeric">
+													 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="{{ data.principalDelayInterestStartMonth }}" name="principalDelayInterestStartMonth" type="text" inputmode="numeric">
 												 </div>
 											 </div>
 											 <div class="govuk-date-input__item">
@@ -50,7 +50,7 @@
 													 <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
 														 Year
 													 </label>
-													 <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.principalDelayInterestOnInterestStartYear }}" name="principalDelayInterestOnInterestStartYear" type="text" inputmode="numeric">
+													 <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.principalDelayInterestStartYear }}" name="principalDelayInterestStartYear" type="text" inputmode="numeric">
 												 </div>
 											 </div>
 										 </div>
@@ -71,7 +71,7 @@
 													 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
 														 Day
 													 </label>
-													 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.principalDelayInterestOnInterestEndDay}}" name="principalDelayInterestOnInterestEndDay" type="text" inputmode="numeric">
+													 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.principalDelayInterestEndDay}}" name="principalDelayInterestEndDay" type="text" inputmode="numeric">
 												 </div>
 											 </div>
 											 <div class="govuk-date-input__item">
@@ -79,7 +79,7 @@
 													 <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
 														 Month
 													 </label>
-													 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="{{data.principalDelayInterestOnInterestEndMonth}}" name="principalDelayInterestOnInterestEndMonth" type="text" inputmode="numeric">
+													 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="{{data.principalDelayInterestEndMonth}}" name="principalDelayInterestEndMonth" type="text" inputmode="numeric">
 												 </div>
 											 </div>
 											 <div class="govuk-date-input__item">
@@ -87,7 +87,7 @@
 													 <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
 														 Year
 													 </label>
-													 <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.principalDelayInterestOnInterestEndYear }}" name="principalDelayInterestOnInterestEndYear" type="text" inputmode="numeric">
+													 <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.principalDelayInterestEndYear }}" name="principalDelayInterestEndYear" type="text" inputmode="numeric">
 												 </div>
 											 </div>
 										 </div>
@@ -108,7 +108,7 @@
 										Reference interest rate
 									</label>
 										<div class="govuk-input__wrapper">
-										<input class="govuk-input govuk-input--width-3" id="passport-issued-month" name="principalDelayInterestOnInterestRate" type="number" spellcheck="false" aria-describedby="currency-hint" value="{{ data.principalDelaynterestRate }}">
+										<input class="govuk-input govuk-input--width-3" id="passport-issued-month" name="principalDelayInterestRate" type="number" spellcheck="false" aria-describedby="currency-hint" value="{{ data.principalDelaynterestRate }}">
 											<div class="govuk-input__prefix" aria-hidden="true" style="border-right:2px solid black; margin-left:-2px;">%
 											</div>
 										</div>
@@ -132,7 +132,7 @@
 									</label>
 
 									<div class="govuk-input__wrapper">
-									<input class="govuk-input govuk-input--width-3" id="passport-issued-month" name="principalDelayInterestOnInterestRateMargin" type="number" spellcheck="false" aria-describedby="currency-hint" value="{{ data.interestRateMargin }}">
+									<input class="govuk-input govuk-input--width-3" id="passport-issued-month" name="principalDelayInterestRateMargin" type="number" spellcheck="false" aria-describedby="currency-hint" value="{{ data.interestRateMargin }}">
 										<div class="govuk-input__prefix" aria-hidden="true" style="border-right:2px solid black; margin-left:-2px;">%
 										</div>
 									</div>

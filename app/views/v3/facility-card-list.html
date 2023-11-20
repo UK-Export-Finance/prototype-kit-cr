@@ -581,7 +581,7 @@ Claims and recoveries
 
 
       {% if data.CalculatedPrincipalDelayInterestAmountDue %}
-        {{'Calculated principal amount due'}}
+        {{'Calculated principal interest due'}}
       {% endif %}
 
       {% if data.principalDelayInterestStartDate %}
@@ -593,17 +593,14 @@ Claims and recoveries
        {% endif %}
 
        {% if data.principalDelayInterestDuration %}
-         <br /> {{'Delay interest duration'}}
+         <br /> {{'Calculated interest duration'}}
         {% endif %}
 
 
-       {% if data.principalDelayInterestRate%}
-          <br /> {{'Delay interest interest rate'}}
+       {% if data.principalDelayInterestRateTotal%}
+          <br /> {{'Delay interest interest rate total'}}
        {% endif %}
 
-      {% if data.principalDelayInterestRateMargin %}
-      <br />  {{'PDelay interest interest rate margin'}}
-      {% endif %}
     </div>
      {% endif %}
     </dt>
@@ -623,15 +620,12 @@ Claims and recoveries
     {% endif %}
 
     {% if data.principalDelayInterestDuration %}
-     {{'£'+data.principalDelayInterestDuration or 'Awaiting entry'}}<br />
+     {{data.principalDelayInterestDuration +' days 'or 'Awaiting entry'}}<br />
   {% endif %}
 
-      {% if data.principalDelayInterestRate%}
-        {{'£'+data.principalDelayInterestRate or 'Awaiting entry'}}<br />
-      {% endif %}
+      {% if data.principalDelayInterestRateTotal%}
+        {{data.principalDelayInterestRateTotal + '%'or 'Awaiting entry'}}<br />
 
-      {% if data.principalDelayInterestRateMargin%}
-        {{data.principalDelayInterestRateMargin or '0'}}%
       </dd>
       <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/5--delay-principal-interest/1">View / Change details</a>
 

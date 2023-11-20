@@ -237,6 +237,8 @@ router.post(version +'/2-examination/1--principal-claim-amount/1', function(req,
 			req.session.data.CalculatedPrincipalAmountDue = req.session.data.CalculatedPrincipalAmountDue.toFixed(2)
 
 
+
+
 		res.redirect(version +'/facility-card-list')
 	}
 });
@@ -335,7 +337,14 @@ router.post(version +'/2-examination/5--delay-principal-interest/1', function(re
 
 	 req.session.data.principalDelayInterestDuration = '90'
 
-	 req.session.data.CalculatedPrincipalDelayInterestAmountDue = parseInt(req.session.data.principalDelayInterestRate) + parseInt(req.session.data.principalDelayInterestRateMargin)
+	 req.session.data.principalDelayInterestRateTotal = parseInt(req.session.data.principalDelayInterestRate) + parseInt(req.session.data.principalDelayInterestRateMargin)
+
+	 req.session.data.principalDelayInterestRateTotalToUseInCalc = (req.session.data.principalDelayInterestRateTotal /100)
+
+	 req.session.data.CalculatedPrincipalDelayInterestAmountDue = ((req.session.data.CalculatedPrincipalAmountDue /365) *90) * req.session.data.principalDelayInterestRateTotalToUseInCalc
+
+	 req.session.data.CalculatedPrincipalDelayInterestAmountDue  = req.session.data.CalculatedPrincipalDelayInterestAmountDue.toFixed(2)
+
 
 		res.redirect(version +'/facility-card-list')
 			}

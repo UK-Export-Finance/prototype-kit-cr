@@ -480,4 +480,13 @@ router.post(version +'/2-examination/5--delay-principal-interest/1', function(re
 					res.redirect(version +'/facility-card-list')
 	}
 });
+
+router.post(version +'/add-a-calculation', function(req, res) {
+	{
+			res.redirect(version +'/facility-card-list')
+}
+});
+
+
+
 }

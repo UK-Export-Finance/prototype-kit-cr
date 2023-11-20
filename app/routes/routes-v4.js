@@ -28,7 +28,7 @@ router.post(version +'/are-you-sure-create-new-claim', function(req, res) {
 	{
 		if (req.session.data.cancelClaimCreation =='yes'){
 
-			res.redirect(version +'/facility-card-list')
+			res.redirect(version +'/claims-dashboard-claim')
 		}
 		else{
 			res.redirect(version +'/facility-search-result')
@@ -172,6 +172,12 @@ router.post(version +'/facility-card-list-2', function(req, res) {
 router.post(version +'/facility-card-list-3', function(req, res) {
 	{
 			res.redirect(version +'/confirmation-changes-saved')
+	}
+});
+
+router.post(version +'/confirmation-changes-saved', function(req, res) {
+	{
+			res.redirect(version +'/facility-card-list')
 	}
 });
 

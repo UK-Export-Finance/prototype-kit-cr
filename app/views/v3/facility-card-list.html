@@ -35,7 +35,7 @@ Claims and recoveries
           New generated claim ID
         </dt>
         <dd class="govuk-summary-list__value">
-          12341037-CL1
+          {{data.facility}}-CL1
         </dd>
       </div>
 
@@ -43,7 +43,7 @@ Claims and recoveries
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Show more details
+            Show more details about the facility
           </span>
         </summary>
         <div class="govuk-details__text">
@@ -130,9 +130,9 @@ Claims and recoveries
     <h2 class="govuk-summary-card__title">1. Claim pre-examination</h2>
     <ul class="govuk-summary-card__actions">
 
-      {% if data.section1DefaultDate %}
+      {% if data.section1ExpectedRepeat %}
 
-        {% if data.notificationsSent %}
+        {% if data.notification1 %}
         <span style="margin-right:50px;">
         <strong class="govuk-tag govuk-tag--green app-task-list__tag" >
           All changes automatically saved
@@ -199,6 +199,10 @@ Claims and recoveries
            {% if data.section1AmountAtRisk%}
               <br /> {{'Amount at risk'}}
            {% endif %}
+
+           {% if data.section1PercentageNotRecovered%}
+              <br /> {{'Provision rate'}}
+           {% endif %}
         </div>
          {% endif %}
         </dt>
@@ -226,7 +230,12 @@ Claims and recoveries
           {% endif %}
 
           {% if data.section1AmountAtRisk%}
-            {{'£'+data.section1AmountAtRisk or 'Awaiting data entry'}}
+            {{'£'+data.section1AmountAtRisk or 'Awaiting data entry'}}<br />
+          {% endif %}
+
+          {% if data.section1PercentageNotRecovered%}
+            {{data.section1PercentageNotRecovered+'%' or 'Awaiting data entry'}}
+
           </dd>
           <dd class="govuk-summary-list__value" style="text-align:right;"><a href="1-pre-examination/1">View / Change details</a>
 
@@ -377,9 +386,7 @@ Claims and recoveries
                     </dt>
                     <dd class="govuk-summary-list__value">
 
-                        {% if data.notification1 %}
 
-                        {% endif %}
 
                       {% if data.notification1%}  <br /><br />
                         Sent<br />
@@ -428,7 +435,7 @@ Claims and recoveries
     <h2 class="govuk-summary-card__title">2. Claim examination</h2>
     <ul class="govuk-summary-card__actions">
 
-      {% if data.section1DefaultDate %}
+      {% if data.CalculatedPrincipalAmountDue %}
 
         {% if data.notificationsSent %}
         <span style="margin-right:50px;">
@@ -562,140 +569,84 @@ Claims and recoveries
 
 
 
-
-
-
-
-
-
-<!--Start 2.2-->
+<!--NEW 2.2-->
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row"   {% if (data.delayPrincipaltotalAmount)  %} {% else %} style="border-bottom:1px solid grey;" {% endif %}>
-      <dt class="govuk-summary-list__key" style="width:400px;">
+    <dt class="govuk-summary-list__key" style="width:400px;">
+    {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.2</div> {% endif %}
+    Delay interest on principal
+    {% if data.principalDelayInterestRate %}
 
-        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.2</div> {% endif %}
-      Delay interest on principal
-        {% if data.delayInterestPrincipalName %}
-        <br /><br />
-          {{ data.delayInterestPrincipalName }}
-          {% endif %}
-          {% if data.delayInterestPrincipalName2 %}
-          <br /><br />
-            {{ data.delayInterestPrincipalName2 }}
-            {% endif %}
-      </dt>
-      <dd class="govuk-summary-list__value">
+    <div class="govuk-inset-text" style="margin-top:5px; font-weight:bold; ">
 
-        {% if data.delayInterestPrincipalName %}
-        <br /> <br />
-        {{data.delayPrincipaltotalAmount or £90}}
+
+      {% if data.CalculatedPrincipalDelayInterestAmountDue %}
+        {{'Calculated principal amount due'}}
+      {% endif %}
+
+      {% if data.principalDelayInterestStartDate %}
+         <br /> {{'Delay interest start date'}}
+      {% endif %}
+
+      {% if data.principalDelayInterestEndDate %}
+        <br /> {{'Delay interest end date'}}
+       {% endif %}
+
+       {% if data.principalDelayInterestDuration %}
+         <br /> {{'Delay interest duration'}}
         {% endif %}
-        {% if data.delayInterestPrincipalName2 %}
-        <br /> <br />
-        {{data.delayPrincipaltotalAmount or £90}}
-        {% endif %}
 
-    {% if data.delayInterestPrincipalName %}
-      </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/5--delay-principal-interest/0-interest-name">View / Change details</a>
-      </dd>
+
+       {% if data.principalDelayInterestRate%}
+          <br /> {{'Delay interest interest rate'}}
+       {% endif %}
+
+      {% if data.principalDelayInterestRateMargin %}
+      <br />  {{'PDelay interest interest rate margin'}}
+      {% endif %}
     </div>
-  </dl>
+     {% endif %}
+    </dt>
+    <dd class="govuk-summary-list__value">
 
 
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row"   {% if (data.delayPrincipaltotalAmount)  %} style="border-bottom:1px solid grey;" {% else %}  {% endif %}>
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            View breakdown
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <div class="govuk-summary-list__row" >
-            <dt class="govuk-summary-list__key"  style="width:80%;">
-            Principal name
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{data.delayInterestPrincipalName or 'Principal 1'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Amount
-            </dt>
-            <dd class="govuk-summary-list__value">
-           £{{data.delayPrincipaltotalAmount or '100'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Demo copy data
-            </dt>
-            <dd class="govuk-summary-list__value">
-            Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Value
-            </dd>
-          </div>
-        </div>
+      {% if data.CalculatedPrincipalDelayInterestAmountDue %}  <br /><br />
+        {{'£'+data.CalculatedPrincipalDelayInterestAmountDue or 'Awaiting entry'}}<br />
+      {% endif %}
 
+      {% if data.principalDelayInterestStartDate%}
+        {{data.principalDelayInterestStartDate or 'Awaiting entry'}}<br />
+      {% endif %}
 
-      {% if data.delayInterestPrincipalName2 %}
-        <div class="govuk-details__text">
-          <div class="govuk-summary-list__row" >
-            <dt class="govuk-summary-list__key" style="width:80%;">
-            Principal name
-            </dt>
-            <dd class="govuk-summary-list__value">
-             {{data.delayInterestPrincipalName2 or 'Principal 2'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Amount
-            </dt>
-            <dd class="govuk-summary-list__value">
-           £{{data.delayPrincipaltotalAmount or '80'}}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Demo copy data
-            </dt>
-            <dd class="govuk-summary-list__value">
-            Value
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Demo copy text
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Value
-            </dd>
-          </div>
-        </div>
+      {% if data.principalDelayInterestEndDate %}
+       {{data.principalDelayInterestEndDate or 'Awaiting entry'}}<br />
+    {% endif %}
+
+    {% if data.principalDelayInterestDuration %}
+     {{'£'+data.principalDelayInterestDuration or 'Awaiting entry'}}<br />
+  {% endif %}
+
+      {% if data.principalDelayInterestRate%}
+        {{'£'+data.principalDelayInterestRate or 'Awaiting entry'}}<br />
+      {% endif %}
+
+      {% if data.principalDelayInterestRateMargin%}
+        {{data.principalDelayInterestRateMargin or '0'}}%
+      </dd>
+      <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/5--delay-principal-interest/1">View / Change details</a>
+
+        {% else %}
+        <a class="" href="2-examination/5--delay-principal-interest/1">Add details</a>
         {% endif %}
-      </details>
 
-      {% else %}
-      <a class="" href="2-examination/5--delay-principal-interest/0-interest-name">Add details</a>
-        {% endif %}
-    </div>
-  </dl>
+        {% if data.claimType =='Repeat claim' %}
+         <a class="" href="2-examination/5--delay-principal-interest/1">Add details</a>
 
+         {% endif %}
+      </div>
+    </dl>
 
-<!--End 2.3-->
-
-
-<!--Start 2.4 -->
+<!--Start 2.3 -->
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row"   {% if data.interestName %} {% else %} style="border-bottom:1px solid grey;" {% endif %}>
       <dt class="govuk-summary-list__key" style="width:400px;">
@@ -727,7 +678,7 @@ Claims and recoveries
 
     {% if data.interestName %}
       </dd>
-        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/9--delay-interest-on-interest-deferred/0-interest-name">View / Change details</a>
+        <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/9--delay-interest-on-interest-paid/1">View / Change details</a>
       </dd>
     </div>
   </dl>
@@ -816,7 +767,7 @@ Claims and recoveries
       </details>
 
       {% else %}
-      <a class="" href="2-examination/9--delay-interest-on-interest-deferred/0-interest-name">Add details</a>
+      <a class="" href="2-examination/9--delay-interest-on-interest-paid/1">Add details</a>
 
         {% endif %}
     </div>

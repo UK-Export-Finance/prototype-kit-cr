@@ -1,0 +1,219 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<nav class="govuk-!-display-none-print">
+	{{govukBackLink({
+	  text: "Back",
+	  "href": "javascript: window.history.go(-1)"
+	  })}}
+	  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+	  </a>
+	</nav>
+{% endblock %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+		      <h1 class="govuk-fieldset__heading">
+		    Check and complete RM Summary
+		      </h1>
+		    </legend>
+		    <div id="passport-issued-hint" class="govuk-hint">
+		      Check all details are correct and press confirm once complete
+					</div><br />
+
+				<form action="" method="post" novalidate>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key" style="width:50%">
+								Product
+						</dt>
+						<dd class="govuk-summary-list__value">
+						Buyer credit (Aero)
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="/2-examination/5-calculate-delay-principal-interest/1-interest-start-date">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key" style="width:50%">
+								Claimant
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{{data.bank}}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="/2-examination/5-calculate-delay-principal-interest/0-interest-name">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Deal number
+						</dt>
+						<dd class="govuk-summary-list__value">
+							012873566373
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/2-amount">
+								<span class="govuk-visually-hidden"> claim amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Facility ID
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{data.facility}}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/2-amount">
+								<span class="govuk-visually-hidden"> claim amount</span>
+							</a>
+						</dd>
+					</div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              MSN Number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              017736363
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="1-calculate-principal-claim-amount/2-amount">
+                <span class="govuk-visually-hidden"> claim amount</span>
+              </a>
+            </dd>
+          </div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Supplier
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{data.company}}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Ultimate Obligor
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{data.buyer}}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Project
+						</dt>
+						<dd class="govuk-summary-list__value">
+							BC: A/C No.3 ESN 63441
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Amount claimed
+						</dt>
+						<dd class="govuk-summary-list__value">
+				        {{'£'+data.CalculatedPrincipalDelayInterestOnInterestAmountDue or 'No entry'}}<br />
+
+
+				        {{data.principalDelayInterestOnInterestStartDate or 'Awaiting entry'}}<br />
+
+				       {{data.principalDelayInterestOnInterestEndDate or 'Awaiting entry'}}<br />
+
+				     {{data.principalDelayInterestOnInterestDuration +' days 'or 'Awaiting entry'}}<br />
+
+				        {{data.principalDelayInterestOnInterestRateTotal + '%'or 'Awaiting entry'}}<br />
+
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							ECA Percentage
+						</dt>
+						<dd class="govuk-summary-list__value">
+						None
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							ECA Percentage
+						</dt>
+						<dd class="govuk-summary-list__value">
+						None
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Add commentary to RM Summary
+						</dt>
+						<dd class="govuk-summary-list__value">
+
+							<textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+						</div>
+
+						<dd class="govuk-summary-list__actions">
+
+						</dd>
+					</div>
+
+
+
+
+        </dl>
+				<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button" type="submit"  value="no" name="addAnother">
+					Confirm
+				</button>
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" value="yes" name="addAnother">
+					Confirm and add another interest
+				</button>
+			</div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

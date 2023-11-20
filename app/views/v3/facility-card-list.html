@@ -437,7 +437,7 @@ Claims and recoveries
 
       {% if data.CalculatedPrincipalAmountDue %}
 
-        {% if data.notificationsSent %}
+        {% if data.totalClaimAmount %}
         <span style="margin-right:50px;">
         <strong class="govuk-tag govuk-tag--green app-task-list__tag" >
           All changes automatically saved
@@ -472,21 +472,6 @@ Claims and recoveries
 
     </ul>
   </div>
-
-
-
-
-<!--Start examination--->
-<!--Start examination--->
-<!--Start examination--->
-<!--Start examination--->
-<!--Start examination--->
-<!--Start examination--->
-<!--Start examination--->
-<!--Start examination--->
-  <!--SEction starts here-->
-
-
 
 <!-- 2.1 starts here --->
 
@@ -732,22 +717,56 @@ Claims and recoveries
 
       </dd>
         <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/2--contractual-interest-amount/1-days-in-year">View / Change details</a>
-      </dd>
-    </div>
-  </dl>
+
   {% else %}
   Awaiting completion
     {% endif %}
 </div>
-</dl>
 
 
 
 
+<div class="govuk-summary-list__row"   {% if data.totalAmount %} {% else %} style="border-bottom:1px solid grey;" {% endif %}>
+    <dt class="govuk-summary-list__key"  style="width:400px;">
+    {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.5 </div>{% endif %}
+   Enter C-Number
+  </dt>
+  <dd class="govuk-summary-list__value">
 
-  <!--End 2.5 -->
+    {% if data.cNumber %}
+      {{data.cNumber or 'Awaiting completion'}}
+
+  </dd>
+    <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/10--C-Number/1">View / Change details</a>
+</dd>
+</div>
+
+{% else %}
+<a class="" href="2-examination/10--C-Number/1">Add details</a>
+</div>
+{% endif %}
 
 
+
+<div class="govuk-summary-list__row"   {% if data.totalAmount %} {% else %} style="border-bottom:1px solid grey;" {% endif %}>
+    <dt class="govuk-summary-list__key"  style="width:400px;">
+    {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.5 </div>{% endif %}
+  RM summary
+  </dt>
+  <dd class="govuk-summary-list__value">
+
+    {% if data.cNumber %}
+      {{data.cNumber or 'Awaiting completion'}}
+
+  </dd>
+    <dd class="govuk-summary-list__value" style="text-align:right;"><a href="2-examination/11--Summary/1">View / Change details</a>
+  </dd>
+</div>
+
+{% else %}
+<a class="" href="2-examination/11--Summary/1">Add details</a>
+{% endif %}
+</div>
 
 
 
@@ -761,14 +780,7 @@ Claims and recoveries
   Remove a calculation
 </button>
 </div>
-
-
-
-
-  <!--End add buttons -->
-
-
-  </div>
+</div>
 <!--END of examination-->
 <!--END of examination-->
 <!--END of examination-->

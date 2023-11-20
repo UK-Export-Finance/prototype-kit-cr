@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<nav class="govuk-!-display-none-print">
+	{{govukBackLink({
+	  text: "Back",
+	  "href": "javascript: window.history.go(-1)"
+	  })}}
+	  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+	  </a>
+	</nav>
+{% endblock %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4" style="margin-left:10px;">
+    	Add another amount
+      </h1><br />
+
+			<p class="govuk-body"></p>
+
+			<div data-module="moj-add-another">
+  
+			  <form method="post">
+
+			    <fieldset class="govuk-fieldset moj-add-another__item">
+
+			      <legend class="govuk-fieldset__legend moj-add-another__title govuk-fieldset__legend--m">
+
+			        Amount
+
+			      </legend>
+
+			      <div class="govuk-form-group">
+			        <label class="govuk-label govuk-!-font-weight-bold" for="person[0][first_name]">
+			          Amount name
+			        </label>
+
+			        <input class="govuk-input govuk-input--width-20" id="other" name="amount[0][name]" type="text" data-name="amount[%index%][name]" data-id="amount[%index%][name]">
+
+			      </div>
+
+			      <div class="govuk-form-group">
+			        <label class="govuk-label govuk-!-font-weight-bold" for="amount[0][last_name]">
+			          Amount
+			        </label>
+
+			        <input class="govuk-input govuk-input--width-20" id="amount[0][value]" name="amount[0][value]" type="text" data-name="amount[%index%][value]" data-id="amount[%index%][value]">
+
+			      </div>
+
+
+
+			    </fieldset>
+
+			    <div class="moj-button-action">
+
+			      <button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+			        Add another amount
+			      </button>
+
+			    </div>
+
+			    <div class="moj-button-action">
+
+			      <button class="govuk-button" data-module="govuk-button">
+			        Confirm
+			      </button>
+
+			    </div>
+
+			  </form>
+
+			</div>
+
+
+
+
+			<form method="post">
+
+  </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

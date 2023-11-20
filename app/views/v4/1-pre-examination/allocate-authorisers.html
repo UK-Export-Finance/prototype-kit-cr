@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<nav class="govuk-!-display-none-print">
+	{{govukBackLink({
+	  text: "Back",
+	  "href": "javascript: window.history.go(-1)"
+	  })}}
+	  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+	  </a>
+	</nav>
+{% endblock %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-grid-column-two-thirds">
+      <form method="post">
+				<div class="govuk-form-group">
+				  <fieldset class="govuk-fieldset">
+				    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+				      <h1 class="govuk-fieldset__heading">
+				        Choose the authoriser would you like to allocate to the claim?
+				      </h1>
+				    </legend>
+						<div id="nationality-hint" class="govuk-hint">
+    			You can only allocate authoriser </div>
+
+
+
+				    <div class="govuk-radios" data-module="govuk-radios">
+								<div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="organisation" name="allocatedAuthoriser" type="radio" {% if data.allocatedAuthoriser=="Steven Smith" %} checked {% endif %} value="Steven Smith">
+				        <label class="govuk-label govuk-radios__label" for="organisation">
+				          Steven Smith
+				        </label>
+				      </div>
+				      <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="organisation-2" name="allocatedAuthoriser" type="radio" {% if data.allocatedAuthoriser=="Rajesh Damodaran" %} checked {% endif %} value="Rajesh Damodaran">
+				        <label class="govuk-label govuk-radios__label" for="organisation-2">
+				          Mario Capelli
+				        </label>
+				      </div>
+				      <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="organisation-3" name="allocatedAuthoriser" type="radio" {% if data.allocatedAuthoriser=="Lisa Fitzgerald" %} checked {% endif %} value="Lisa Fitzgerald">
+				        <label class="govuk-label govuk-radios__label" for="organisation-3">
+				          Lisa Fitzgerald
+				        </label>
+				      </div>
+				      <div class="govuk-radios__item">
+				        <input class="govuk-radios__input" id="organisation-4" name="allocatedAuthoriser"  type="radio" {% if data.allocatedAuthoriser=="Samir Khan" %} checked {% endif %} value="Samir Khan">
+				        <label class="govuk-label govuk-radios__label" for="organisation-4">
+				          Samir Khan
+				        </label>
+				      </div>
+				    </div>
+				  </fieldset>
+				</div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Confirm
+          </button>
+
+    <!--      <input type="hidden" name="cancelClaimCreation" value="false">-->
+        </form>
+			</div>
+			</div>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,240 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<nav class="govuk-!-display-none-print">
+	{{govukBackLink({
+	  text: "Back",
+	  "href": "javascript: window.history.go(-1)"
+	  })}}
+	  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+	  </a>
+	</nav>
+{% endblock %}
+	<div class="govuk-grid-row">
+	  <div class="govuk-grid-column-two-thirds">
+		  <form method="post">
+				<h1 class="govuk-heading-xl govuk-!-margin-bottom-4" >
+					 Claim details
+				</h1>
+				<div class="govuk-form-group">
+					<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+					 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+						 <h1 class="govuk-fieldset__heading">
+				 What is the claim status?
+						 </h1>
+					 </legend>
+					 <div class="govuk-radios" data-module="govuk-radios">
+ 						<div class="govuk-radios__item">
+ 						<input class="govuk-radios__input" id="changed-name" name="section1ExpectedRepeat" {% if data.section1ExpectedRepeat=='New claim'%} checked='checked' {% endif %} type="radio" value="New claim">
+ 						<label class="govuk-label govuk-radios__label" for="changed-name">
+ 							A new claim
+ 						</label>
+ 					</div>
+ 					<div class="govuk-radios__item">
+ 						<input class="govuk-radios__input" id="changed-name-2" name="section1ExpectedRepeat" {% if data.section1ExpectedRepeat=='Repeat claim'%} checked='checked' {% endif %} type="radio" value="Repeat claim">
+ 						<label class="govuk-label govuk-radios__label" for="changed-name-2">
+ 							A repeat claim
+ 						</label>
+ 						</div>
+ 					</div>
+					</fieldset>
+						<br /><br />
+
+							<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+							<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+								<h1 class="govuk-fieldset__heading">
+									What is the claim type?
+								</h1>
+							</legend>
+
+						<div class="govuk-radios" data-module="govuk-radios">
+							<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="changed-name-3" name="section1ClaimNotification" {% if data.section1ClaimNotification=='Notified'%} checked='checked' {% endif %} type="radio" value="Notified">
+							<label class="govuk-label govuk-radios__label" for="changed-name-3">
+								Notified
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="changed-name-4" name="section1ClaimNotification" {% if data.section1ClaimNotification=='Expected'%} checked='checked' {% endif %} type="radio" value="Expected">
+							<label class="govuk-label govuk-radios__label" for="changed-name-4">
+								Expected
+							</label>
+							</div>
+						</div>
+							</fieldset>
+							<br /><br />
+
+
+
+							<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+								<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+									<h1 class="govuk-fieldset__heading">
+								What is the date of the default?
+									</h1>
+								</legend>
+								<div id="passport-issued-hint" class="govuk-hint">
+									For example, 27 11 2023. The claim due date is automatically calculated using this date
+								</div>
+								<div class="govuk-date-input" id="passport-issued">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+												Day
+											</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.section1DefaultDay }}" name="section1DefaultDay" type="text" inputmode="numeric">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+												Month
+											</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="{{ data.section1DefaultMonth }}" name="section1DefaultMonth" type="number" inputmode="numeric">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+												Year
+											</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.section1DefaultYear }}" name="section1DefaultYear" type="text" inputmode="numeric">
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<br /><br />
+
+
+
+							{% if data.section1ClaimDueDate%}
+							<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+								<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+									<h1 class="govuk-fieldset__heading">
+								Claim due date
+									</h1>
+								</legend>
+								<div id="passport-issued-hint" class="govuk-hint">
+									This has been calculated using the date of the default
+								</div>
+								<div class="govuk-date-input" id="passport-issued">
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+												Day
+											</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" value="{{ data.section1ClaimDueDay }}" name="section1ClaimDueDay" type="text" inputmode="numeric">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+												Month
+											</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" value="{{ data.section1ClaimDueMonth }}" name="section1ClaimDueMonth" type="number" inputmode="numeric">
+										</div>
+									</div>
+									<div class="govuk-date-input__item">
+										<div class="govuk-form-group">
+											<label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+												Year
+											</label>
+											<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"  value="{{ data.section1ClaimDueYear }}" name="section1ClaimDueYear" type="text" inputmode="numeric">
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<br /><br />
+							{% endif %}
+
+
+							<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+						 	 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+						 		 <h1 class="govuk-fieldset__heading">
+						 	 What is the gross claimed amount?
+						 		 </h1>
+						 	 </legend>
+						 	 <div id="passport-issued-hint" class="govuk-hint">
+						 		 Enter as a full amount, for example 9,000.56
+						 	 <div class="govuk-date-input" id="passport-issued">
+
+						 		 <div class="govuk-date-input__item">
+						 			 <div class="govuk-form-group">
+						 				 <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+						 					 Amount
+						 				 </label>
+						 				 <div class="govuk-input__wrapper">
+						 						 <div class="govuk-input__prefix" aria-hidden="true">£</div>
+						 						 <input class="govuk-input govuk-input--width-10" id="passport-issued-month" name="section1ClaimedAmount" type="text" spellcheck="false" aria-describedby="currency-hint" value="{{ data.section1ClaimedAmount }}">
+						 					 </div>
+						 			 </div>
+						 		 </div>
+						 	 </div>
+						  </fieldset>
+						<br /><br />
+
+						<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+						 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+							 <h1 class="govuk-fieldset__heading">
+						 What is the amount at risk?
+							 </h1>
+						 </legend>
+						 <div id="passport-issued-hint" class="govuk-hint">
+							 Enter as a full amount, for example 9,000.56
+						 <div class="govuk-date-input" id="passport-issued">
+
+							 <div class="govuk-date-input__item">
+								 <div class="govuk-form-group">
+									 <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+										 Amount
+									 </label>
+									 <div class="govuk-input__wrapper">
+											 <div class="govuk-input__prefix" aria-hidden="true">£</div>
+											 <input class="govuk-input govuk-input--width-10" id="passport-issued-month" name="section1AmountAtRisk" type="text" spellcheck="false" aria-describedby="currency-hint" value="{{ data.section1AmountAtRisk }}">
+										 </div>
+								 </div>
+							 </div>
+						 </div>
+						</fieldset>
+					<br /><br />
+
+
+
+					<fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+					 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+						 <h1 class="govuk-fieldset__heading">
+					 What is the provision rate?
+						 </h1>
+					 </legend>
+					 <div id="passport-issued-hint" class="govuk-hint">
+						 The amount expressed as a percentage that is not expected to be recovered
+					 <div class="govuk-date-input" id="passport-issued">
+
+						 <div class="govuk-date-input__item">
+							 <div class="govuk-form-group">
+								 <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+									 Amount
+								 </label>
+								 <div class="govuk-input__wrapper">
+										 <input class="govuk-input govuk-input--width-10" id="passport-issued-month" name="section1PercentageNotRecovered" type="text" spellcheck="false" aria-describedby="currency-hint" value="{{ data.section1PercentageNotRecovered }}">
+										 <div class="govuk-input__prefix" aria-hidden="true" style="border-right:2px solid black; margin-left:-2px;">%
+										 </div>
+								</div>
+							 </div>
+						 </div>
+					 </div>
+					</fieldset>
+				<br /><br />
+
+
+				</div>
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
+		 </form>
+		</div>
+	</div>
+
+</div>
+{% endblock %}

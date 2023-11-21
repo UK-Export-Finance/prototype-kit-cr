@@ -1,0 +1,217 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Claims and recoveries
+{% endblock %}
+
+
+{% block beforeContent %}
+<nav class="govuk-!-display-none-print">
+{{govukBackLink({
+  text: "Back",
+  "href": "javascript: window.history.go(-1)"
+  })}}
+  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+  </a>
+</nav>
+<h1 class="govuk-heading-l">
+  Claims and recoveries dashboard	</h1>
+<p class="govuk-body">Select the facility from the list shown to create a new claim or view an exisiting claim, or search for a different facility.<br /> You can aslo filter the results, by selecting the show filters button.</p>
+
+<div class="homepage-search">
+	<div class="govuk-width-container">
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Search for a facility</h2>
+		<p class="govuk-body govuk-hint"> Enter the facility ID, deal ID or exporter name.</p>
+		<form method="post" class="horizontal-form" data-test="homepage-search-form" name="facilitySearch">
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="keywords">
+					Search term
+				</label>
+				<input class="govuk-input" id="keywords" name="keywords" type="text" data-test="homepage-search-keywords">
+			</div>
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="location">
+					Search category
+				</label>
+				<select class="govuk-select" id="location" name="Home-Search" data-test="homepage-search-location">
+					<option value="Home-Search">Select category</option>
+
+					<option value="Facility ">Facility ID</option>
+					<option value="Deal">Deal ID</option>
+						<option value="Company">Exporter</option>
+						<option value="Claim">Claim ID</option>
+				</select>
+			</div>
+			<button type="submit" class="govuk-button" data-module="govuk-button">
+				Search
+			</button>
+		</form>
+	</div>
+</div>
+{% block content %}
+<form id="form" method="post" action="search-results-24102023">
+<br />
+  {% endblock %}
+
+		{% if data.claimType =='new' %}
+			<h2 class="govuk-heading-s">
+				Showing 2 of 2 results for '1234'
+			</h2>
+      {% else %}
+      <h2 class="govuk-heading-s">
+				Showing 1 of 1 result for '1234'
+			</h2>
+      {% endif %}
+
+			{% from "govuk/components/table/macro.njk" import govukTable %}
+			<table class="govuk-table app-whereabouts-table--sticky-head" data-module="moj-sortable-table">
+				<thead class="govuk-table__head">
+					<tr class="govuk-table__row">
+						<!-- <th class="govuk-table__header" scope="col">Date</th> -->
+
+          {% if data.claimType =='new' %}
+						<th class="govuk-table__header" style="width:13%" scope="col" aria-sort="ascending"><button type="button" data-index="1"></button>Facility ID</th>
+						<th class="govuk-table__header" scope="col" aria-sort="none">Exporter</th>
+            <th class="govuk-table__header" scope="col" aria-sort="none">Buyer</th>
+            <th class="govuk-table__header" scope="col" aria-sort="none">Product Type</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col" aria-sort="none">Amount at risk</th>
+            <th class="govuk-table__header" scope="col"></th>
+						<th class="govuk-table__header" scope="col"></th>
+
+          {% else %}
+            <th class="govuk-table__header" style="width:13%" scope="col" aria-sort="ascending">Claim ID</th>
+            <th class="govuk-table__header" scope="col" aria-sort="none">Exporter</th>
+            <th class="govuk-table__header" scope="col" aria-sort="none">Claim due date</th>
+						<th class="govuk-table__header" scope="col" aria-sort="none">Product Type</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col" aria-sort="none">Claim value</th>
+              <th class="govuk-table__header" scope="col" aria-sort="none">Claim status</th>
+						<th class="govuk-table__header" scope="col"></th>
+          {% endif %}
+					</tr>
+				</thead>
+				<tbody class="govuk-table__body">
+            {% if data.claimType =='existing' %}
+					  <tr class="govuk-table__row ">
+  						<td class="govuk-table__cell"><strong>
+                {% if data.setupShowCardview =='yes' %}
+              <!--  <a href="facility-card-list?company=Airbus UK&buyer=Singapore Airline&bank=JP Morgan&facility=12345678&deal=9882652&address1=Aerospace Ave&address2=Filton&address3=Bristol&address4=BS34 7PA&email@airbus.ukcom&phone=0117 969 3831&claimNotificationorExpectedRepeat=New claim&claimNotification=Expected">-->
+              <a href="company-details?company=Airbus UK&buyer=Singapore Airline&bank=JP Morgan&facility=12345678&deal=9882652&address1=Aerospace Ave&address2=Filton&address3=Bristol&address4=BS34 7PA&email@airbus.ukcom&phone=0117 969 3831&claimNotificationorExpectedRepeat=New claim&claimNotification=Expected">
+
+                  {% else %}
+                  <a href="company-details?company=Airbus UK&buyer=Singapore Airline&bank=JP Morgan&facility=12345678&deal=9882652&address1=Aerospace Ave&address2=Filton&address3=Bristol&address4=BS34 7PA&email@airbus.ukcom&phone=0117 969 3831">
+                  <!--<a href="facility-task-list?company=Airbus UK&buyer=Singapore Airline&bank=JP Morgan&facility=12345678&deal=9882652&address1=Aerospace Ave&address2=Filton&address3=Bristol&address4=BS34 7PA&email@airbus.ukcom&phone=0117 969 3831">-->
+
+                {% endif %}
+                A345678</a></strong></td>
+  						<td class="govuk-table__cell">Airbus UK</td>
+              <td class="govuk-table__cell"data-sort-value="230921">21st Sept 2024</td>
+              <td class="govuk-table__cell"data-sort-value="Buyer credit">Buyer credit (Aero)</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="20">2,000,000</td>
+  					  <td class="govuk-table__cell ">
+  						<span class="govuk-tag govuk-tag--blue">In progress</span></td>
+            </tr>
+          {% endif %}
+
+            {% if data.claimType =='new' %}
+            <tr class="govuk-table__row ">
+						<td class="govuk-table__cell">
+              <strong>
+                <a href="company-details?company=Boeing&buyer=KLM&bank=HSBC&facility=12341037&deal=87256276&address1=71 High Street&address2=Poole&address3=Dorset&address4=BH7 7HN&email=head@Boeing.com&phone=01202 779671">12341037</a>
+
+              <!--  <a href="are-you-sure-create-new-claim?company=Boeing&buyer=KLM&bank=HSBC&facility=12341037&deal=87256276&address1=71 High Street&address2=Poole&address3=Dorset&address4=BH7 7HN&email=head@Boeing.com&phone=01202 779671">12341037</a>-->
+              </strong>
+            </td>
+						<td class="govuk-table__cell">Boeing</td>
+					<!--	<td class="govuk-table__cell govuk-table__cell--numeric">2,000,000</td>-->
+						<td class="govuk-table__cell ">KLM </td>
+            <td class="govuk-table__cell"data-sort-value="Buyer credit">Buyer credit (Aero)</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="15">1,500,000</td>
+					  </tr>
+            {% endif %}
+
+            {% if data.claimType =='new' %}
+          <tr class="govuk-table__row ">
+          <td class="govuk-table__cell">
+            <strong>
+            <a href="company-details?company=Airbus &buyer=Virgin Atlantic&bank=Barclays&facility=98212341&deal=28181034&address1=99 Straits Avenue&address2=Bracknell&address3=Berkshire&address4=SL6 7PJ&email=ramesh.kham@Airbus.com&phone=01766 344333">98212341</a>
+
+          <!--  <a href="are-you-sure-create-new-claim?company=Airbus &buyer=Virgin Atlantic&bank=Barclays&facility=98212341&deal=28181034&address1=99 Straits Avenue&address2=Bracknell&address3=Berkshire&address4=SL6 7PJ&email=ramesh.kham@Airbus.com&phone=01766 344333">98212341</a>-->
+          </strong>
+          </td>
+          <td class="govuk-table__cell">Airbus</td>
+        <!--	<td class="govuk-table__cell govuk-table__cell--numeric">2,000,000</td>-->
+          <td class="govuk-table__cell ">Virgin Atlantic</td>
+          <td class="govuk-table__cell"data-sort-value="Buyer credit">Buyer credit (Aero)</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3">300,000</td>
+
+        </tr>
+          {% endif %}
+				</tbody>
+			</table>
+</form>
+{% endblock %}
+
+
+
+{% block pageScripts %}
+<script type="text/javascript">
+	$(document).ready(function () {
+		new MOJFrontend.FilterToggleButton({
+			bigModeMediaQuery: "(min-width: 48.063em)",
+			startHidden: true,
+			toggleButton: {
+				container: $(".moj-action__filter"),
+				showText: "Show filter",
+				hideText: "Hide filter",
+				classes: "govuk-button--secondary",
+			},
+			closeButton: {
+				container: $(".moj-filter__header-action"),
+				text: "Close",
+			},
+			filter: {
+				container: $(".moj-filter"),
+			},
+		});
+	})
+</script>
+
+
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#appointment-location-fltr'),
+        showAllValues: true,
+        defaultValue: '',
+        autoselect: true,
+        confirmOnBlur: false,
+    })
+</script>
+
+
+
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#appointment-type-fltr'),
+        showAllValues: true,
+        defaultValue: '',
+        autoselect: true,
+        confirmOnBlur: false,
+    })
+</script>
+
+
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#appointment-prisoner-name'),
+        showAllValues: true,
+        defaultValue: '',
+        autoselect: true,
+        confirmOnBlur: false,
+    })
+</script>
+{% endblock %}

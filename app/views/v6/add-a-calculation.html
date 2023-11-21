@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Claims and recoveries
+{% endblock %}
+
+
+{% block beforeContent %}
+<nav class="govuk-!-display-none-print">
+{{govukBackLink({
+  text: "Back",
+  "href": "javascript: window.history.go(-1)"
+  })}}
+  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+  </a>
+</nav>
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post">
+	<h1 class="govuk-heading-l">
+
+  Add another task to the claim 
+  </h1>
+	<p class="govuk-body">If there are further tasks thhat are needed for the claim, you can add another task to the task list by selecting the task from the selection below. </p>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
+      Select a task to add to the task list
+    </label>
+    <select class="govuk-select" id="sort" name="sort">
+      <option value="published">Calculate delay interest on Interest deferred</option>
+      <option value="updated" selected>Calculate delay interest on principal deferred</option>
+      <option value="views">Calculate delay interest on interest</option>
+      <option value="comments">Calculate  Deferred contractual Interest to Due Date </option>
+    </select>
+  </div>
+
+<!--Start add buttons -->
+
+<div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button">
+    Add task to task list
+  </button>
+  <a class="govuk-link" href="facility-card-list">Cancel and go back</a>
+
+
+</div>
+
+<!--END of examination-->
+<!--END of examination-->
+<!--END of examination-->
+<!--END of examination-->
+<!--END of examination-->
+<!--END of examination-->
+<!--END of examination-->
+<!--END of examination-->
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<script type="text/javascript">
+	$(document).ready(function () {
+		new MOJFrontend.FilterToggleButton({
+			bigModeMediaQuery: "(min-width: 48.063em)",
+			startHidden: true,
+			toggleButton: {
+				container: $(".moj-action__filter"),
+				showText: "Show filter",
+				hideText: "Hide filter",
+				classes: "govuk-button--secondary",
+			},
+			closeButton: {
+				container: $(".moj-filter__header-action"),
+				text: "Close",
+			},
+			filter: {
+				container: $(".moj-filter"),
+			},
+		});
+	})
+</script>
+
+
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#appointment-location-fltr'),
+        showAllValues: true,
+        defaultValue: '',
+        autoselect: true,
+        confirmOnBlur: false,
+    })
+</script>
+
+
+
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#appointment-type-fltr'),
+        showAllValues: true,
+        defaultValue: '',
+        autoselect: true,
+        confirmOnBlur: false,
+    })
+</script>
+
+
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#appointment-prisoner-name'),
+        showAllValues: true,
+        defaultValue: '',
+        autoselect: true,
+        confirmOnBlur: false,
+    })
+</script>
+{% endblock %}

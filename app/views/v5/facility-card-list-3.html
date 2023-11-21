@@ -1,0 +1,270 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Claims and recoveries
+{% endblock %}
+
+
+{% block beforeContent %}
+<nav class="govuk-!-display-none-print">
+{{govukBackLink({
+  text: "Back",
+  "href": "javascript: window.history.go(-1)"
+  })}}
+  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+  </a>
+</nav>
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post">
+	<h1 class="govuk-heading-l">
+
+    {% if data.claimType =='new' %}
+		Create new claim record for facility {{data.facility}}
+    {% else %}
+		Manage existing claim record for facility {{data.facility}}
+    {% endif %}
+  </h1>
+	<p class="govuk-body">Complete the tasks below. The information entered will be automatcally saved and retained when you leave this page.</p>
+
+  <div class="">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row" style="border-bottom:none;">
+        <dt class="govuk-summary-list__key" style="width:400px;">
+          New generated claim ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data.facility}}-CL1
+        </dd>
+      </div>
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Show more details about the facility
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Exporter
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{data.company}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Buyer
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{data.buyer}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Product type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Buyer credit (Aero)
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Bank
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{data.bank}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Bank contact details
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">{{data.phone}}</p>
+      <p class="govuk-body">bank@thebank.com</p>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Facility ID
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{data.facility}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Deal ID
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{data.deal}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Amount at risk
+    </dt>
+    <dd class="govuk-summary-list__value">
+      &pound;10,000,000
+    </dd>
+  </div>
+</div>
+</details>
+</dl>
+
+<nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+  <ul class="moj-sub-navigation__list">
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link"href="facility-card-list">1. Pre-examination</a>
+    </li>
+
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link"  href="facility-card-list-2">2. Examination</a>
+    </li>
+
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" aria-current="page" href="facility-card-list-3">3. Review and authorisation</a>
+    </li>
+  </ul>
+
+</nav>
+
+
+
+<!--NEW Section2-->
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">3. Review and authorisation</h2>
+    <ul class="govuk-summary-card__actions">
+
+      <span style="margin-right:50px;">
+      <strong class="" >
+        <a href="">
+        - Remove a calculation
+        </a>
+      </strong>
+      </span>
+
+
+    <span style="">
+    <strong class="" >
+      <a href="add-a-calculation">
+        + Add a calculation
+      </a>
+    </strong>
+    </span>
+    </ul>
+  </div>
+
+<!-- 2.1 starts here --->
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row"   {% if (data.delayPrincipaltotalAmount)  %} {% else %} style="border-bottom:1px solid grey;" {% endif %}>
+        <dt class="govuk-summary-list__key" style="width:400px;">
+        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.1</div> {% endif %}
+        Next section coming soon.
+
+
+</div>
+
+
+
+
+
+<!--Start add buttons -->
+<br /><br />
+<div class="govuk-button-group">
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save and exit
+  </button>
+</div>
+
+<!--END of examination-->
+<!--END of examination-->
+<!--END of examination-->
+<!--END of examination-->
+<!--END of examination-->
+<!--END of examination-->
+<!--END of examination-->
+<!--END of examination-->
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<script type="text/javascript">
+	$(document).ready(function () {
+		new MOJFrontend.FilterToggleButton({
+			bigModeMediaQuery: "(min-width: 48.063em)",
+			startHidden: true,
+			toggleButton: {
+				container: $(".moj-action__filter"),
+				showText: "Show filter",
+				hideText: "Hide filter",
+				classes: "govuk-button--secondary",
+			},
+			closeButton: {
+				container: $(".moj-filter__header-action"),
+				text: "Close",
+			},
+			filter: {
+				container: $(".moj-filter"),
+			},
+		});
+	})
+</script>
+
+
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#appointment-location-fltr'),
+        showAllValues: true,
+        defaultValue: '',
+        autoselect: true,
+        confirmOnBlur: false,
+    })
+</script>
+
+
+
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#appointment-type-fltr'),
+        showAllValues: true,
+        defaultValue: '',
+        autoselect: true,
+        confirmOnBlur: false,
+    })
+</script>
+
+
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    accessibleAutocomplete.enhanceSelectElement({
+        selectElement: document.querySelector('#appointment-prisoner-name'),
+        showAllValues: true,
+        defaultValue: '',
+        autoselect: true,
+        confirmOnBlur: false,
+    })
+</script>
+{% endblock %}

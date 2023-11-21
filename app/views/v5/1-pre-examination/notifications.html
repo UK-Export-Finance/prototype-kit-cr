@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<nav class="govuk-!-display-none-print">
+	{{govukBackLink({
+	  text: "Back",
+	  "href": "javascript: window.history.go(-1)"
+	  })}}
+	  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+	  </a>
+	</nav>
+{% endblock %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+      <form method="post">
+        <div class="govuk-form-group">
+					<div class="govuk-form-group">
+	  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+	    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+	      <h1 class="govuk-fieldset__heading">
+	    Which notifications have been sent
+	      </h1>
+	    </legend>
+
+
+			<div class="govuk-form-group">
+			  <fieldset class="govuk-fieldset">
+			    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+			      <h1 class="govuk-fieldset__heading">
+			       Notifications
+			      </h1>
+			    </legend>
+			    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+			      <div class="govuk-checkboxes__item">
+			        <input class="govuk-checkboxes__input" id="organisation" name="notification1" type="checkbox" {% if data.notification1=="Party 1" %} checked{% endif %} value="Party 1">
+			        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+			           Party 1
+			        </label>
+			      </div>
+			      <div class="govuk-checkboxes__item">
+			        <input class="govuk-checkboxes__input" id="organisation-2" name="notification2" type="checkbox" {% if data.notification2=="Party 2" %} checked{% endif %}  value="Party 2">
+			        <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+			          Party 2
+			        </label>
+			      </div>
+			      <div class="govuk-checkboxes__item">
+			        <input class="govuk-checkboxes__input" id="organisation-3" name="notification3" type="checkbox" {% if data.notification3=="Party 3" %} checked{% endif %}  value="Party 3">
+			        <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+			           Party 3
+			        </label>
+			      </div>
+			      <div class="govuk-checkboxes__item">
+			        <input class="govuk-checkboxes__input" id="organisation-4" name="notification4" type="checkbox" {% if data.notification4=="Party 4" %} checked{% endif %}  value="Party 4">
+			        <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+			           Party 4
+			        </label>
+			      </div>
+			    </div>
+			  </fieldset>
+			</div>
+			<input class="govuk-checkboxes__input" id="organisation" name="notificationsSent" type="hidden" value="true">
+
+
+
+
+
+	  </fieldset>
+	</div>
+        </div>
+          <button class="govuk-button" data-module="govuk-button">
+          Confirm
+          </button>
+
+    <!--      <input type="hidden" name="cancelClaimCreation" value="false">-->
+        </form>
+      </div>
+    </div>
+    </div>
+{% endblock %}

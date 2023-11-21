@@ -1,0 +1,217 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Activities Management prototype
+{% endblock %}
+{% block primaryNavigation %}
+{% endblock %}
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<h1 class="govuk-heading-l govuk-!-margin-top-7">Claims and recoveries</h1>
+
+	{% if data.setuoShowSearch=='yes' %}
+	<p>Search for a facility using criteria below or navigate to either  create a new claim or manage an existing claim.</p>
+	{% endif %}
+</div>
+
+{% endblock %}
+
+
+<div class="homepage-search">
+	<div class="govuk-width-container">
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Search for a different facility </h2>
+		<p class="govuk-body govuk-hint"> Enter the facility ID, deal ID, company name or existing claim ID</p>
+		<form method="post" class="horizontal-form" data-test="homepage-search-form" name="facilitySearch">
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="keywords">
+					Search term
+				</label>
+				<input class="govuk-input" id="keywords" name="keywords" type="text" data-test="homepage-search-keywords">
+			</div>
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="location">
+					Search category
+				</label>
+				<select class="govuk-select" id="location" name="Home-Search" data-test="homepage-search-location">
+					<option value="Home-Search">Select category</option>
+
+					<option value="Facility ">Facility ID</option>
+					<option value="Deal">Deal ID</option>
+						<option value="Company">Company name</option>
+						<option value="Claim">Claim ID</option>
+				</select>
+			</div>
+			<button type="submit" class="govuk-button" data-module="govuk-button">
+				Search
+			</button>
+		</form>
+	</div>
+</div>
+
+
+
+<div class="homepage-content">
+
+	<div class="govuk-width-container">
+			<h1 class="govuk-heading-l">Claim status and stages for claim {{data.claimID or '1236553-CL1'}}</h1>
+			<h2 class="govuk-heading-m">Current step: 1. Pre-examination, enter claim details</h2>
+		<ul class="govuk-grid-row card-group" id="sortable">
+
+			<li class="govuk-grid-column-one-third card-group__item" id="tile_create">
+				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+
+					<h2 class="govuk-heading-m card__heading" >
+						<a class="govuk-link card__link govuk-link--no-visited-state" href="facility-card-list">
+						1. Pre-examination
+						</a>
+					</h2>
+					<p class="govuk-body card__description">
+						0% tasks complete
+					</p>
+				</div>
+			</li>
+			<li class="govuk-grid-column-one-third card-group__item" id="tile_create">
+				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+					<h2 class="govuk-heading-m card__heading">
+						<a class="govuk-link card__link govuk-link--no-visited-state" href="facility-card-list-2">
+							2. Examination
+						</a>
+					</h2>
+					<p class="govuk-body card__description">
+						0% tasks complete
+					</p>
+				</div>
+			</li>
+			<li class="govuk-grid-column-one-third card-group__item" id="tile_unlock">
+				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+					<h2 class="govuk-heading-m card__heading">
+						<a class="govuk-link card__link govuk-link--no-visited-state" href="#">
+							3. Authorisation and approval
+						</a>
+					</h2>
+					<p class="govuk-body card__description">
+						0% tasks complete
+					</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="govuk-width-container">
+		<ul class="govuk-grid-row card-group" id="sortable">
+
+			<li class="govuk-grid-column-one-third card-group__item" id="tile_create">
+				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+					<h2 class="govuk-heading-m card__heading">
+						<a class="govuk-link card__link govuk-link--no-visited-state" href="#">
+							4. An other section
+						</a>
+					</h2>
+					<p class="govuk-body card__description">
+						0% tasks complete
+					</p>
+				</div>
+			</li>
+			<li class="govuk-grid-column-one-third card-group__item" id="tile_create">
+				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+					<h2 class="govuk-heading-m card__heading">
+						<a class="govuk-link card__link govuk-link--no-visited-state" href="#">
+							5. An other section
+						</a>
+					</h2>
+					<p class="govuk-body card__description">
+						0% tasks complete
+					</p>
+				</div>
+			</li>
+			<li class="govuk-grid-column-one-third card-group__item" id="tile_unlock">
+				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+					<h2 class="govuk-heading-m card__heading">
+						<a class="govuk-link card__link govuk-link--no-visited-state" href="#">
+							6. An other section
+						</a>
+					</h2>
+					<p class="govuk-body card__description">
+						0% tasks complete
+					</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="govuk-width-container" style="margin-top:80px;">
+		<ul class="govuk-grid-row card-group" id="sortable">
+
+			<li class="govuk-grid-column-one-quarter card-group__item" id="tile_create">
+				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+					<h2 class="govuk-heading-m card__heading">
+						<a class="govuk-link card__link govuk-link--no-visited-state" href="#">
+							Glossary
+						</a>
+					</h2>
+					<p class="govuk-body card__description">
+						A definition of commonly used terms and  abbreviations in claims and recoveries
+					</p>
+				</div>
+			</li>
+			<li class="govuk-grid-column-one-quarter card-group__item" id="tile_create">
+				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+					<h2 class="govuk-heading-m card__heading">
+						<a class="govuk-link card__link govuk-link--no-visited-state" href="#">
+							Reporting
+						</a>
+					</h2>
+					<p class="govuk-body card__description">
+						View existing and create new reports for claims and recoveries
+					</p>
+				</div>
+			</li>
+			<li class="govuk-grid-column-one-quarter card-group__item" id="tile_unlock">
+				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+					<h2 class="govuk-heading-m card__heading">
+						<a class="govuk-link card__link govuk-link--no-visited-state" href="#">
+							An other section
+						</a>
+					</h2>
+					<p class="govuk-body card__description">
+						This can be another useful section which can be defined later
+					</p>
+				</div>
+			</li>
+			<li class="govuk-grid-column-one-quarter card-group__item" id="tile_unlock">
+				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+					<h2 class="govuk-heading-m card__heading">
+						<a class="govuk-link card__link govuk-link--no-visited-state" href="#">
+							An other section
+						</a>
+					</h2>
+					<p class="govuk-body card__description">
+						This can be yet another useful ection which can be defined later
+					</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+{% endblock %}
+{% block pageScripts %}
+<script src="/public/javascripts/cards.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+	// $(document).ready( function() {
+	// 	var $list = "ul#sortable"
+	// 	$($list).sortable({
+	// 		update: function(event, ui) {
+	// 			var order = [];
+	// 			var data = $(this).sortable('serialize');
+
+	// 			$($list + ' li').each( function(e) {
+	// 				order.push( $(this).find('a').html() );
+	// 			});
+
+	// 			console.log( order , data );
+	// 		}
+	// 	});
+	// 	$($list).disableSelection();
+	// } );
+</script>
+{% endblock %}

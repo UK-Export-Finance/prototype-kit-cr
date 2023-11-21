@@ -158,15 +158,25 @@ router.post(version +'/1-pre-examination/notifications', function(req, res) {
 
 router.post(version +'/facility-card-list', function(req, res) {
 	{
-			res.redirect(version +'/facility-card-list-2')
-	}
+			if  (req.session.data.save == 'exit') {
+				res.redirect(version +'/confirmation-changes-saved')
+			}
+			else{
+				res.redirect(version +'/facility-card-list-2')
+			}
+		}
 });
 
 
 router.post(version +'/facility-card-list-2', function(req, res) {
 	{
-			res.redirect(version +'/facility-card-list-3')
-	}
+			if  (req.session.data.save == 'exit') {
+				res.redirect(version +'/confirmation-changes-saved')
+			}
+			else{
+				res.redirect(version +'/facility-card-list-3')
+			}
+		}
 });
 
 router.post(version +'/facility-card-list-3', function(req, res) {
@@ -177,7 +187,7 @@ router.post(version +'/facility-card-list-3', function(req, res) {
 
 router.post(version +'/confirmation-changes-saved', function(req, res) {
 	{
-			res.redirect(version +'/facility-card-list')
+			res.redirect(version +'/claims-dashboard-claim')
 	}
 });
 
@@ -492,6 +502,8 @@ router.post(version +'/add-a-calculation', function(req, res) {
 			res.redirect(version +'/facility-card-list')
 }
 });
+
+
 
 
 

@@ -271,7 +271,7 @@ router.post(version +'/2-examination/1--principal-claim-amount/1', function(req,
 			}
 
 
-		res.redirect(version +'/facility-card-list')
+		res.redirect(version +'/facility-card-list-2')
 	}
 });
 
@@ -373,7 +373,7 @@ router.post(version +'/2-examination/5--delay-principal-interest/1', function(re
 	 req.session.data.CalculatedPrincipalDelayInterestAmountDue  = req.session.data.CalculatedPrincipalDelayInterestAmountDue.toFixed(2)
 
 
-		res.redirect(version +'/facility-card-list')
+		res.redirect(version +'/facility-card-list-2')
 			}
 		});
 
@@ -481,25 +481,25 @@ router.post(version +'/2-examination/5--delay-principal-interest/1', function(re
 
 
 			 // + req.session.data.CalculatedPrincipalDelayInterestAmountDue +  req.session.data.CalculatedPrincipalDelayInterestOnInterestAmountDue
-				res.redirect(version +'/facility-card-list')
+				res.redirect(version +'/facility-card-list-2')
 					}
 				});
 
 				router.post(version +'/2-examination/10--C-Number/1', function(req, res) {
 					{
-							res.redirect(version +'/facility-card-list')
+							res.redirect(version +'/facility-card-list-2')
 			}
 		});
 
 		router.post(version +'/2-examination/11--Summary/1', function(req, res) {
 			{
-					res.redirect(version +'/facility-card-list')
+					res.redirect(version +'/facility-card-list-2')
 	}
 });
 
 router.post(version +'/add-a-calculation', function(req, res) {
 	{
-			res.redirect(version +'/facility-card-list')
+			res.redirect(version +'/facility-card-list-2')
 }
 });
 

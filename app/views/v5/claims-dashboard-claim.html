@@ -67,7 +67,11 @@ Activities Management prototype
 						</a>
 					</h2>
 					<p class="govuk-body card__description">
+						{% if data.notification1 =="Party 1" %}
+						100% complete
+						{% else %}
 						0% tasks complete
+						{% endif %}
 					</p>
 				</div>
 			</li>
@@ -79,7 +83,11 @@ Activities Management prototype
 						</a>
 					</h2>
 					<p class="govuk-body card__description">
+						{% if data.rmSummaryComplete =="yes" %}
+						100% complete
+						{% else %}
 						0% tasks complete
+						{% endif %}
 					</p>
 				</div>
 			</li>

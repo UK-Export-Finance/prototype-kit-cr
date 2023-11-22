@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Activities Management prototype
+{% endblock %}
+{% block primaryNavigation %}
+{% endblock %}
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<h1 class="govuk-heading-l govuk-!-margin-top-7">Claims and recoveries</h1>
+
+	{% if data.setuoShowSearch=='yes' %}
+	<p>Search for a facility using criteria below or navigate to either  create a new claim or manage an existing claim.</p>
+	{% endif %}
+</div>
+
+{% endblock %}
+
+
+
+
+<div class="homepage-content">
+	<div class="govuk-width-container">
+		<iframe src="https://ukef.sharepoint.com/:u:/r/sites/CharlesTestTeam/Glossary/SitePages/Glossary.aspx?csf=1&web=1&e=5F2R2S" width="600" height="400"></iframe>
+</div>
+</div>
+
+
+{% endblock %}
+{% block pageScripts %}
+<script src="/public/javascripts/cards.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+	// $(document).ready( function() {
+	// 	var $list = "ul#sortable"
+	// 	$($list).sortable({
+	// 		update: function(event, ui) {
+	// 			var order = [];
+	// 			var data = $(this).sortable('serialize');
+
+	// 			$($list + ' li').each( function(e) {
+	// 				order.push( $(this).find('a').html() );
+	// 			});
+
+	// 			console.log( order , data );
+	// 		}
+	// 	});
+	// 	$($list).disableSelection();
+	// } );
+</script>
+{% endblock %}

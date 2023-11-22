@@ -38,7 +38,7 @@
   border-style: solid;
   border-color: black transparent transparent transparent;
 }
-
+ 
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }

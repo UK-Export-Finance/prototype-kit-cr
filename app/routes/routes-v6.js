@@ -9,6 +9,11 @@ router.post(version +'/setup', function(req, res) {
 		res.redirect(version +'/3-Authorise/primary-exam.html')
 	}
 
+	else if(req.session.data.setupUserJourney=="authoriser"){
+
+		res.redirect(version +'/3-Authorise/auth.html')
+	}
+
 	else{
 
 	res.redirect(version +'/ukef-tiles')

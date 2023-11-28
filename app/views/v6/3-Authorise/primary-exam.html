@@ -19,37 +19,31 @@ Claims and recoveries
 {% block content %}
 
 	<h1 class="govuk-heading-l">
-  Claim examination queue
+  Claims awaiting review
   </h1>
 
   <!--start-->
-  <div class="govuk-summary-card">
-    <div class="govuk-summary-card__title-wrapper">
-      <h2 class="govuk-summary-card__title" style="font-size:1.5em">Facility {{data.facility}}</h2>
-      <ul class="govuk-summary-card__actions">
-        <li class="govuk-summary-card__action"> <a class="govuk-link" href="are-you-sure-create-new-claim">
-            Create new claim<span class="govuk-visually-hidden">Create new claim<</span>
-          </a>
-        </li>
-      </ul>
-    </div>
+
+
     <div class="govuk-tabs" data-module="govuk-tabs">
       <h2 class="govuk-tabs__title">
         Contents
       </h2>
       <ul class="govuk-tabs__list">
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#awaiting">
-             Claims awaiting examination review
+          <a class="govuk-tabs__tab" href="#current-claims1">
+            Work items allocated to me
           </a>
         </li>
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#past-claims1">
-            Previously reviewed claims
+            All work items allocated to the team
           </a>
         </li>
+
+
       </ul>
-      <div class="govuk-tabs__panel" id="awaiting"  style="border:none;">
+      <div class="govuk-tabs__panel" id="current-claims1">
         <h2 class="govuk-heading-l">Current claims</h2>
         <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -79,7 +73,7 @@ Claims and recoveries
               <td class="govuk-table__cell">3 Jan 2024</td>
               <td class="govuk-table__cell">
                 <strong class="govuk-tag govuk-tag--blue app-task-list__tag">
-                  In progress
+                  Awaiting primary review
                 </strong>
               </td>
             </tr>
@@ -88,28 +82,24 @@ Claims and recoveries
               <td class="govuk-table__cell">£10,000</td>
               <td class="govuk-table__cell">2 Feb 2024</td>
               <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--blue app-task-list__tag">
-                In progress
+                <strong class="govuk-tag govuk-tag--yellow app-task-list__tag">
+                Awaiting secondary review
                 </strong>
               </td>
             </tr>
           </tbody>
         </table>
         <div class="govuk-button-group">
-          <a href="are-you-sure-create-new-claim">
-            <button class="govuk-button" data-module="govuk-button">
-              Create new claim
-            </button>
-          </a>
+
           <a href="facility-search-result">
             <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit">
-            Return to results dashboard
+            Return to options
           </button>
           </a>
         </div>
       </div>
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="reviewed" style="border:none;">
-        <h2 class="govuk-heading-l">Past claims</h2>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-claims1">
+        <h2 class="govuk-heading-l">All work items</h2>
         <table class="govuk-table">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -125,43 +115,76 @@ Claims and recoveries
               </div>
             </th>
             <th scope="col" class="govuk-table__header">
-              <div class="tooltip">Claim paid date
-              <span class="tooltiptext">The date the claim was actually paid</span>
+              <div class="tooltip">Allocated to
+              <span class="tooltiptext">This is who the work item is currently allocated to</span>
             </div>
           </th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="#">C999999</a></td>
+              <td class="govuk-table__cell"><a href="#">C123456</a></td>
               <td class="govuk-table__cell">£30,000</td>
-              <td class="govuk-table__cell">4 Sept 2022</td>
-              <td class="govuk-table__cell">3 Sept 2022</td>
+              <td class="govuk-table__cell">3 Jan 2024</td>
+              <td class="govuk-table__cell">Steven Smith
+                <strong class="govuk-tag govuk-tag--blue app-task-list__tag">
+                  Awaiting primary review
+                </strong>
+              </td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="#">C882772</a></td>
-              <td class="govuk-table__cell">£20,000</td>
-              <td class="govuk-table__cell">4 Jan 2021</td>
-              <td class="govuk-table__cell">3 Jan 2021</td>
+              <td class="govuk-table__cell"><a href="#">C553632</a></td>
+              <td class="govuk-table__cell">£10,000</td>
+              <td class="govuk-table__cell">2 Feb 2024</td>
+              <td class="govuk-table__cell">Steven Smith
+                <strong class="govuk-tag govuk-tag--yellow app-task-list__tag">
+                Awaiting secondary review
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#">C553632</a></td>
+              <td class="govuk-table__cell">£1,100,000</td>
+              <td class="govuk-table__cell">14 Jan 2024</td>
+              <td class="govuk-table__cell">Rajesh Damodaran
+                <strong class="govuk-tag govuk-tag--yellow app-task-list__tag">
+                Awaiting secondary review
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#">C787828</a></td>
+              <td class="govuk-table__cell">£760,000</td>
+              <td class="govuk-table__cell">19 Dec 2023</td>
+              <td class="govuk-table__cell">Julie Bellingham
+                <strong class="govuk-tag govuk-tag--yellow app-task-list__tag">
+                Awaiting secondary review
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#">C203948</a></td>
+              <td class="govuk-table__cell">£928,000</td>
+              <td class="govuk-table__cell">12 Dec 2023</td>
+              <td class="govuk-table__cell">Leona McEntee
+                <strong class="govuk-tag govuk-tag--blue app-task-list__tag">
+                  Awaiting primary review
+                </strong>
+              </td>
             </tr>
           </tbody>
         </table>
         <div class="govuk-button-group">
-          <a href="are-you-sure-create-new-claim">
-            <button class="govuk-button" data-module="govuk-button">
-              Create new claim
-            </button>
-          </a>
+
           <a href="facility-search-result">
             <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit">
-            Return to results dashboard
+            Return to options
           </button>
           </a>
         </div>
         </div>
-
   </div>
-</div>  <!--
+ <!--
 <div class="govuk-button-group">
   <button class="govuk-button" data-module="govuk-button">
     Create new claim

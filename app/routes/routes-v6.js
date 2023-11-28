@@ -3,8 +3,21 @@ module.exports = function (router) {
 var version = '/v6';
 
 router.post(version +'/setup', function(req, res) {
+
+	if(req.session.data.setupUserJourney=="reviewer"){
+
+		res.redirect(version +'/3-Authorise/primary-exam.html')
+	}
+
+	else{
+
 	res.redirect(version +'/ukef-tiles')
+	}
 		});
+
+
+
+
 
 router.post(version +'/url', function(req, res) {
 	{

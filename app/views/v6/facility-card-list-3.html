@@ -141,45 +141,103 @@ Claims and recoveries
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">3. Review and authorisation</h2>
-    <ul class="govuk-summary-card__actions">
 
-      <span style="margin-right:50px;">
-      <strong class="" >
-        <a href="">
-        - Remove a task
-        </a>
-      </strong>
-      </span>
-
-
-    <span style="">
-    <strong class="" >
-      <a href="add-a-calculation">
-        + Add a task
-      </a>
-    </strong>
-    </span>
-    </ul>
   </div>
 
 <!-- 2.1 starts here --->
 
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row"   {% if (data.delayPrincipaltotalAmount)  %} {% else %} style="border-bottom:1px solid grey;" {% endif %}>
-        <dt class="govuk-summary-list__key" style="width:400px;">
-        {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">2.1</div> {% endif %}
-        Next section coming soon.
+<div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key" style="width:400px;">
+      {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">3.1</div> {% endif %}
+      Primary examination
+
+      {% if data.allocatedPrimaryExaminer %}
+
+      <div class="govuk-inset-text" style="margin-top:5px; font-weight:bold; ">
+        {% if data.allocatedPrimaryExaminer %}
+          {{'Allocated authoriser'}}
+          <br /> Due date
+        {% endif %}
+      </div>
+       {% endif %}
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {% if data.allocatedPrimaryExaminer%}<br /><br />
+          {{data.allocatedPrimaryExaminer or 'Awaiting entry'}}<br />
+          2nd Jan 2024
+        </dd>
+        <dd class="govuk-summary-list__value" style="text-align:right;">
+          {% else %}
+          Awaiting entry
+          {% endif %}
+        </dd>
+        <dd><span class="govuk-tag govuk-tag--green">Approved</span></dd>
+        </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key" style="width:400px;">
+      {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">3.2</div> {% endif %}
+      Secondary examination review
+      {% if data.allocatedSecondaryExaminer %}
+      <div class="govuk-inset-text" style="margin-top:5px; font-weight:bold; ">
+        {% if data.allocatedSecondaryExaminer %}
+          {{'Secondary examiner'}}
+            <br /> Due date
+        {% endif %}
+      </div>
+       {% endif %}
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {% if data.allocatedSecondaryExaminer%}<br /><br />
+          {{data.allocatedSecondaryExaminer or 'Awaiting entry'}}<br />
+          2nd Feb 2024
+        </dd>
+        <dd class="govuk-summary-list__value" style="text-align:right;">
+          {% else %}
+          Awaiting entry
+          {% endif %}
+          </dd>
+          <dd><span class="govuk-tag govuk-tag--yellow">Under review</span></dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:400px;">
+          {% if data.setupShowNumberList =='true' %}<div style="width:40px; float:left;">3.3</div> {% endif %}
+          Claim authorisation
+          {% if data.allocatedAuthoriser %}
+
+          <div class="govuk-inset-text" style="margin-top:5px; font-weight:bold; ">
+            {% if data.allocatedAuthoriser %}
+              {{'Claim authoriser'}}
+                <br /> Due date
+            {% endif %}
+          </div>
+           {% endif %}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data.allocatedAuthoriser%}<br /><br />
+              {{data.allocatedAuthoriser or 'Awaiting entry'}}<br />
+              2nd March 2024
+            </dd>
+            <dd class="govuk-summary-list__value" style="text-align:right;">
+              {% else %}
+              Awaiting entry
+              {% endif %}
+              </dd>
+              <dd><span class="govuk-tag govuk-tag--blue">Allocated</span></dd>
+            </div>
 
 
-</div>
+      </dl>
+
 
 
 
 
 
 <!--Start add buttons -->
-<br /><br />
 <div class="govuk-button-group">
   <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Save and exit

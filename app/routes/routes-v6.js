@@ -4,20 +4,20 @@ var version = '/v6';
 
 router.post(version +'/setup', function(req, res) {
 
-	if(req.session.data.setupUserJourney=="reviewer"){
+//	if(req.session.data.setupUserJourney=="reviewer"){
 
-		res.redirect(version +'/3-Authorise/primary-exam.html')
-	}
+///		res.redirect(version +'/3-Authorise/primary-exam.html')
+//	}
 
-	else if(req.session.data.setupUserJourney=="authoriser"){
+//	else if(req.session.data.setupUserJourney=="authoriser"){
 
-		res.redirect(version +'/3-Authorise/auth.html')
-	}
+//		res.redirect(version +'/3-Authorise/auth.html')
+//	}
 
-	else{
+//	else{
 
 	res.redirect(version +'/ukef-tiles')
-	}
+	
 		});
 
 

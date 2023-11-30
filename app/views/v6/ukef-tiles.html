@@ -56,20 +56,37 @@ Activities Management prototype
 	<div class="govuk-width-container">
 		<ul class="govuk-grid-row card-group" id="sortable">
 
-			{% if data.setupShowCardview !== 'no' %}
+			{% if data.setupUserJourney=="reviewer" or data.setupUserJourney=="authoriser"%}
+
 			<li class="govuk-grid-column-one-third card-group__item" id="tile_create">
 				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
 					<h2 class="govuk-heading-m card__heading">
-						<a class="govuk-link card__link govuk-link--no-visited-state" href="facility-search-for-facility?claimType=new">
-							Review 
+						<a class="govuk-link card__link govuk-link--no-visited-state" href="3-Authorise/primary-exam.html">
+							Review a claim
 						</a>
 					</h2>
 					<p class="govuk-body card__description">
-						Create a new claim for a facility or manage an existing claim in progress.
+						Review a new claim for a facility.
 					</p>
 				</div>
 			</li>
-			{% endif %}
+{% endif %}
+
+{% if data.setupUserJourney=="authoriser" %}
+
+<li class="govuk-grid-column-one-third card-group__item" id="tile_create">
+	<div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+		<h2 class="govuk-heading-m card__heading">
+			<a class="govuk-link card__link govuk-link--no-visited-state" href="facility-search-for-facility?claimType=new">
+				Authorise a claim
+			</a>
+		</h2>
+		<p class="govuk-body card__description">
+			Approve and authorise a reviewed claim for a facility.
+		</p>
+	</div>
+</li>
+{% endif %}
 
 			<li class="govuk-grid-column-one-third card-group__item" id="tile_create">
 				<div class="card card--clickable" data-test="manage-prisoner-whereabouts">

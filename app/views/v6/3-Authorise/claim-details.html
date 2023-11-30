@@ -1,0 +1,266 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% block beforeContent %}
+<div class="govuk-width-container">
+	<nav class="govuk-!-display-none-print">
+	{{govukBackLink({
+	  text: "Back",
+	  "href": "javascript: window.history.go(-1)"
+	  })}}
+	  <a href="ukef-tiles.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+	  </a>
+	</nav>
+{% endblock %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+		      <h1 class="govuk-fieldset__heading">
+		    Review and approve claim
+		      </h1>
+		    </legend>
+		    <div id="passport-issued-hint" class="govuk-hint">
+		      Check all details are correct and press approve once complete
+					</div><br />
+
+				<form action="" method="post">
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key" style="width:50%">
+								Product
+						</dt>
+						<dd class="govuk-summary-list__value">
+						Buyer credit (Aero)
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="/2-examination/5-calculate-delay-principal-interest/1-interest-start-date">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key" style="width:50%">
+								Claimant
+						</dt>
+						<dd class="govuk-summary-list__value">
+						JP Morgan Chase (London branch)
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="/2-examination/5-calculate-delay-principal-interest/0-interest-name">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Deal number
+						</dt>
+						<dd class="govuk-summary-list__value">
+							012873566373
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/2-amount">
+								<span class="govuk-visually-hidden"> claim amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Facility ID
+						</dt>
+						<dd class="govuk-summary-list__value">
+							12341037
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/2-amount">
+								<span class="govuk-visually-hidden"> claim amount</span>
+							</a>
+						</dd>
+					</div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              MSN Number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              017736363
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="1-calculate-principal-claim-amount/2-amount">
+                <span class="govuk-visually-hidden"> claim amount</span>
+              </a>
+            </dd>
+          </div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Supplier
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Boeing
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Ultimate Obligor
+						</dt>
+						<dd class="govuk-summary-list__value">
+							KLM
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Project
+						</dt>
+						<dd class="govuk-summary-list__value">
+							BC: A/C No.3 ESN 63441
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Amount claimed
+						</dt>
+						<dd class="govuk-summary-list__value">
+				        £1,500,000<br />
+						</dd>
+						</div>
+						<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Start date
+						</dt>
+						<dd class="govuk-summary-list__value">
+				        12 September 2023
+						</dd>
+						</div>
+						<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							End date
+						</dt>
+						<dd class="govuk-summary-list__value">
+				       12 December 2023
+						</dd>
+						</div>
+						<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+						Interest period
+						</dt>
+						<dd class="govuk-summary-list__value">
+							 90 days
+						</dd>
+						</div>
+						<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+						Total interest rate
+						</dt>
+						<dd class="govuk-summary-list__value">
+							 5%
+						</dd>
+						</div>
+						<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+						Partial payment amount
+						</dt>
+						<dd class="govuk-summary-list__value">
+							 £0
+						</dd>
+						</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							ECA Percentage
+						</dt>
+						<dd class="govuk-summary-list__value">
+						None
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							ECA Percentage
+						</dt>
+						<dd class="govuk-summary-list__value">
+						None
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="1-calculate-principal-claim-amount/3-partial">
+								<span class="govuk-visually-hidden">Partial Payment Amount</span>
+							</a>
+						</dd>
+					</div>
+
+
+						<dd class="govuk-summary-list__actions">
+						</dd>
+					</div>
+				</div>
+				<div class="govuk-form-group">
+		<fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+			<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+				Do you want to approve this claim?
+
+			<div id="contact-hint" class="govuk-hint">
+				Select one option.
+			</div>
+			<div class="govuk-radios" data-module="govuk-radios">
+				<div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+					<label class="govuk-label govuk-radios__label" for="contact">
+						Yes
+					</label>
+				</div>
+
+				<div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+					<label class="govuk-label govuk-radios__label" for="contact-2">
+						No
+					</label>
+				</div>
+				<div class="govuk-radios__conditional" id="conditional-contact-2">
+					<div class="govuk-form-group">
+						<label class="govuk-label" for="contact-by-email">
+							Enter reasons for not approving this claim
+						</label>
+						<input class="govuk-input" id="contact-by-email" name="cNumber"  spellcheck="false" aria-describedby="contact-by-email-error" autocomplete="email">
+					</div>
+				</div>
+
+
+			</div>
+		</fieldset>
+	</div>
+
+				<div class="govuk-button-group">
+			  <button class="govuk-button" data-module="govuk-button">
+			    Conirm
+			  </button>
+
+			  <a class="govuk-link" href="../../facility-card-list">Cancel and go back</a>
+			</div>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Claims and recoveries
+{% endblock %}
+
+
+{% block beforeContent %}
+<nav class="govuk-!-display-none-print">
+{{govukBackLink({
+  text: "Back",
+  "href": "javascript: window.history.go(-1)"
+  })}}
+
+</nav>
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="">
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              Claim has been successfully reviewed
+            </h1>
+            <div class="govuk-panel__body">
+              Claim ID: <br><strong>12341037-CL1</strong>
+            </div>
+          </div>
+
+          <h2 class="govuk-heading-m">What happens next</h2>
+          <p class="govuk-body">
+          The claim will now be assessed by a second reviewer.</p>
+          <p class="govuk-body">
+            You can now either <a href="3-Authorise/primary-exam">review another claims</a> or return to <a href="../ukef-tiles">view further options</a>.
+          </p>
+        <form id="form" method="post">
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Back to claim dashboard
+            </button>
+
+          </div>
+          </form>
+        </div>
+
+
+      </div>
+    </main>
+  </div>
+
+
+{% endblock %}

@@ -17,7 +17,7 @@ router.post(version +'/setup', function(req, res) {
 //	else{
 
 	res.redirect(version +'/ukef-tiles')
-	
+
 		});
 
 
@@ -521,6 +521,13 @@ router.post(version +'/add-a-calculation', function(req, res) {
 }
 });
 
+
+router.post(version +'/3-Authorise/claim-details', function(req, res) {
+	{
+
+		res.redirect(version +'/3-Authorise/claim-details-confirm')
+	}
+});
 
 
 

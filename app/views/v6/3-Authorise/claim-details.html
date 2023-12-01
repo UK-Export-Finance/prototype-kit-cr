@@ -17,7 +17,7 @@
       <div class="govuk-grid-column-two-thirds-from-desktop">
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 		      <h1 class="govuk-fieldset__heading">
-		    Review and approve claim
+		    Review and approve claim 12341037-CL1
 		      </h1>
 		    </legend>
 		    <div id="passport-issued-hint" class="govuk-hint">
@@ -227,24 +227,24 @@
 			</div>
 			<div class="govuk-radios" data-module="govuk-radios">
 				<div class="govuk-radios__item">
-					<input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+					<input class="govuk-radios__input" id="contact" name="reviewClaim" type="radio" value="yes" data-aria-controls="conditional-contact">
 					<label class="govuk-label govuk-radios__label" for="contact">
 						Yes
 					</label>
 				</div>
 
 				<div class="govuk-radios__item">
-					<input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+					<input class="govuk-radios__input" id="contact-2" name="reviewClaim" type="radio" value="no" data-aria-controls="conditional-contact-2">
 					<label class="govuk-label govuk-radios__label" for="contact-2">
 						No
 					</label>
 				</div>
 				<div class="govuk-radios__conditional" id="conditional-contact-2">
 					<div class="govuk-form-group">
-						<label class="govuk-label" for="contact-by-email">
+						<label class="govuk-label" for="rejectReason">
 							Enter reasons for not approving this claim
 						</label>
-						<input class="govuk-input" id="contact-by-email" name="cNumber"  spellcheck="false" aria-describedby="contact-by-email-error" autocomplete="email">
+						<textarea class="govuk-textarea" id="rejectReason" name="rejectReason" rows="5" aria-describedby="more-detail-hint"></textarea>
 					</div>
 				</div>
 
@@ -255,7 +255,7 @@
 
 				<div class="govuk-button-group">
 			  <button class="govuk-button" data-module="govuk-button">
-			    Conirm
+			    Confirm
 			  </button>
 
 			  <a class="govuk-link" href="../../facility-card-list">Cancel and go back</a>

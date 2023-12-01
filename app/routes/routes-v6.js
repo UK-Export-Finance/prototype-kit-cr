@@ -541,6 +541,11 @@ router.post(version +'/3-Authorise/claim-details-auth', function(req, res) {
 	}
 });
 
+router.post(version +'/3-Authorise/claim-details-auth-confirm', function(req, res) {
+	{
 
+		res.redirect(version +'/3-Authorise/auth-claim')
+	}
+	});
 
 }

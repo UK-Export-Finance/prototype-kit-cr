@@ -528,6 +528,12 @@ router.post(version +'/3-Authorise/claim-details', function(req, res) {
 		res.redirect(version +'/3-Authorise/claim-details-confirm')
 	}
 });
+router.post(version +'/3-Authorise/claim-details-confirm', function(req, res) {
+	{
+
+		res.redirect(version +'/3-Authorise/primary-exam')
+	}
+});
 
 
 

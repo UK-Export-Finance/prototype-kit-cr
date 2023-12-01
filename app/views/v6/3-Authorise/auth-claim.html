@@ -1,0 +1,194 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Claims and recoveries
+{% endblock %}
+
+
+{% block beforeContent %}
+<nav class="govuk-!-display-none-print">
+{{govukBackLink({
+  text: "Back",
+  "href": "javascript: window.history.go(-1)"
+  })}}
+    <a href="../ukef-tiles" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+  </a>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+	<h1 class="govuk-heading-l">
+  Claims awaiting authorisation
+  </h1>
+
+  <!--start-->
+
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#current-claims1">
+            My work allocation
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-claims1">
+            My teams work allocation
+          </a>
+        </li>
+
+
+      </ul>
+      <div class="govuk-tabs__panel" id="current-claims1">
+        <h2 class="govuk-heading-l">My work items</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Claim ID</th>
+              <th scope="col" class="govuk-table__header">
+                <div class="tooltip">Claim amount
+                <span class="tooltiptext">This is the amount being claimed by the claimant</span>
+              </div></th>
+              <th scope="col" class="govuk-table__header">
+                <div class="tooltip">Claim due date
+                <span class="tooltiptext">The date by which the claim is due to be paid</span>
+              </div>
+            </th>
+
+
+
+
+
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="claim-details-auth">C123456</a></td>
+              <td class="govuk-table__cell">£30,000</td>
+              <td class="govuk-table__cell">3 Jan 2024</td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--blue app-task-list__tag">
+                  Awaiting authorisation
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="claim-details-auth">C553632</a></td>
+              <td class="govuk-table__cell">£10,000</td>
+              <td class="govuk-table__cell">2 Feb 2024</td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--yellow app-task-list__tag">
+                Awaiting authorisation
+                </strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="govuk-button-group">
+
+          <a href="../ukef-tiles">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit">
+            Back
+          </button>
+          </a>
+        </div>
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-claims1">
+        <h2 class="govuk-heading-l">All work items</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Claim ID</th>
+              <th scope="col" class="govuk-table__header">
+                <div class="tooltip">Claim amount
+                <span class="tooltiptext">This is the amount being claimed by the claimant</span>
+              </div>
+            </th>
+              <th scope="col" class="govuk-table__header">
+                <div class="tooltip">Claim due date
+                <span class="tooltiptext">The date by which the claim was due to be paid</span>
+              </div>
+            </th>
+            <th scope="col" class="govuk-table__header">
+              <div class="tooltip">Allocated to
+              <span class="tooltiptext">This is who the work item is currently allocated to</span>
+            </div>
+          </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#">C123456</a></td>
+              <td class="govuk-table__cell">£30,000</td>
+              <td class="govuk-table__cell">3 Jan 2024</td>
+              <td class="govuk-table__cell">Steven Smith
+                <strong class="govuk-tag govuk-tag--blue app-task-list__tag">
+                  Awaiting authorisation
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#">C553632</a></td>
+              <td class="govuk-table__cell">£10,000</td>
+              <td class="govuk-table__cell">2 Feb 2024</td>
+              <td class="govuk-table__cell">Steven Smith
+                <strong class="govuk-tag govuk-tag--yellow app-task-list__tag">
+                Awaiting authorisation
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#">C553632</a></td>
+              <td class="govuk-table__cell">£1,100,000</td>
+              <td class="govuk-table__cell">14 Jan 2024</td>
+              <td class="govuk-table__cell">Rajesh Damodaran
+                <strong class="govuk-tag govuk-tag--yellow app-task-list__tag">
+                Awaiting authorisation
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#">C787828</a></td>
+              <td class="govuk-table__cell">£760,000</td>
+              <td class="govuk-table__cell">19 Dec 2023</td>
+              <td class="govuk-table__cell">Julie Bellingham
+                <strong class="govuk-tag govuk-tag--yellow app-task-list__tag">
+                Awaiting authorisation
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#">C203948</a></td>
+              <td class="govuk-table__cell">£928,000</td>
+              <td class="govuk-table__cell">12 Dec 2023</td>
+              <td class="govuk-table__cell">Leona McEntee
+                <strong class="govuk-tag govuk-tag--blue app-task-list__tag">
+                  Awaiting authorisation
+                </strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="govuk-button-group">
+
+            <a href="../ukef-tiles">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit">
+            Back
+          </button>
+          </a>
+        </div>
+        </div>
+  </div>
+
+
+
+
+
+
+
+  {% endblock %}

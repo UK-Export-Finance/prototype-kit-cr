@@ -22,7 +22,12 @@ Claims and recoveries
         <div class="govuk-grid-column-two-thirds">
           <div class="govuk-panel govuk-panel--confirmation">
             <h1 class="govuk-panel__title">
-              Claim has been successfully reviewed
+
+              {% if data.reviewClaim =='yes' %}
+              The claim has been successfully reviewed
+              {% else %}
+              The claim has not been authorised
+              {% endif %}
             </h1>
             <div class="govuk-panel__body">
               Claim ID: <br><strong>12341037-CL1</strong>
@@ -31,7 +36,13 @@ Claims and recoveries
 
           <h2 class="govuk-heading-m">What happens next</h2>
           <p class="govuk-body">
-          The claim will now be assessed by a second reviewer.</p>
+
+            {% if data.reviewClaim =='yes' %}
+            The claim will now be assessed by a second reviewer
+            {% else %}
+            The claim will be returned to the claim handler for further action.
+            {% endif %}
+          </p>
           <p class="govuk-body">
             You can now either <a href="3-Authorise/primary-exam">review another claims</a> or return to <a href="../ukef-tiles">view further options</a>.
           </p>
